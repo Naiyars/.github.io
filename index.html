@@ -2,31 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naiyar Shaman | Aerospace Engineering Portfolio</title>
+  <title>Naiyar Shaman | Aerospace Systems</title>
   <meta
     name="description"
-    content="Portfolio of Naiyar Shaman — engineering undergraduate, incoming NASA Langley intern, engineering lead at MeltPro, and leader in NASA-affiliated mission architecture and aerospace systems work."
+    content="Naiyar Shaman — aerospace systems, mission architecture, engineering design, and NASA-affiliated project work."
   />
   <style>
-    :root {
-      --bg: #020304;
-      --bg-2: #07090d;
-      --panel: rgba(255, 255, 255, 0.03);
-      --panel-2: rgba(255, 255, 255, 0.045);
-      --border: rgba(255, 255, 255, 0.09);
-      --text: #f5f7fb;
-      --muted: #b7bfcb;
-      --soft: #8b95a7;
-      --accent: #8fc7ff;
-      --accent-2: #d7ecff;
-      --max: 1220px;
-      --nav-h: 74px;
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap');
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -34,53 +25,25 @@
     }
 
     body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 20% 10%, rgba(143, 199, 255, 0.08), transparent 20%),
-        radial-gradient(circle at 80% 20%, rgba(143, 199, 255, 0.04), transparent 20%),
-        linear-gradient(180deg, #010203 0%, #04060a 50%, #020304 100%);
+      font-family: 'Familjen Grotesk', sans-serif;
+      background: #000;
+      color: #fff;
       overflow-x: hidden;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: #fff;
     }
 
-    img {
-      max-width: 100%;
+    ul {
+      list-style: none;
+    }
+
+    img,
+    video {
       display: block;
-    }
-
-    canvas#stars {
-      position: fixed;
-      inset: 0;
-      z-index: -3;
-      pointer-events: none;
-    }
-
-    .vignette {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 50% 25%, transparent 0%, transparent 35%, rgba(0,0,0,0.28) 100%);
-    }
-
-    .grid-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      opacity: 0.06;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent 85%);
+      max-width: 100%;
     }
 
     .progress {
@@ -89,1205 +52,547 @@
       left: 0;
       height: 2px;
       width: 0;
+      background: #fff;
       z-index: 9999;
-      background: linear-gradient(90deg, #ffffff, var(--accent));
-      box-shadow: 0 0 14px rgba(143, 199, 255, 0.35);
     }
 
-    .nav {
+    .main-header {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
       z-index: 1000;
-      transition: background 180ms ease, backdrop-filter 180ms ease, border-color 180ms ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      height: 96px;
+      padding: 0 34px;
+      transition: background 0.25s ease, backdrop-filter 0.25s ease, border-color 0.25s ease;
       border-bottom: 1px solid transparent;
     }
 
-    .nav.scrolled {
-      background: rgba(3, 4, 6, 0.75);
-      backdrop-filter: blur(16px);
-      border-color: rgba(255,255,255,0.06);
+    .main-header.scrolled {
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(10px);
+      border-color: rgba(255, 255, 255, 0.08);
     }
 
-    .nav-inner {
-      width: min(calc(100% - 32px), var(--max));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
+    .logo a {
+      font-size: 0.82rem;
       font-weight: 700;
-      color: #eef3fb;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      display: inline-block;
     }
 
-    .nav-links {
+    .desktop-main-menu ul {
       display: flex;
-      gap: 24px;
-      flex-wrap: wrap;
-      color: var(--muted);
+      gap: 26px;
+    }
+
+    .desktop-main-menu ul li {
+      position: relative;
+      padding-bottom: 2px;
       font-size: 0.92rem;
     }
 
-    .nav-links a {
-      position: relative;
-      transition: color 160ms ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .nav-links a::after {
-      content: "";
+    .desktop-main-menu ul li a::after {
+      content: '';
       position: absolute;
+      bottom: -4px;
       left: 0;
-      right: 0;
-      bottom: -7px;
+      width: 100%;
       height: 1px;
-      background: rgba(255,255,255,0.9);
+      background: #fff;
       transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 160ms ease;
+      transform-origin: right center;
+      transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    .nav-links a:hover::after {
+    .desktop-main-menu ul li a:hover::after {
       transform: scaleX(1);
-    }
-
-    .shell {
-      width: min(calc(100% - 32px), var(--max));
-      margin: 0 auto;
+      transform-origin: left center;
     }
 
     section {
-      padding: 110px 0;
       position: relative;
-      scroll-margin-top: calc(var(--nav-h) + 18px);
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: calc(var(--nav-h) + 40px);
-      padding-bottom: 70px;
-    }
-
-    .hero-inner {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 22px;
-      color: var(--accent-2);
+      height: 100vh;
+      min-height: 760px;
+      overflow: hidden;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.76rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.025);
-      padding: 10px 14px;
-      border-radius: 999px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(3.4rem, 8vw, 7rem);
-      line-height: 0.92;
-      letter-spacing: -0.06em;
-      max-width: 900px;
+    .background-video,
+    .background-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
     }
 
-    .hero h1 span {
-      display: block;
-      color: var(--accent-2);
+    .background-image {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
 
-    .hero-sub {
-      margin-top: 18px;
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--muted);
-      line-height: 1.85;
+    .overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.45) 48%, rgba(0, 0, 0, 0.8) 100%);
+    }
+
+    .overlay.heavy {
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.58) 48%, rgba(0, 0, 0, 0.88) 100%);
+    }
+
+    .section-inner {
+      position: absolute;
+      bottom: 130px;
+      left: 72px;
       max-width: 760px;
+      z-index: 2;
     }
 
-    .hero-meta {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      margin-top: 34px;
-      color: var(--muted);
+    .section-inner.centered {
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: min(88%, 960px);
+      max-width: 960px;
     }
 
-    .hero-meta strong {
-      display: block;
-      color: #fff;
-      font-size: 1.15rem;
-      margin-bottom: 4px;
+    .section-inner h4 {
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.9);
+      animation: fadeInUp 0.55s ease-in-out;
     }
 
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 32px;
+    .section-inner h1,
+    .section-inner h2 {
+      font-size: clamp(3rem, 7vw, 5.4rem);
+      line-height: 0.94;
+      font-weight: 700;
+      margin-bottom: 18px;
+      letter-spacing: -0.05em;
+      animation: fadeInUp 0.55s ease-in-out 0.12s;
+      animation-fill-mode: both;
+    }
+
+    .section-inner p {
+      text-transform: none;
+      color: rgba(255, 255, 255, 0.84);
+      line-height: 1.75;
+      font-size: 1.08rem;
+      max-width: 760px;
+      margin-bottom: 28px;
+      animation: fadeInUp 0.55s ease-in-out 0.22s;
+      animation-fill-mode: both;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: transparent;
-      color: #fff;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      text-align: center;
+      min-width: 148px;
+      padding: 15px 34px;
+      margin-top: 8px;
+      border: 2px solid #fff;
+      text-transform: uppercase;
       font-weight: 600;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,0.32);
-    }
-
-    .btn.primary {
-      background: #ffffff;
-      color: #06080c;
-      border-color: #ffffff;
-    }
-
-    .btn.primary:hover {
-      background: #f3f7fb;
-    }
-
-    .hero-visual {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      width: min(500px, 100%);
-      justify-self: center;
-      display: grid;
-      place-items: center;
-    }
-
-    .hero-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: inset 0 0 22px rgba(255,255,255,0.02);
-    }
-
-    .hero-ring.r1 {
-      width: 72%;
-      height: 72%;
-      animation: spin 22s linear infinite;
-    }
-
-    .hero-ring.r2 {
-      width: 92%;
-      height: 92%;
-      animation: spinReverse 30s linear infinite;
-    }
-
-    .hero-ring.r3 {
-      width: 108%;
-      height: 108%;
-      border-style: dashed;
-      animation: spin 42s linear infinite;
-    }
-
-    .core {
-      width: 40%;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.16), transparent 18%),
-        radial-gradient(circle at 50% 50%, #0d1017 0%, #0b1320 42%, #06080c 72%, #020304 100%);
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        inset -18px -28px 50px rgba(0,0,0,0.7),
-        0 0 80px rgba(143, 199, 255, 0.12);
-      position: relative;
+      letter-spacing: 0.04em;
       overflow: hidden;
+      z-index: 2;
+      animation: fadeInUp 0.55s ease-in-out 0.32s;
+      animation-fill-mode: both;
     }
 
-    .core::after {
-      content: "";
+    .btn:hover span {
+      color: #000;
+    }
+
+    .btn .hover {
       position: absolute;
-      inset: 18%;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(143, 199, 255, 0.18), transparent 65%);
-      filter: blur(8px);
-    }
-
-    .sat {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 0 16px rgba(255,255,255,0.5);
-    }
-
-    .sat.s1 { top: 14%; left: 58%; }
-    .sat.s2 { bottom: 20%; left: 24%; width: 8px; height: 8px; }
-    .sat.s3 { right: 19%; top: 64%; width: 7px; height: 7px; background: var(--accent); box-shadow: 0 0 14px rgba(143,199,255,0.5); }
-
-    .section-top {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-bottom: 34px;
-    }
-
-    .section-label {
-      margin: 0 0 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-size: 0.74rem;
-      color: var(--accent-2);
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.6rem);
-      line-height: 1;
-      letter-spacing: -0.045em;
-    }
-
-    .section-copy {
-      max-width: 640px;
-      color: var(--muted);
-      line-height: 1.85;
-    }
-
-    .panel {
-      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .featured-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .featured-visual {
-      min-height: 470px;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 22%, rgba(143,199,255,0.12), transparent 20%),
-        linear-gradient(180deg, #05070b 0%, #030406 100%);
-    }
-
-    .feature-lines {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 44px 44px;
-      opacity: 0.25;
-      mask-image: radial-gradient(circle at center, black 20%, transparent 85%);
-    }
-
-    .rocket-wrap {
-      position: absolute;
-      left: 50%;
-      top: 55%;
-      width: 150px;
-      height: 360px;
-      transform: translate(-50%, -50%);
-      animation: float 5s ease-in-out infinite;
-    }
-
-    .rocket-body {
-      position: absolute;
-      inset: 38px 35px 62px 35px;
-      border-radius: 999px 999px 22px 22px;
-      background: linear-gradient(180deg, #fafcff 0%, #b7d8ff 38%, #3b4a63 100%);
-      border: 1px solid rgba(255,255,255,0.22);
-      overflow: hidden;
-    }
-
-    .rocket-body::before {
-      content: "";
-      position: absolute;
-      top: 10%;
-      left: 22%;
-      right: 22%;
-      height: 24%;
-      border-radius: 999px;
-      background: radial-gradient(circle at 50% 50%, #16345d, #0c1728 75%);
-      border: 1px solid rgba(255,255,255,0.18);
-    }
-
-    .rocket-tip {
-      position: absolute;
-      left: 50%;
       top: 0;
-      width: 70px;
-      height: 84px;
-      transform: translateX(-50%);
-      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-      background: linear-gradient(180deg, #ffffff 0%, #b7d6ff 100%);
+      left: 0;
+      width: 101%;
+      height: 100%;
+      background: #fff;
+      z-index: -1;
+      transform: translateY(100%);
+      transition: transform 0.55s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    .fin {
-      position: absolute;
-      bottom: 58px;
-      width: 38px;
-      height: 82px;
-      background: linear-gradient(180deg, #495d7e, #212f45);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .fin.left {
-      left: 15px;
-      clip-path: polygon(100% 0%, 100% 100%, 0 78%);
-    }
-
-    .fin.right {
-      right: 15px;
-      clip-path: polygon(0 0, 100% 78%, 0 100%);
-    }
-
-    .engine {
-      position: absolute;
-      left: 50%;
-      bottom: 36px;
-      width: 36px;
-      height: 28px;
-      transform: translateX(-50%);
-      background: linear-gradient(180deg, #4c5a70, #263348);
-      border-radius: 0 0 18px 18px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .flame {
-      position: absolute;
-      left: 50%;
-      bottom: -4px;
-      width: 46px;
-      height: 92px;
-      transform: translateX(-50%);
-      clip-path: polygon(50% 0%, 72% 18%, 84% 46%, 68% 100%, 50% 84%, 32% 100%, 16% 44%, 28% 18%);
-      background: radial-gradient(circle at 50% 14%, rgba(255,255,255,0.95) 0%, rgba(180,220,255,0.9) 18%, rgba(143,199,255,0.46) 46%, transparent 100%);
-      filter: blur(0.6px) drop-shadow(0 0 14px rgba(143,199,255,0.24));
-      animation: flamePulse 0.18s ease-in-out infinite alternate;
-    }
-
-    .featured-copy-wrap {
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .kicker {
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 0.75rem;
-      color: var(--accent-2);
-    }
-
-    .featured-copy-wrap h3 {
-      margin: 8px 0 12px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1;
-      letter-spacing: -0.045em;
-    }
-
-    .featured-copy-wrap p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.85;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .stat {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.08rem;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--soft);
-      font-size: 0.92rem;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      padding: 24px;
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.16);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-    }
-
-    .card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-
-    .chip {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent-2);
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.025);
-    }
-
-    .icon-box {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.025);
-    }
-
-    .icon-box svg {
-      width: 22px;
-      height: 22px;
-      stroke: #fff;
-      opacity: 0.92;
-    }
-
-    .card h3 {
-      margin: 0 0 12px;
-      font-size: 1.34rem;
-      letter-spacing: -0.03em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 16px;
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 20px;
-      padding: 24px;
-    }
-
-    .timeline-date {
-      color: var(--accent-2);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.76rem;
-      padding-top: 4px;
-    }
-
-    .timeline-item h3 {
-      margin: 0 0 10px;
-      font-size: 1.28rem;
-      letter-spacing: -0.03em;
-    }
-
-    .timeline-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.82;
-    }
-
-    .about-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 22px;
-    }
-
-    .about-card,
-    .contact-card {
-      padding: 30px;
-    }
-
-    .about-card p,
-    .contact-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .skill-list span {
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.025);
-      color: #e7eef8;
-      font-size: 0.9rem;
-    }
-
-    .contact-links {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .contact-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.07);
-      background: rgba(255,255,255,0.025);
-      transition: transform 160ms ease, border-color 160ms ease;
-    }
-
-    .contact-link:hover {
-      transform: translateX(4px);
-      border-color: rgba(255,255,255,0.18);
-    }
-
-    .contact-link small {
-      display: block;
-      color: var(--soft);
-      margin-bottom: 4px;
-      font-size: 0.82rem;
-    }
-
-    footer {
-      padding: 36px 0 58px;
-      color: var(--soft);
-      font-size: 0.92rem;
-    }
-
-    .footer-line {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 700ms ease, transform 700ms ease;
-      will-change: opacity, transform;
-    }
-
-    .reveal.in-view {
-      opacity: 1;
+    .btn:hover .hover {
       transform: translateY(0);
     }
 
-    .delay-1 { transition-delay: 90ms; }
-    .delay-2 { transition-delay: 180ms; }
-    .delay-3 { transition-delay: 270ms; }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .scroll-down {
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      width: 20px;
+      height: 20px;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      transform: translate(-50%, 0%) rotate(45deg);
+      animation: fade_move_down 4s ease-in-out infinite;
+      z-index: 10;
     }
 
-    @keyframes spinReverse {
-      from { transform: rotate(360deg); }
-      to { transform: rotate(0deg); }
+    .meta-row {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      animation: fadeInUp 0.55s ease-in-out 0.4s;
+      animation-fill-mode: both;
     }
 
-    @keyframes flamePulse {
-      from { transform: translateX(-50%) scaleY(0.93); opacity: 0.82; }
-      to { transform: translateX(-50%) scaleY(1.05); opacity: 1; }
+    .meta-row div {
+      text-transform: none;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
-      50% { transform: translate(-50%, -50%) translateY(-10px); }
+    .meta-row strong {
+      display: block;
+      font-size: 1.08rem;
+      color: #fff;
+      margin-bottom: 3px;
     }
 
-    @media (max-width: 1024px) {
-      .hero-inner,
-      .featured-grid,
-      .cards,
-      .about-grid,
-      .contact-grid,
-      .timeline-item {
-        grid-template-columns: 1fr;
-      }
+    .meta-row span {
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.96rem;
+    }
 
-      .stats {
-        grid-template-columns: 1fr;
-      }
+    footer {
+      position: relative;
+      padding: 46px 20px 56px;
+      background: #000;
+    }
 
-      .hero {
-        min-height: auto;
-      }
+    footer span {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #9f9f9f;
+      letter-spacing: 0.08em;
+    }
 
-      .hero-visual {
-        width: min(420px, 82vw);
+    footer ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    footer ul li {
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #9f9f9f;
+      letter-spacing: 0.08em;
+    }
+
+    footer ul li a {
+      color: #fff;
+      transition: color 0.25s ease;
+    }
+
+    footer ul li a:hover {
+      color: #a8a8a8;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(120px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 720px) {
-      :root {
-        --nav-h: 66px;
+    @keyframes fade_move_down {
+      0% {
+        transform: translate(0, -10px) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(0, 10px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .desktop-main-menu {
+        display: none;
       }
 
+      .main-header {
+        padding: 0 20px;
+      }
+
+      .section-inner {
+        left: 28px;
+        right: 28px;
+        bottom: 90px;
+        max-width: none;
+      }
+
+      .section-inner.centered {
+        width: calc(100% - 40px);
+      }
+
+      .section-inner p {
+        font-size: 1rem;
+      }
+
+      .meta-row {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
       section {
-        padding: 88px 0;
+        min-height: 680px;
       }
 
-      .nav-inner,
-      .shell {
-        width: min(calc(100% - 20px), var(--max));
+      .section-inner {
+        bottom: 75px;
+        left: 20px;
+        right: 20px;
       }
 
-      .nav-links {
-        gap: 12px;
-        font-size: 0.84rem;
+      .section-inner h1,
+      .section-inner h2 {
+        font-size: 2.55rem;
       }
 
-      .brand {
-        font-size: 0.7rem;
-        letter-spacing: 0.12em;
-      }
-
-      .featured-copy-wrap,
-      .about-card,
-      .contact-card,
-      .card,
-      .timeline-item {
-        padding: 22px;
-      }
-
-      .featured-visual {
-        min-height: 360px;
-      }
-
-      .rocket-wrap {
-        transform: translate(-50%, -50%) scale(0.84);
+      .logo a {
+        font-size: 0.72rem;
       }
     }
   </style>
 </head>
 <body>
-  <canvas id="stars"></canvas>
-  <div class="vignette"></div>
-  <div class="grid-overlay"></div>
   <div class="progress" id="progress"></div>
 
-  <header class="nav" id="siteNav">
-    <div class="nav-inner">
-      <a class="brand" href="#top">Naiyar Shaman</a>
-      <nav class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+  <header class="main-header" id="header">
+    <div class="logo">
+      <a href="#top">Shaman Engineering</a>
     </div>
+    <nav class="desktop-main-menu">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="shell hero-inner">
-        <div class="reveal in-view">
-          <div class="eyebrow">Aerospace · Systems · Mission Architecture</div>
-          <h1>
-            NAIYAR
-            <span>SHAMAN</span>
-          </h1>
-          <p class="hero-sub">
-            Designing and building integrated space systems across propulsion, power, hardware development, and mission-level architecture.
-          </p>
+  <section id="top">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="images/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="overlay heavy"></div>
 
-          <div class="hero-buttons">
-            <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn" href="#contact">Get In Touch</a>
-          </div>
+    <div class="section-inner centered">
+      <h4>Aerospace Systems · Mission Architecture · Engineering Design</h4>
+      <h1>Naiyar Shaman</h1>
+      <p>
+        Building integrated aerospace systems across mission architecture, lunar surface power concepts,
+        hardware design, and NASA-affiliated project work.
+      </p>
 
-          <div class="hero-meta">
-            <div>
-              <strong>NASA</strong>
-              <span>Incoming Langley internship</span>
-            </div>
-            <div>
-              <strong>MeltPro</strong>
-              <span>Engineering lead / mechanical design</span>
-            </div>
-            <div>
-              <strong>RASC-AL</strong>
-              <span>Founder, president, project manager</span>
-            </div>
-          </div>
+      <a href="#projects" class="btn">
+        <div class="hover"></div>
+        <span>Discover</span>
+      </a>
+
+      <div class="meta-row">
+        <div>
+          <strong>NASA</strong>
+          <span>L’SPACE · NPWEE · Incoming Langley internship</span>
         </div>
-
-        <div class="hero-visual reveal delay-1" aria-hidden="true">
-          <div class="hero-ring r3"></div>
-          <div class="hero-ring r2"></div>
-          <div class="hero-ring r1"></div>
-          <div class="core"></div>
-          <div class="sat s1"></div>
-          <div class="sat s2"></div>
-          <div class="sat s3"></div>
+        <div>
+          <strong>RASC-AL</strong>
+          <span>Project AUREVO</span>
+        </div>
+        <div>
+          <strong>MeltPro</strong>
+          <span>Engineering Lead / Mechanical Designer</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="projects">
-      <div class="shell">
-        <div class="section-top reveal">
-          <div>
-            <p class="section-label">Featured Project</p>
-            <h2>Project AUREVO</h2>
-          </div>
-          <p class="section-copy">
-            A lunar surface power architecture focused on continuous power delivery, survivability through extended darkness, scalable energy distribution, and resource-aware system design.
-          </p>
-        </div>
+    <div class="scroll-down"></div>
+  </section>
 
-        <div class="featured-grid">
-          <div class="panel featured-visual reveal">
-            <div class="feature-lines"></div>
-            <div class="rocket-wrap">
-              <div class="rocket-tip"></div>
-              <div class="rocket-body"></div>
-              <div class="fin left"></div>
-              <div class="fin right"></div>
-              <div class="engine"></div>
-              <div class="flame"></div>
-            </div>
-          </div>
+  <section id="projects">
+    <div
+      class="background-image"
+      style="background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.62)),
+        url('images/project-aurevo.jpg');">
+    </div>
+    <div class="overlay"></div>
 
-          <div class="panel featured-copy-wrap reveal delay-1">
-            <div>
-              <div class="kicker">ERAU NASA RASC-AL Team</div>
-              <h3>Lunar Power Architecture</h3>
-              <p>
-                As founder, president, and project manager of Embry-Riddle’s RASC-AL team, you led development of a sustainable lunar surface power concept centered on mission-level architecture, energy storage, distribution, systems integration, and NASA competition compliance. :contentReference[oaicite:1]{index=1}
-              </p>
+    <div class="section-inner">
+      <h4>Current Project</h4>
+      <h2>Project AUREVO</h2>
+      <p>
+        A lunar surface power architecture centered on continuous power delivery,
+        fault-tolerant design logic, and resource-aware energy storage and distribution.
+      </p>
+      <a href="#work" class="btn">
+        <div class="hover"></div>
+        <span>Discover</span>
+      </a>
+    </div>
 
-              <div class="stats">
-                <div class="stat">
-                  <strong>100 kWe</strong>
-                  <span>continuous target system power</span>
-                </div>
-                <div class="stat">
-                  <strong>N-1</strong>
-                  <span>fault-tolerant architectural logic</span>
-                </div>
-                <div class="stat">
-                  <strong>ISRU-aligned</strong>
-                  <span>regolith-based thermal storage concept</span>
-                </div>
-              </div>
-            </div>
+    <div class="scroll-down"></div>
+  </section>
 
-            <div class="hero-buttons" style="margin-top:0;">
-              <a class="btn primary" href="#work">Selected Work</a>
-              <a class="btn" href="#contact">Contact</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <section id="work">
+    <div
+      class="background-image"
+      style="background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.68)),
+        url('images/work-background.jpg');">
+    </div>
+    <div class="overlay"></div>
 
-    <section id="work">
-      <div class="shell">
-        <div class="section-top reveal">
-          <div>
-            <p class="section-label">Selected Work</p>
-            <h2>Recent Engineering Work</h2>
-          </div>
-          <p class="section-copy">
-            The strongest version of your site is project-led. These cards highlight mission architecture, mechanical design, and applied aerospace systems work without overcrowding the page.
-          </p>
-        </div>
+    <div class="section-inner">
+      <h4>Recent Work</h4>
+      <h2>MeltPro Engineering Design</h2>
+      <p>
+        CAD ownership, technical drawings, assembly support, tolerancing,
+        manufacturability, and production-facing engineering execution on real hardware systems.
+      </p>
+      <a href="#experience" class="btn">
+        <div class="hover"></div>
+        <span>Learn More</span>
+      </a>
+    </div>
 
-        <div class="cards">
-          <article class="panel card reveal">
-            <div>
-              <div class="card-top">
-                <span class="chip">NASA L’SPACE</span>
-                <div class="icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7">
-                    <path d="M12 3v18"></path>
-                    <path d="M5 8l7-5 7 5"></path>
-                    <path d="M7 21h10"></path>
-                  </svg>
-                </div>
-              </div>
-              <h3>Mission Concept Academy</h3>
-              <p>
-                Led a 15-member multidisciplinary team through NASA systems engineering processes, managing subsystem integration, requirements traceability, trade studies, and major technical deliverables. :contentReference[oaicite:2]{index=2}
-              </p>
-            </div>
-            <a class="btn" href="#contact">Discuss This Work</a>
-          </article>
+    <div class="scroll-down"></div>
+  </section>
 
-          <article class="panel card reveal delay-1">
-            <div>
-              <div class="card-top">
-                <span class="chip">MeltPro</span>
-                <div class="icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7">
-                    <path d="M14 4l6 6-9 9H5v-6l9-9Z"></path>
-                    <path d="m13 5 6 6"></path>
-                  </svg>
-                </div>
-              </div>
-              <h3>Engineering Lead / Mechanical Design</h3>
-              <p>
-                Own SolidWorks drafting and CAD modeling, manage a library of 500+ parts and assemblies, lead quality control, and work directly with production on mechanical systems and adhesive-dispensing units. :contentReference[oaicite:3]{index=3}
-              </p>
-            </div>
-            <a class="btn" href="#contact">Learn More</a>
-          </article>
+  <section id="experience">
+    <div
+      class="background-image"
+      style="background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.26), rgba(0,0,0,0.72)),
+        url('images/experience-background.jpg');">
+    </div>
+    <div class="overlay"></div>
 
-          <article class="panel card reveal delay-2">
-            <div>
-              <div class="card-top">
-                <span class="chip">NASA SUITS</span>
-                <div class="icon-box">
-                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7">
-                    <circle cx="12" cy="12" r="4"></circle>
-                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"></path>
-                  </svg>
-                </div>
-              </div>
-              <h3>Mixed-Reality EVA HUD Concept</h3>
-              <p>
-                Led development of an augmented-reality EVA interface concept using HoloLens 2, coordinating interface design, sensor mapping, proposal strategy, and integrated submission work. :contentReference[oaicite:4]{index=4}
-              </p>
-            </div>
-            <a class="btn" href="#contact">See More</a>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="section-inner">
+      <h4>Experience</h4>
+      <h2>NASA-Affiliated Systems Work</h2>
+      <p>
+        Mission concept development, systems integration, technical coordination,
+        proposal work, research, and leadership across L’SPACE, NPWEE, RASC-AL, SUITS,
+        and your incoming NASA Langley internship.
+      </p>
+      <a href="#about" class="btn">
+        <div class="hover"></div>
+        <span>Learn More</span>
+      </a>
+    </div>
 
-    <section id="experience">
-      <div class="shell">
-        <div class="section-top reveal">
-          <div>
-            <p class="section-label">Experience</p>
-            <h2>Engineering Path</h2>
-          </div>
-          <p class="section-copy">
-            This section keeps the site grounded. It shows that the visuals are not covering for weak substance — the substance is already there.
-          </p>
-        </div>
+    <div class="scroll-down"></div>
+  </section>
 
-        <div class="timeline">
-          <article class="panel timeline-item reveal">
-            <div class="timeline-date">Apr 2025 – Present</div>
-            <div>
-              <h3>MeltPro Inc. · Engineering Lead / Mechanical Designer</h3>
-              <p>
-                Produce detailed technical drawings, manage CAD and drafting workflow, lead quality control for machined parts, coordinate with production, and drive iterative design improvements based on manufacturability, assembly efficiency, and field performance. :contentReference[oaicite:5]{index=5}
-              </p>
-            </div>
-          </article>
+  <section id="about">
+    <div
+      class="background-image"
+      style="background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
+        url('images/about-background.jpg');">
+    </div>
+    <div class="overlay"></div>
 
-          <article class="panel timeline-item reveal delay-1">
-            <div class="timeline-date">Summer 2026</div>
-            <div>
-              <h3>Incoming NASA Langley Internship</h3>
-              <p>
-                Positioned to contribute to Mars human exploration architecture through systems-level trade studies and mission concept work aligned with NASA exploration planning.
-              </p>
-            </div>
-          </article>
+    <div class="section-inner">
+      <h4>About</h4>
+      <h2>Engineering With Systems Thinking</h2>
+      <p>
+        I’m an engineering undergraduate focused on aerospace systems, mission architecture,
+        hardware development, and the engineering tradeoffs that turn ambitious ideas into viable designs.
+      </p>
+      <a href="#contact" class="btn">
+        <div class="hover"></div>
+        <span>Contact</span>
+      </a>
+    </div>
 
-          <article class="panel timeline-item reveal delay-2">
-            <div class="timeline-date">2025 – Present</div>
-            <div>
-              <h3>NASA-Affiliated Mission Development & Aerospace Research</h3>
-              <p>
-                Led or contributed across L’SPACE, RASC-AL, SUITS, experimental propulsion work, and reusable launch vehicle research focused on mission assurance, subsystem integration, technical documentation, and systems engineering. :contentReference[oaicite:6]{index=6}
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="scroll-down"></div>
+  </section>
 
-    <section id="about">
-      <div class="shell">
-        <div class="section-top reveal">
-          <div>
-            <p class="section-label">About</p>
-            <h2>Built Around Systems Thinking</h2>
-          </div>
-          <p class="section-copy">
-            The best version of your personal brand is not “student.” It is early-career engineer with real ownership, real systems work, and clear technical range.
-          </p>
-        </div>
+  <section id="contact">
+    <div
+      class="background-image"
+      style="background-image:
+        linear-gradient(180deg, rgba(0,0,0,0.34), rgba(0,0,0,0.82)),
+        url('images/contact-background.jpg');">
+    </div>
+    <div class="overlay"></div>
 
-        <div class="about-grid">
-          <div class="panel about-card reveal">
-            <p>
-              I’m an undergraduate engineer at Embry-Riddle Aeronautical University with hands-on experience leading NASA-affiliated mission design teams and contributing across propulsion, manufacturing, systems engineering, CAD, documentation, and subsystem integration. :contentReference[oaicite:7]{index=7}
-            </p>
-            <div class="skill-list">
-              <span>SolidWorks</span>
-              <span>MATLAB</span>
-              <span>Python</span>
-              <span>ANSYS Fluent</span>
-              <span>Systems Engineering</span>
-              <span>CAD & GD&amp;T</span>
-              <span>Thermal Analysis</span>
-              <span>Mission Architecture</span>
-            </div>
-          </div>
-
-          <div class="panel about-card reveal delay-1">
-            <p>
-              My strongest interests sit at the intersection of aerospace systems, lunar infrastructure, energy architecture, hardware development, and the engineering tradeoffs that turn ambitious concepts into viable designs.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="shell">
-        <div class="section-top reveal">
-          <div>
-            <p class="section-label">Contact</p>
-            <h2>Get In Touch</h2>
-          </div>
-          <p class="section-copy">
-            Keep the contact section simple, direct, and clean. That fits this style much better than a bulky form.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="panel contact-card reveal">
-            <h3 style="margin-top:0; font-size:1.7rem; letter-spacing:-0.03em;">Let’s build something ambitious.</h3>
-            <p>
-              I’m interested in serious engineering conversations involving aerospace systems, mission architecture, lunar infrastructure, hardware design, and technically demanding projects.
-            </p>
-          </div>
-
-          <div class="panel contact-card reveal delay-1">
-            <div class="contact-links">
-              <a class="contact-link" href="mailto:naiyar@shamanengineering.com">
-                <div>
-                  <small>Email</small>
-                  <div>naiyar@shamanengineering.com</div>
-                </div>
-                <span>↗</span>
-              </a>
-
-              <a class="contact-link" href="https://github.com/naiyars" target="_blank" rel="noreferrer noopener">
-                <div>
-                  <small>GitHub</small>
-                  <div>github.com/naiyars</div>
-                </div>
-                <span>↗</span>
-              </a>
-
-              <a class="contact-link" href="#" target="_blank" rel="noreferrer noopener">
-                <div>
-                  <small>LinkedIn</small>
-                  <div>Add your LinkedIn URL here</div>
-                </div>
-                <span>↗</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    <div class="section-inner">
+      <h4>Get In Touch</h4>
+      <h2>Let’s Build Something Ambitious</h2>
+      <p>
+        Interested in aerospace systems, mission architecture, lunar infrastructure,
+        hardware design, or serious engineering opportunities.
+      </p>
+      <a href="mailto:naiyar@shamanengineering.com" class="btn">
+        <div class="hover"></div>
+        <span>Email</span>
+      </a>
+    </div>
+  </section>
 
   <footer>
-    <div class="shell footer-line">
-      <div>© 2026 Naiyar Shaman</div>
-      <div>Black minimalist aerospace portfolio · built for GitHub Pages</div>
-    </div>
+    <span>Naiyar Shaman 2026</span>
+    <ul>
+      <li><a href="https://github.com/naiyars" target="_blank" rel="noreferrer">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+      <li><a href="mailto:naiyar@shamanengineering.com">Email</a></li>
+    </ul>
   </footer>
 
   <script>
-    // nav + progress
-    const nav = document.getElementById("siteNav");
-    const progress = document.getElementById("progress");
+    const header = document.getElementById('header');
+    const progress = document.getElementById('progress');
 
-    function updateUIChrome() {
+    function updateChrome() {
       const y = window.scrollY;
-      nav.classList.toggle("scrolled", y > 20);
+      header.classList.toggle('scrolled', y > 20);
 
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = scrollable > 0 ? (y / scrollable) * 100 : 0;
-      progress.style.width = ratio + "%";
+      const pct = scrollable > 0 ? (y / scrollable) * 100 : 0;
+      progress.style.width = pct + '%';
     }
 
-    updateUIChrome();
-    window.addEventListener("scroll", updateUIChrome, { passive: true });
-
-    // reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("in-view");
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach(el => {
-      if (!el.classList.contains("in-view")) observer.observe(el);
-    });
-
-    // starfield
-    const canvas = document.getElementById("stars");
-    const ctx = canvas.getContext("2d");
-
-    let stars = [];
-    let shootingStars = [];
-
-    function resizeCanvas() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.floor(window.innerWidth * dpr);
-      canvas.height = Math.floor(window.innerHeight * dpr);
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      const count = Math.min(220, Math.floor((window.innerWidth * window.innerHeight) / 7000));
-      stars = Array.from({ length: count }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        r: Math.random() * 1.6 + 0.3,
-        a: Math.random() * 0.65 + 0.15,
-        tw: Math.random() * 0.025 + 0.004,
-      }));
-    }
-
-    function maybeSpawnShootingStar() {
-      if (Math.random() < 0.012 && shootingStars.length < 2) {
-        shootingStars.push({
-          x: Math.random() * window.innerWidth * 0.75,
-          y: Math.random() * window.innerHeight * 0.35,
-          vx: 10 + Math.random() * 6,
-          vy: 4 + Math.random() * 2.3,
-          life: 0,
-          max: 28 + Math.random() * 20
-        });
-      }
-    }
-
-    function animateStars() {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-
-      for (const s of stars) {
-        s.a += (Math.random() - 0.5) * s.tw;
-        if (s.a < 0.08) s.a = 0.08;
-        if (s.a > 0.96) s.a = 0.96;
-
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${s.a})`;
-        ctx.fill();
-      }
-
-      maybeSpawnShootingStar();
-      shootingStars = shootingStars.filter(star => star.life < star.max);
-
-      for (const star of shootingStars) {
-        star.life += 1;
-        star.x += star.vx;
-        star.y += star.vy;
-
-        const alpha = 1 - star.life / star.max;
-        const tailX = star.x - star.vx * 3.5;
-        const tailY = star.y - star.vy * 3.5;
-
-        const grad = ctx.createLinearGradient(star.x, star.y, tailX, tailY);
-        grad.addColorStop(0, `rgba(255,255,255,${alpha})`);
-        grad.addColorStop(1, "rgba(255,255,255,0)");
-
-        ctx.strokeStyle = grad;
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(star.x, star.y);
-        ctx.lineTo(tailX, tailY);
-        ctx.stroke();
-      }
-
-      requestAnimationFrame(animateStars);
-    }
-
-    resizeCanvas();
-    animateStars();
-    window.addEventListener("resize", resizeCanvas);
+    updateChrome();
+    window.addEventListener('scroll', updateChrome, { passive: true });
   </script>
 </body>
 </html>
