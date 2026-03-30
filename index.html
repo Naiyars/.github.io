@@ -2,597 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naiyar Shaman | Aerospace Systems</title>
-  <meta
-    name="description"
-    content="Naiyar Shaman — aerospace systems, mission architecture, engineering design, and NASA-affiliated project work."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naiyar Shaman | Aerospace Systems Engineering</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap');
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Familjen Grotesk', sans-serif;
-      background: #000;
-      color: #fff;
-      overflow-x: hidden;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: black;
+      color: white;
     }
 
-    a {
-      text-decoration: none;
-      color: #fff;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    img,
-    video {
-      display: block;
-      max-width: 100%;
-    }
-
-    .progress {
+    header {
       position: fixed;
       top: 0;
-      left: 0;
-      height: 2px;
-      width: 0;
-      background: #fff;
-      z-index: 9999;
-    }
-
-    .main-header {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
-      z-index: 1000;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      z-index: 10;
       text-transform: uppercase;
-      height: 96px;
-      padding: 0 34px;
-      transition: background 0.25s ease, backdrop-filter 0.25s ease, border-color 0.25s ease;
-      border-bottom: 1px solid transparent;
     }
 
-    .main-header.scrolled {
-      background: rgba(0, 0, 0, 0.72);
-      backdrop-filter: blur(10px);
-      border-color: rgba(255, 255, 255, 0.08);
-    }
-
-    .logo a {
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      display: inline-block;
-    }
-
-    .desktop-main-menu ul {
-      display: flex;
-      gap: 26px;
-    }
-
-    .desktop-main-menu ul li {
-      position: relative;
-      padding-bottom: 2px;
-      font-size: 0.92rem;
-    }
-
-    .desktop-main-menu ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: #fff;
-      transform: scaleX(0);
-      transform-origin: right center;
-      transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    .desktop-main-menu ul li a:hover::after {
-      transform: scaleX(1);
-      transform-origin: left center;
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
     }
 
     section {
-      position: relative;
       height: 100vh;
-      min-height: 760px;
-      overflow: hidden;
-      text-transform: uppercase;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: flex-end;
+      padding: 80px;
+      box-sizing: border-box;
     }
 
-    .background-video,
-    .background-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -3;
-    }
-
-    .background-image {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    .hero {
+      background: url('img/hero.jpg') center/cover no-repeat;
     }
 
     .overlay {
       position: absolute;
       inset: 0;
-      z-index: -2;
-      background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.45) 48%, rgba(0, 0, 0, 0.8) 100%);
+      background: rgba(0,0,0,0.5);
     }
 
-    .overlay.heavy {
-      background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.58) 48%, rgba(0, 0, 0, 0.88) 100%);
+    .content {
+      position: relative;
+      max-width: 600px;
     }
 
-    .section-inner {
-      position: absolute;
-      bottom: 130px;
-      left: 72px;
-      max-width: 760px;
-      z-index: 2;
-    }
-
-    .section-inner.centered {
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      width: min(88%, 960px);
-      max-width: 960px;
-    }
-
-    .section-inner h4 {
-      font-size: 1.05rem;
-      font-weight: 400;
+    h1 {
+      font-size: 50px;
       margin-bottom: 10px;
-      color: rgba(255, 255, 255, 0.9);
-      animation: fadeInUp 0.55s ease-in-out;
     }
 
-    .section-inner h1,
-    .section-inner h2 {
-      font-size: clamp(3rem, 7vw, 5.4rem);
-      line-height: 0.94;
-      font-weight: 700;
-      margin-bottom: 18px;
-      letter-spacing: -0.05em;
-      animation: fadeInUp 0.55s ease-in-out 0.12s;
-      animation-fill-mode: both;
-    }
-
-    .section-inner p {
-      text-transform: none;
-      color: rgba(255, 255, 255, 0.84);
-      line-height: 1.75;
-      font-size: 1.08rem;
-      max-width: 760px;
-      margin-bottom: 28px;
-      animation: fadeInUp 0.55s ease-in-out 0.22s;
-      animation-fill-mode: both;
+    h2 {
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 20px;
     }
 
     .btn {
-      position: relative;
+      border: 1px solid white;
+      padding: 12px 30px;
+      text-decoration: none;
+      color: white;
       display: inline-block;
-      cursor: pointer;
-      text-align: center;
-      min-width: 148px;
-      padding: 15px 34px;
-      margin-top: 8px;
-      border: 2px solid #fff;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      overflow: hidden;
-      z-index: 2;
-      animation: fadeInUp 0.55s ease-in-out 0.32s;
-      animation-fill-mode: both;
+      transition: 0.3s;
     }
 
-    .btn:hover span {
-      color: #000;
-    }
-
-    .btn .hover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 101%;
-      height: 100%;
-      background: #fff;
-      z-index: -1;
-      transform: translateY(100%);
-      transition: transform 0.55s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-
-    .btn:hover .hover {
-      transform: translateY(0);
-    }
-
-    .scroll-down {
-      position: absolute;
-      left: 50%;
-      bottom: 30px;
-      width: 20px;
-      height: 20px;
-      border-bottom: 2px solid #fff;
-      border-right: 2px solid #fff;
-      transform: translate(-50%, 0%) rotate(45deg);
-      animation: fade_move_down 4s ease-in-out infinite;
-      z-index: 10;
-    }
-
-    .meta-row {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-      animation: fadeInUp 0.55s ease-in-out 0.4s;
-      animation-fill-mode: both;
-    }
-
-    .meta-row div {
-      text-transform: none;
-    }
-
-    .meta-row strong {
-      display: block;
-      font-size: 1.08rem;
-      color: #fff;
-      margin-bottom: 3px;
-    }
-
-    .meta-row span {
-      color: rgba(255, 255, 255, 0.74);
-      font-size: 0.96rem;
+    .btn:hover {
+      background: white;
+      color: black;
     }
 
     footer {
-      position: relative;
-      padding: 46px 20px 56px;
-      background: #000;
-    }
-
-    footer span {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-      font-size: 12px;
-      text-transform: uppercase;
-      color: #9f9f9f;
-      letter-spacing: 0.08em;
-    }
-
-    footer ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 28px;
-    }
-
-    footer ul li {
-      text-transform: uppercase;
-      font-size: 12px;
-      color: #9f9f9f;
-      letter-spacing: 0.08em;
-    }
-
-    footer ul li a {
-      color: #fff;
-      transition: color 0.25s ease;
-    }
-
-    footer ul li a:hover {
-      color: #a8a8a8;
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(120px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fade_move_down {
-      0% {
-        transform: translate(0, -10px) rotate(45deg);
-        opacity: 0;
-      }
-      50% {
-        opacity: 1;
-      }
-      100% {
-        transform: translate(0, 10px) rotate(45deg);
-        opacity: 0;
-      }
-    }
-
-    @media (max-width: 960px) {
-      .desktop-main-menu {
-        display: none;
-      }
-
-      .main-header {
-        padding: 0 20px;
-      }
-
-      .section-inner {
-        left: 28px;
-        right: 28px;
-        bottom: 90px;
-        max-width: none;
-      }
-
-      .section-inner.centered {
-        width: calc(100% - 40px);
-      }
-
-      .section-inner p {
-        font-size: 1rem;
-      }
-
-      .meta-row {
-        gap: 18px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      section {
-        min-height: 680px;
-      }
-
-      .section-inner {
-        bottom: 75px;
-        left: 20px;
-        right: 20px;
-      }
-
-      .section-inner h1,
-      .section-inner h2 {
-        font-size: 2.55rem;
-      }
-
-      .logo a {
-        font-size: 0.72rem;
-      }
+      padding: 40px;
+      text-align: center;
+      font-size: 14px;
     }
   </style>
 </head>
+
 <body>
-  <div class="progress" id="progress"></div>
 
-  <header class="main-header" id="header">
-    <div class="logo">
-      <a href="#top">Shaman Engineering</a>
-    </div>
-    <nav class="desktop-main-menu">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div><a href="index.html">NAIYAR SHAMAN</a></div>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="experience.html">Experience</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <section id="top">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="images/hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay heavy"></div>
+<!-- HERO -->
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>Naiyar Shaman</h1>
+    <h2>Aerospace Systems Engineering</h2>
+    <p>Mission Architecture • Lunar Power Systems • Engineering Design</p>
+    <a href="projects.html" class="btn">View Work</a>
+  </div>
+</section>
 
-    <div class="section-inner centered">
-      <h4>Aerospace Systems · Mission Architecture · Engineering Design</h4>
-      <h1>Naiyar Shaman</h1>
-      <p>
-        Building integrated aerospace systems across mission architecture, lunar surface power concepts,
-        hardware design, and NASA-affiliated project work.
-      </p>
+<!-- FEATURED PROJECT -->
+<section>
+  <div class="content">
+    <h2>Featured Project</h2>
+    <h1>AUREVO — Lunar Surface Power Architecture</h1>
+    <p>
+      Designed a 100 kWe fault-tolerant lunar power system using dual fission nodes 
+      and regolith-based thermal energy storage.
+    </p>
+    <a href="projects.html" class="btn">Explore Project</a>
+  </div>
+</section>
 
-      <a href="#projects" class="btn">
-        <div class="hover"></div>
-        <span>Discover</span>
-      </a>
+<!-- EXPERIENCE -->
+<section>
+  <div class="content">
+    <h2>Experience</h2>
+    <p>
+      Engineering Lead — MeltPro Inc.<br/>
+      NASA L’SPACE — Project Manager<br/>
+      RASC-AL — Team President<br/>
+      NASA SUITS — Project Manager
+    </p>
+    <a href="experience.html" class="btn">View Full Experience</a>
+  </div>
+</section>
 
-      <div class="meta-row">
-        <div>
-          <strong>NASA</strong>
-          <span>L’SPACE · NPWEE · Incoming Langley internship</span>
-        </div>
-        <div>
-          <strong>RASC-AL</strong>
-          <span>Project AUREVO</span>
-        </div>
-        <div>
-          <strong>MeltPro</strong>
-          <span>Engineering Lead / Mechanical Designer</span>
-        </div>
-      </div>
-    </div>
+<!-- CONTACT -->
+<section>
+  <div class="content">
+    <h1>Let’s Build Something That Works.</h1>
+    <a href="contact.html" class="btn">Contact</a>
+  </div>
+</section>
 
-    <div class="scroll-down"></div>
-  </section>
+<footer>
+  <p>© 2026 Naiyar Shaman</p>
+  <p>
+    <a href="#">GitHub</a> |
+    <a href="#">LinkedIn</a>
+  </p>
+</footer>
 
-  <section id="projects">
-    <div
-      class="background-image"
-      style="background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.62)),
-        url('images/project-aurevo.jpg');">
-    </div>
-    <div class="overlay"></div>
-
-    <div class="section-inner">
-      <h4>Current Project</h4>
-      <h2>Project AUREVO</h2>
-      <p>
-        A lunar surface power architecture centered on continuous power delivery,
-        fault-tolerant design logic, and resource-aware energy storage and distribution.
-      </p>
-      <a href="#work" class="btn">
-        <div class="hover"></div>
-        <span>Discover</span>
-      </a>
-    </div>
-
-    <div class="scroll-down"></div>
-  </section>
-
-  <section id="work">
-    <div
-      class="background-image"
-      style="background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.68)),
-        url('images/work-background.jpg');">
-    </div>
-    <div class="overlay"></div>
-
-    <div class="section-inner">
-      <h4>Recent Work</h4>
-      <h2>MeltPro Engineering Design</h2>
-      <p>
-        CAD ownership, technical drawings, assembly support, tolerancing,
-        manufacturability, and production-facing engineering execution on real hardware systems.
-      </p>
-      <a href="#experience" class="btn">
-        <div class="hover"></div>
-        <span>Learn More</span>
-      </a>
-    </div>
-
-    <div class="scroll-down"></div>
-  </section>
-
-  <section id="experience">
-    <div
-      class="background-image"
-      style="background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.26), rgba(0,0,0,0.72)),
-        url('images/experience-background.jpg');">
-    </div>
-    <div class="overlay"></div>
-
-    <div class="section-inner">
-      <h4>Experience</h4>
-      <h2>NASA-Affiliated Systems Work</h2>
-      <p>
-        Mission concept development, systems integration, technical coordination,
-        proposal work, research, and leadership across L’SPACE, NPWEE, RASC-AL, SUITS,
-        and your incoming NASA Langley internship.
-      </p>
-      <a href="#about" class="btn">
-        <div class="hover"></div>
-        <span>Learn More</span>
-      </a>
-    </div>
-
-    <div class="scroll-down"></div>
-  </section>
-
-  <section id="about">
-    <div
-      class="background-image"
-      style="background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.78)),
-        url('images/about-background.jpg');">
-    </div>
-    <div class="overlay"></div>
-
-    <div class="section-inner">
-      <h4>About</h4>
-      <h2>Engineering With Systems Thinking</h2>
-      <p>
-        I’m an engineering undergraduate focused on aerospace systems, mission architecture,
-        hardware development, and the engineering tradeoffs that turn ambitious ideas into viable designs.
-      </p>
-      <a href="#contact" class="btn">
-        <div class="hover"></div>
-        <span>Contact</span>
-      </a>
-    </div>
-
-    <div class="scroll-down"></div>
-  </section>
-
-  <section id="contact">
-    <div
-      class="background-image"
-      style="background-image:
-        linear-gradient(180deg, rgba(0,0,0,0.34), rgba(0,0,0,0.82)),
-        url('images/contact-background.jpg');">
-    </div>
-    <div class="overlay"></div>
-
-    <div class="section-inner">
-      <h4>Get In Touch</h4>
-      <h2>Let’s Build Something Ambitious</h2>
-      <p>
-        Interested in aerospace systems, mission architecture, lunar infrastructure,
-        hardware design, or serious engineering opportunities.
-      </p>
-      <a href="mailto:naiyar@shamanengineering.com" class="btn">
-        <div class="hover"></div>
-        <span>Email</span>
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <span>Naiyar Shaman 2026</span>
-    <ul>
-      <li><a href="https://github.com/naiyars" target="_blank" rel="noreferrer">GitHub</a></li>
-      <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
-      <li><a href="mailto:naiyar@shamanengineering.com">Email</a></li>
-    </ul>
-  </footer>
-
-  <script>
-    const header = document.getElementById('header');
-    const progress = document.getElementById('progress');
-
-    function updateChrome() {
-      const y = window.scrollY;
-      header.classList.toggle('scrolled', y > 20);
-
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = scrollable > 0 ? (y / scrollable) * 100 : 0;
-      progress.style.width = pct + '%';
-    }
-
-    updateChrome();
-    window.addEventListener('scroll', updateChrome, { passive: true });
-  </script>
 </body>
 </html>
