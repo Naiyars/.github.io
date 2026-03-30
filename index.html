@@ -1,208 +1,1198 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Naiyar Shaman | Aerospace Engineering Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naiyar Shaman | Aerospace Engineering Portfolio</title>
+  <meta name="description" content="Aerospace engineering portfolio for Naiyar Shaman featuring NASA, lunar power architecture, and engineering design work." />
+  <style>
+    :root {
+      --bg: #04070d;
+      --bg-2: #08101d;
+      --panel: rgba(12, 20, 34, 0.56);
+      --panel-strong: rgba(10, 17, 30, 0.84);
+      --text: #eef4ff;
+      --muted: #a6b4cc;
+      --line: rgba(160, 196, 255, 0.14);
+      --accent: #79b8ff;
+      --accent-2: #8f7cff;
+      --accent-3: #5ef0d0;
+      --glow: 0 0 32px rgba(121, 184, 255, 0.18);
+      --radius: 24px;
+      --max: 1200px;
+      --nav-h: 74px;
+    }
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 15%, rgba(90, 115, 255, 0.18), transparent 22%),
+        radial-gradient(circle at 80% 18%, rgba(33, 205, 255, 0.11), transparent 20%),
+        radial-gradient(circle at 60% 80%, rgba(143, 124, 255, 0.09), transparent 18%),
+        linear-gradient(180deg, #04070d 0%, #060b13 45%, #04070d 100%);
+      overflow-x: hidden;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Naiyar Shaman</h1>
-<p>Engineering Undergraduate | Incoming NASA Langley Intern | Lead Designer @ MeltPro Inc.</p>
-<ul class="actions">
-	<li><a href="#one" class="button scrolly">View My Work</a></li>
-</ul>
-						</div>
-					</section>
+    #stars, #nebula {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -3;
+    }
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        radial-gradient(rgba(255,255,255,0.28) 0.6px, transparent 0.6px);
+      background-size: 8px 8px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 95%);
+    }
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+    .aurora {
+      position: fixed;
+      inset: -10% -10% auto -10%;
+      height: 55vh;
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(48px);
+      opacity: 0.38;
+      background:
+        radial-gradient(circle at 18% 30%, rgba(94, 240, 208, 0.28), transparent 18%),
+        radial-gradient(circle at 55% 22%, rgba(121, 184, 255, 0.25), transparent 18%),
+        radial-gradient(circle at 82% 20%, rgba(143, 124, 255, 0.3), transparent 20%);
+      animation: drift 16s ease-in-out infinite alternate;
+    }
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
+    @keyframes drift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(0, 30px, 0) scale(1.08); }
+    }
 
-			</div>
+    .progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      z-index: 9999;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      box-shadow: 0 0 24px rgba(121, 184, 255, 0.45);
+      transform-origin: left center;
+    }
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 220ms ease, border-color 220ms ease, backdrop-filter 220ms ease;
+      border-bottom: 1px solid transparent;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    .nav.scrolled {
+      background: rgba(5, 9, 16, 0.68);
+      border-color: rgba(255,255,255,0.06);
+      backdrop-filter: blur(18px);
+    }
 
-	</body>
+    .nav-inner {
+      width: min(calc(100% - 32px), var(--max));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: #dfe8fb;
+      font-weight: 650;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    section {
+      position: relative;
+      padding: 110px 0;
+      scroll-margin-top: calc(var(--nav-h) + 20px);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: calc(var(--nav-h) + 40px);
+      padding-bottom: 64px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #d8e6ff;
+      background: rgba(121, 184, 255, 0.08);
+      border: 1px solid rgba(121, 184, 255, 0.16);
+      border-radius: 999px;
+      padding: 10px 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      margin-bottom: 22px;
+      box-shadow: var(--glow);
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 18px var(--accent-3);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.25rem);
+      line-height: 0.94;
+      margin: 0 0 22px;
+      letter-spacing: -0.05em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(120deg, #ffffff 0%, #d1e3ff 30%, #8ecbff 62%, #92f5e1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      line-height: 1.75;
+      max-width: 760px;
+      color: var(--muted);
+      margin: 0 0 30px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      background: rgba(255,255,255,0.02);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(121, 184, 255, 0.35);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.35), 0 0 24px rgba(121, 184, 255, 0.12);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, rgba(121,184,255,0.18), rgba(143,124,255,0.18));
+      border-color: rgba(121, 184, 255, 0.3);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      color: #d7e5ff;
+      font-size: 0.95rem;
+    }
+
+    .hero-meta strong {
+      display: block;
+      font-size: 1.22rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .orbital-wrap {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      width: min(520px, 100%);
+      margin-inline: auto;
+      display: grid;
+      place-items: center;
+    }
+
+    .planet {
+      width: 38%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      position: absolute;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.28), transparent 18%),
+        radial-gradient(circle at 50% 50%, #0b1f3b 0%, #0e2952 40%, #08101d 70%, #050913 100%);
+      box-shadow:
+        inset -24px -32px 60px rgba(0,0,0,0.6),
+        0 0 80px rgba(121, 184, 255, 0.16),
+        0 0 180px rgba(62, 100, 255, 0.12);
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .planet::before,
+    .planet::after {
+      content: "";
+      position: absolute;
+      inset: 12% 8%;
+      border-radius: 50%;
+      opacity: 0.18;
+      filter: blur(12px);
+      background:
+        radial-gradient(circle at 35% 50%, rgba(94,240,208,0.9), transparent 25%),
+        radial-gradient(circle at 70% 30%, rgba(121,184,255,0.9), transparent 28%),
+        radial-gradient(circle at 60% 75%, rgba(143,124,255,0.9), transparent 24%);
+    }
+
+    .ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(170, 210, 255, 0.12);
+      box-shadow: inset 0 0 28px rgba(121,184,255,0.04);
+    }
+
+    .ring.r1 { width: 74%; height: 74%; animation: spin 24s linear infinite; }
+    .ring.r2 { width: 92%; height: 92%; animation: spinReverse 30s linear infinite; }
+    .ring.r3 { width: 108%; height: 108%; border-style: dashed; animation: spin 38s linear infinite; }
+
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spinReverse { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+
+    .satellite, .marker {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff 0%, #bfe0ff 40%, #79b8ff 100%);
+      box-shadow: 0 0 20px rgba(121,184,255,0.55);
+    }
+
+    .satellite.s1 { top: 16%; left: 58%; }
+    .satellite.s2 { bottom: 22%; left: 22%; width: 10px; height: 10px; }
+    .marker { top: 66%; right: 18%; width: 9px; height: 9px; background: radial-gradient(circle, #fff 0%, #9ff6e6 40%, #5ef0d0 100%); box-shadow: 0 0 16px rgba(94,240,208,0.55); }
+
+    .section-head {
+      margin-bottom: 34px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .section-label {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      color: #c6d8ff;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .section-copy {
+      max-width: 650px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(13, 20, 34, 0.74), rgba(9, 14, 23, 0.88));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 26px 90px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .featured-visual {
+      min-height: 460px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 58% 35%, rgba(115, 180, 255, 0.24), transparent 22%),
+        radial-gradient(circle at 30% 65%, rgba(143, 124, 255, 0.18), transparent 24%),
+        linear-gradient(180deg, #0b1220 0%, #070d16 100%);
+    }
+
+    .rocket {
+      position: absolute;
+      width: 120px;
+      height: 320px;
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%) rotate(8deg);
+      filter: drop-shadow(0 22px 38px rgba(0,0,0,0.36));
+      animation: rocketFloat 5s ease-in-out infinite;
+    }
+
+    @keyframes rocketFloat {
+      0%, 100% { transform: translate(-50%, -50%) rotate(8deg) translateY(0); }
+      50% { transform: translate(-50%, -50%) rotate(8deg) translateY(-10px); }
+    }
+
+    .rocket-body {
+      position: absolute;
+      inset: 28px 28px 56px 28px;
+      border-radius: 999px 999px 24px 24px;
+      background: linear-gradient(180deg, #d8e6ff 0%, #8fb7ff 54%, #2f4d78 100%);
+      border: 1px solid rgba(255,255,255,0.28);
+      overflow: hidden;
+    }
+
+    .rocket-body::before {
+      content: "";
+      position: absolute;
+      top: 10%; left: 24%; right: 24%; height: 26%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 50% 50%, #0b1f3c, #163e78 60%, #08101d 100%);
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow: inset 0 0 24px rgba(121,184,255,0.22);
+    }
+
+    .rocket-tip {
+      position: absolute;
+      left: 50%; top: 0;
+      transform: translateX(-50%);
+      width: 64px; height: 76px;
+      background: linear-gradient(180deg, #edf4ff 0%, #98bbff 100%);
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      filter: drop-shadow(0 4px 12px rgba(255,255,255,0.08));
+    }
+
+    .fin {
+      position: absolute;
+      bottom: 52px;
+      width: 34px;
+      height: 78px;
+      background: linear-gradient(180deg, #436ba8 0%, #1d3558 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .fin.left {
+      left: 12px;
+      clip-path: polygon(100% 0%, 100% 100%, 0 78%);
+    }
+
+    .fin.right {
+      right: 12px;
+      clip-path: polygon(0 0, 100% 78%, 0 100%);
+    }
+
+    .engine {
+      position: absolute;
+      left: 50%; bottom: 32px;
+      transform: translateX(-50%);
+      width: 34px; height: 26px;
+      border-radius: 0 0 18px 18px;
+      background: linear-gradient(180deg, #4f6482, #24344f);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .flame {
+      position: absolute;
+      left: 50%; bottom: -10px;
+      transform: translateX(-50%);
+      width: 42px; height: 90px;
+      background: radial-gradient(circle at 50% 12%, rgba(255,255,255,0.95) 0%, rgba(150,220,255,0.92) 16%, rgba(94,240,208,0.72) 42%, rgba(121,184,255,0.26) 68%, transparent 100%);
+      clip-path: polygon(50% 0%, 72% 20%, 84% 46%, 68% 100%, 50% 84%, 32% 100%, 16% 44%, 28% 18%);
+      filter: blur(1px) drop-shadow(0 0 16px rgba(121,184,255,0.32));
+      animation: flamePulse 0.18s ease-in-out infinite alternate;
+    }
+
+    @keyframes flamePulse {
+      from { transform: translateX(-50%) scaleY(0.92); opacity: 0.84; }
+      to { transform: translateX(-50%) scaleY(1.05); opacity: 1; }
+    }
+
+    .trajectory {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 25% 78%, rgba(255,255,255,0.8), transparent 0.8%),
+        radial-gradient(circle at 62% 16%, rgba(255,255,255,0.65), transparent 0.65%),
+        radial-gradient(circle at 82% 28%, rgba(255,255,255,0.85), transparent 0.8%),
+        radial-gradient(circle at 76% 72%, rgba(255,255,255,0.7), transparent 0.8%),
+        radial-gradient(circle at 14% 28%, rgba(255,255,255,0.55), transparent 0.75%);
+      opacity: 0.8;
+    }
+
+    .featured-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      color: #c9dbff;
+    }
+
+    .featured-copy h3 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1;
+      margin: 4px 0 12px;
+      letter-spacing: -0.04em;
+    }
+
+    .featured-copy p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    .project-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.12rem;
+      margin-bottom: 5px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      position: relative;
+      padding: 24px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      isolation: isolate;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(121,184,255,0.06), rgba(255,255,255,0));
+      opacity: 0;
+      transition: opacity 180ms ease;
+      z-index: -1;
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #d8e6ff;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    .glyph {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(121,184,255,0.16), rgba(143,124,255,0.12));
+      border: 1px solid rgba(121,184,255,0.16);
+      box-shadow: var(--glow);
+    }
+
+    .glyph svg {
+      width: 22px;
+      height: 22px;
+      stroke: white;
+      opacity: 0.92;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 20px;
+      padding: 22px 24px;
+      align-items: start;
+    }
+
+    .timeline-date {
+      color: #d8e6ff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.76rem;
+      padding-top: 4px;
+    }
+
+    .timeline-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.28rem;
+      letter-spacing: -0.03em;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .about-copy, .about-panel {
+      padding: 30px;
+    }
+
+    .about-copy p, .about-panel p {
+      color: var(--muted);
+      line-height: 1.9;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .stack span {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #dbe7ff;
+      font-size: 0.9rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      padding: 30px;
+      min-height: 100%;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      color: #e4eeff;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .contact-link:hover {
+      transform: translateX(4px);
+      border-color: rgba(121,184,255,0.25);
+    }
+
+    .contact-label {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      padding: 36px 0 58px;
+      color: #b7c7e2;
+      font-size: 0.92rem;
+    }
+
+    .footer-line {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px) scale(0.985);
+      transition: opacity 800ms cubic-bezier(.2,.8,.2,1), transform 800ms cubic-bezier(.2,.8,.2,1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .delay-1 { transition-delay: 80ms; }
+    .delay-2 { transition-delay: 160ms; }
+    .delay-3 { transition-delay: 240ms; }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .featured-grid,
+      .about-grid,
+      .contact-grid,
+      .timeline-item,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item { gap: 8px; }
+      .project-stats { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+      .orbital-wrap { width: min(420px, 80vw); }
+    }
+
+    @media (max-width: 720px) {
+      :root { --nav-h: 66px; }
+      .nav-links { gap: 12px; font-size: 0.84rem; }
+      .brand { font-size: 0.72rem; letter-spacing: 0.12em; }
+      .shell { width: min(calc(100% - 20px), var(--max)); }
+      section { padding: 88px 0; }
+      .hero-meta { gap: 16px; }
+      .featured-copy, .about-copy, .about-panel, .contact-card, .card { padding: 22px; }
+      .timeline-item { padding: 18px; }
+      .featured-visual { min-height: 360px; }
+      .rocket { transform: translate(-50%, -50%) rotate(10deg) scale(0.82); }
+      .nav-inner { width: min(calc(100% - 20px), var(--max)); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <canvas id="nebula"></canvas>
+  <div class="noise"></div>
+  <div class="aurora"></div>
+  <div class="progress" id="scrollProgress"></div>
+
+  <header class="nav" id="siteNav">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Shaman Engineering</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal in-view">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Aerospace Systems · Space Architecture · Engineering Design</div>
+          <h1><span class="gradient-text">Designing hardware, energy systems, and mission concepts for the next frontier.</span></h1>
+          <p>
+            I’m <strong>Naiyar Shaman</strong>, an engineering undergraduate, incoming NASA Langley intern, and lead designer building aerospace concepts, lunar energy architectures, and real-world engineered hardware.
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="#projects">Explore Projects</a>
+            <a class="btn" href="#contact">Get In Touch</a>
+          </div>
+          <div class="hero-meta">
+            <div><strong>NASA</strong><span>Incoming Langley Internship</span></div>
+            <div><strong>RASC-AL</strong><span>Lunar systems & architecture</span></div>
+            <div><strong>MeltPro</strong><span>Lead Designer & engineering support</span></div>
+          </div>
+        </div>
+
+        <div class="orbital-wrap reveal delay-1">
+          <div class="ring r3"></div>
+          <div class="ring r2"></div>
+          <div class="ring r1"></div>
+          <div class="planet"></div>
+          <div class="satellite s1"></div>
+          <div class="satellite s2"></div>
+          <div class="marker"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Featured Mission Concept</p>
+            <h2>Current Project</h2>
+          </div>
+          <p class="section-copy">A flagship architecture section inspired by the clean, project-led flow you liked, but pushed into a more cinematic aerospace direction.</p>
+        </div>
+
+        <div class="featured-grid">
+          <div class="panel featured-visual reveal">
+            <div class="trajectory"></div>
+            <div class="rocket" aria-hidden="true">
+              <div class="rocket-tip"></div>
+              <div class="rocket-body"></div>
+              <div class="fin left"></div>
+              <div class="fin right"></div>
+              <div class="engine"></div>
+              <div class="flame"></div>
+            </div>
+          </div>
+          <div class="panel featured-copy reveal delay-1">
+            <div>
+              <div class="kicker">Featured Architecture</div>
+              <h3>Project AUREVO</h3>
+              <p>
+                A lunar surface power architecture centered on continuous power delivery, long-duration survivability, and scalable energy distribution. The concept combines dual fission nodes, HVDC distribution, and regolith-based thermal energy storage for robust operation through extended darkness.
+              </p>
+              <div class="project-stats">
+                <div class="stat"><strong>100 kWe</strong><span>Continuous target power</span></div>
+                <div class="stat"><strong>N-1</strong><span>Fault-tolerant architecture</span></div>
+                <div class="stat"><strong>Lunar ISRU</strong><span>Regolith thermal storage concept</span></div>
+              </div>
+            </div>
+            <div class="cta-row">
+              <a class="btn primary" href="#work">View More Work</a>
+              <a class="btn" href="#contact">Let’s Talk</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Selected Work</p>
+            <h2>Recent Projects</h2>
+          </div>
+          <p class="section-copy">Three clean feature cards give you room to showcase aerospace, hardware, and systems work without cluttering the homepage.</p>
+        </div>
+
+        <div class="card-grid">
+          <article class="panel card reveal">
+            <div>
+              <div class="card-top">
+                <span class="chip">NASA / Architecture</span>
+                <div class="glyph">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M12 3v18"/><path d="M5 8l7-5 7 5"/><path d="M7 21h10"/></svg>
+                </div>
+              </div>
+              <h3>Mars Exploration Architecture</h3>
+              <p>Systems-level trade studies, mission architecture thinking, and concept evaluation tied to future human exploration frameworks.</p>
+            </div>
+            <a class="btn" href="#contact">Discuss This Work</a>
+          </article>
+
+          <article class="panel card reveal delay-1">
+            <div>
+              <div class="card-top">
+                <span class="chip">Hardware / Design</span>
+                <div class="glyph">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M14 4l6 6-9 9H5v-6l9-9Z"/><path d="m13 5 6 6"/></svg>
+                </div>
+              </div>
+              <h3>MeltPro Engineering Design</h3>
+              <p>CAD-driven product development, assembly refinement, manufacturing support, and applied design work for industrial adhesive systems.</p>
+            </div>
+            <a class="btn" href="#contact">See Details</a>
+          </article>
+
+          <article class="panel card reveal delay-2">
+            <div>
+              <div class="card-top">
+                <span class="chip">Energy / Lunar Surface</span>
+                <div class="glyph">
+                  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"/></svg>
+                </div>
+              </div>
+              <h3>Lunar Power Distribution</h3>
+              <p>Power architecture studies focused on survivability, efficient transmission, and intelligent use of local resources in harsh environments.</p>
+            </div>
+            <a class="btn" href="#contact">Start a Conversation</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Experience</p>
+            <h2>Engineering Path</h2>
+          </div>
+          <p class="section-copy">A Gunn-style experience section, but with more depth and stronger motion design so it still feels premium and unique.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="panel timeline-item reveal">
+            <div class="timeline-date">Current</div>
+            <div>
+              <h3>Lead Designer · MeltPro Inc.</h3>
+              <p>Responsible for CAD modeling, assemblies, drawing control, engineering iteration, manufacturing support, and cross-functional design execution for industrial hardware systems.</p>
+            </div>
+          </article>
+          <article class="panel timeline-item reveal delay-1">
+            <div class="timeline-date">Summer 2026</div>
+            <div>
+              <h3>Incoming NASA Langley Intern</h3>
+              <p>Contributing to Mars human exploration architecture work focused on mission analysis, trade studies, and systems-level concept development.</p>
+            </div>
+          </article>
+          <article class="panel timeline-item reveal delay-2">
+            <div class="timeline-date">University Projects</div>
+            <div>
+              <h3>NASA University Competitions & Research</h3>
+              <p>Participation in mission concept development, lunar systems architecture, and aerospace-focused technical work through NASA-related programs and team leadership roles.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">About</p>
+            <h2>Built for Aerospace</h2>
+          </div>
+          <p class="section-copy">This section is intentionally restrained. The homepage should feel cinematic, but the copy should still read like an engineer, not a sci-fi movie trailer.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel about-copy reveal">
+            <p>
+              My work sits at the intersection of aerospace systems, mission architecture, hardware design, and technical execution. I’m especially interested in space systems, lunar infrastructure, energy distribution, and the practical engineering decisions that turn ambitious concepts into viable architectures.
+            </p>
+            <div class="stack">
+              <span>Space Systems</span>
+              <span>Mission Architecture</span>
+              <span>CAD & Design</span>
+              <span>Lunar Energy Concepts</span>
+              <span>Engineering Analysis</span>
+              <span>Hardware Development</span>
+            </div>
+          </div>
+          <div class="panel about-panel reveal delay-1">
+            <p>
+              The best portfolio sites are not overloaded with gimmicks. They feel precise, intentional, and high-signal. That’s why this design uses cinematic motion, layered lighting, and aerospace-inspired visuals without turning into a cluttered game interface.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-label">Contact</p>
+            <h2>Get In Touch</h2>
+          </div>
+          <p class="section-copy">Keep contact clean and direct. For a portfolio, this matters more than a huge form.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="panel contact-card reveal">
+            <h3 style="margin-top:0; font-size:1.65rem; letter-spacing:-0.03em;">Let’s build something ambitious.</h3>
+            <p style="color:var(--muted); line-height:1.85; margin-bottom:0;">
+              Whether it’s aerospace systems, mission concepts, or hardware design work, I’m always interested in serious engineering conversations and opportunities.
+            </p>
+          </div>
+          <div class="panel contact-card reveal delay-1">
+            <div class="contact-list">
+              <a class="contact-link" href="mailto:your@email.com">
+                <div>
+                  <div class="contact-label">Email</div>
+                  <div>your@email.com</div>
+                </div>
+                <span>↗</span>
+              </a>
+              <a class="contact-link" href="https://www.linkedin.com" target="_blank" rel="noreferrer noopener">
+                <div>
+                  <div class="contact-label">LinkedIn</div>
+                  <div>Connect professionally</div>
+                </div>
+                <span>↗</span>
+              </a>
+              <a class="contact-link" href="https://github.com/naiyars" target="_blank" rel="noreferrer noopener">
+                <div>
+                  <div class="contact-label">GitHub</div>
+                  <div>See code and technical work</div>
+                </div>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-line">
+      <div>© 2026 Naiyar Shaman</div>
+      <div>Designed for GitHub Pages · Built with a custom aerospace visual system</div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    const progress = document.getElementById('scrollProgress');
+
+    const updateChrome = () => {
+      const y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 20);
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? (y / scrollable) * 100 : 0;
+      progress.style.width = ratio + '%';
+    };
+    updateChrome();
+    window.addEventListener('scroll', updateChrome, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      if (!el.classList.contains('in-view')) observer.observe(el);
+    });
+
+    // Starfield canvas
+    const starCanvas = document.getElementById('stars');
+    const starCtx = starCanvas.getContext('2d');
+    const nebulaCanvas = document.getElementById('nebula');
+    const nebulaCtx = nebulaCanvas.getContext('2d');
+
+    let stars = [];
+    let shootingStars = [];
+
+    function resizeCanvases() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      [starCanvas, nebulaCanvas].forEach(c => {
+        c.width = Math.floor(window.innerWidth * dpr);
+        c.height = Math.floor(window.innerHeight * dpr);
+        c.style.width = window.innerWidth + 'px';
+        c.style.height = window.innerHeight + 'px';
+      });
+      starCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      nebulaCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      createStars();
+      drawNebula();
+    }
+
+    function createStars() {
+      const count = Math.min(220, Math.floor((window.innerWidth * window.innerHeight) / 7000));
+      stars = Array.from({ length: count }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        r: Math.random() * 1.8 + 0.25,
+        a: Math.random() * 0.7 + 0.15,
+        tw: Math.random() * 0.03 + 0.005,
+      }));
+    }
+
+    function drawNebula() {
+      nebulaCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      const g1 = nebulaCtx.createRadialGradient(window.innerWidth * 0.18, window.innerHeight * 0.12, 0, window.innerWidth * 0.18, window.innerHeight * 0.12, window.innerWidth * 0.35);
+      g1.addColorStop(0, 'rgba(121,184,255,0.16)');
+      g1.addColorStop(1, 'rgba(121,184,255,0)');
+      const g2 = nebulaCtx.createRadialGradient(window.innerWidth * 0.82, window.innerHeight * 0.18, 0, window.innerWidth * 0.82, window.innerHeight * 0.18, window.innerWidth * 0.28);
+      g2.addColorStop(0, 'rgba(143,124,255,0.12)');
+      g2.addColorStop(1, 'rgba(143,124,255,0)');
+      const g3 = nebulaCtx.createRadialGradient(window.innerWidth * 0.55, window.innerHeight * 0.75, 0, window.innerWidth * 0.55, window.innerHeight * 0.75, window.innerWidth * 0.32);
+      g3.addColorStop(0, 'rgba(94,240,208,0.08)');
+      g3.addColorStop(1, 'rgba(94,240,208,0)');
+      nebulaCtx.fillStyle = g1; nebulaCtx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+      nebulaCtx.fillStyle = g2; nebulaCtx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+      nebulaCtx.fillStyle = g3; nebulaCtx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+    }
+
+    function maybeSpawnShootingStar() {
+      if (Math.random() < 0.012 && shootingStars.length < 2) {
+        const startX = Math.random() * window.innerWidth * 0.8;
+        const startY = Math.random() * window.innerHeight * 0.35;
+        shootingStars.push({ x: startX, y: startY, vx: 10 + Math.random() * 7, vy: 4 + Math.random() * 2.4, life: 0, max: 30 + Math.random() * 20 });
+      }
+    }
+
+    function animateStars() {
+      starCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      stars.forEach(s => {
+        s.a += (Math.random() - 0.5) * s.tw;
+        if (s.a < 0.1) s.a = 0.1;
+        if (s.a > 0.95) s.a = 0.95;
+        starCtx.beginPath();
+        starCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        starCtx.fillStyle = `rgba(255,255,255,${s.a})`;
+        starCtx.fill();
+      });
+
+      maybeSpawnShootingStar();
+      shootingStars = shootingStars.filter(star => star.life < star.max);
+      shootingStars.forEach(star => {
+        star.life += 1;
+        star.x += star.vx;
+        star.y += star.vy;
+        const alpha = 1 - star.life / star.max;
+        const tailX = star.x - star.vx * 3.5;
+        const tailY = star.y - star.vy * 3.5;
+        const grad = starCtx.createLinearGradient(star.x, star.y, tailX, tailY);
+        grad.addColorStop(0, `rgba(255,255,255,${alpha})`);
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+        starCtx.strokeStyle = grad;
+        starCtx.lineWidth = 2;
+        starCtx.beginPath();
+        starCtx.moveTo(star.x, star.y);
+        starCtx.lineTo(tailX, tailY);
+        starCtx.stroke();
+      });
+
+      requestAnimationFrame(animateStars);
+    }
+
+    resizeCanvases();
+    animateStars();
+    window.addEventListener('resize', resizeCanvases);
+  </script>
+</body>
 </html>
