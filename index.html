@@ -91,10 +91,11 @@
     .brand {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .brand img {
-  height: 400px;
+  height: 80px;
   width: auto;
   display: block;
 }
@@ -541,9 +542,8 @@
 
     @media (max-width: 760px) {
       :root {
-        --header-height: 450px;
-      }
-
+  --header-height: 90px;
+}
       .container,
       .hero-content {
         width: min(100% - 28px, var(--max-width));
