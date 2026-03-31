@@ -89,12 +89,15 @@
     }
 
     .brand {
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
 
     .nav ul {
       display: flex;
@@ -593,7 +596,9 @@
 <body>
   <header class="site-header">
     <div class="container site-header-inner">
-      <a href="index.html" class="brand">Naiyar Shaman</a>
+      <a href="index.html" class="brand">
+  <img src="logo.png" alt="Shaman Engineering Logo" />
+</a>
 
       <nav class="nav" aria-label="Primary navigation">
         <ul>
