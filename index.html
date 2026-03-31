@@ -24,7 +24,8 @@
       --text: #ffffff;
       --muted: rgba(255, 255, 255, 0.72);
       --muted-2: rgba(255, 255, 255, 0.5);
-      --header-height: 110px;
+      --max-width: 1280px;
+      --header-height: 150px;
       --transition: 220ms ease;
     }
 
@@ -63,7 +64,7 @@
     }
 
     .container {
-      width: min(100% - 24px, 1700px);
+      width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
     }
 
@@ -74,51 +75,48 @@
       width: 100%;
       height: var(--header-height);
       z-index: 1000;
-      overflow: visible;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.25));
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      overflow: hidden;
     }
 
     .site-header-inner {
-      position: relative;
       height: 100%;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
-      gap: 32px;
-      padding-top: 6px;
+      gap: 24px;
     }
 
     .brand {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: flex-start;
-      height: auto;
+      height: 100%;
       flex-shrink: 0;
-      margin-left: -6px;
+      margin-left: -8px;
     }
 
     .brand img {
-      height: 400px;
+      height: 150px;
       width: auto;
       display: block;
     }
 
     .nav {
       margin-left: auto;
-      padding-top: 34px;
     }
 
     .nav ul {
       display: flex;
       align-items: center;
-      gap: 36px;
+      gap: 32px;
     }
 
     .nav a {
       position: relative;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -156,7 +154,7 @@
       overflow: hidden;
       display: flex;
       align-items: flex-end;
-      padding-top: calc(var(--header-height) + 24px);
+      padding-top: var(--header-height);
       border-bottom: 1px solid var(--line);
       background:
         linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.8)),
@@ -191,7 +189,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      width: min(100% - 24px, 1700px);
+      width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
       padding-bottom: 100px;
     }
@@ -552,16 +550,15 @@
 
     @media (max-width: 760px) {
       :root {
-        --header-height: 90px;
+        --header-height: 100px;
       }
 
       .container,
       .hero-content {
-        width: min(100% - 16px, 1700px);
+        width: min(100% - 20px, var(--max-width));
       }
 
       .site-header-inner {
-        padding-top: 4px;
         gap: 14px;
       }
 
@@ -570,15 +567,11 @@
       }
 
       .brand img {
-        height: 120px;
-      }
-
-      .nav {
-        padding-top: 18px;
+        height: 100px;
       }
 
       .nav ul {
-        gap: 18px;
+        gap: 16px;
         flex-wrap: wrap;
         justify-content: flex-end;
       }
