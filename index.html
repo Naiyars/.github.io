@@ -82,12 +82,18 @@
   overflow: visible;
 }
     .site-header-inner {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  /* 🔥 this is the key */
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 12px; /* controls spacing from edges */
+}
 
     .brand {
       display: flex;
