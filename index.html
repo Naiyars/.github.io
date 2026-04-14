@@ -40,14 +40,14 @@
     }
 
     body {
-  font-family: "Familjen Grotesk", Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
-  line-height: 1.5;
-  padding-top: var(--header-height);
-  background-size: 600px 600px;
-  background-attachment: fixed;
-}
+      font-family: "Familjen Grotesk", Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.5;
+      padding-top: var(--header-height);
+      background-size: 600px 600px;
+      background-attachment: fixed;
+    }
 
     img,
     video {
@@ -70,30 +70,29 @@
     }
 
     .site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-height);
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.88);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
-  overflow: visible;
-}
-    .site-header-inner {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      overflow: visible;
+    }
 
-  /* 🔥 this is the key */
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 0 12px; /* controls spacing from edges */
-}
+    .site-header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0 12px;
+    }
 
     .brand {
       display: flex;
@@ -111,9 +110,10 @@
     }
 
     .nav {
-  margin-left: auto;
-  margin-right: 0px;
-}
+      margin-left: auto;
+      margin-right: 0px;
+    }
+
     .nav ul {
       display: flex;
       align-items: center;
@@ -165,17 +165,17 @@
     }
 
     .hero-media {
-  display: none;
-}
+      display: none;
+    }
 
     .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.35));
-  z-index: 1;
-  pointer-events: none;
-}
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.35));
+      z-index: 1;
+      pointer-events: none;
+    }
 
     .hero-content {
       position: relative;
@@ -196,23 +196,23 @@
     }
 
     .hero-subtitle {
-  max-width: 700px;
-  font-size: clamp(1rem, 2vw, 1.22rem);
-  color: var(--muted);
-  margin-bottom: 20px;
-}
+      max-width: 700px;
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
 
     .hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 18px;
-  margin-bottom: 34px;
-  color: var(--muted-2);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.74rem;
-  font-weight: 600;
-}
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-bottom: 34px;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.74rem;
+      font-weight: 600;
+    }
 
     .hero-actions {
       display: flex;
@@ -261,11 +261,11 @@
     }
 
     .section {
-  position: relative;
-  padding: 108px 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
-}
+      position: relative;
+      padding: 108px 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+    }
 
     .section-header {
       display: grid;
@@ -299,7 +299,7 @@
 
     .feature-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.3fr 0.7fr;
       gap: 28px;
       align-items: stretch;
     }
@@ -326,8 +326,8 @@
       height: 100%;
       object-fit: contain;
       object-position: center;
-      opacity: 0.9;
-      filter: contrast(1.08) brightness(0.88);
+      opacity: 1;
+      filter: contrast(1.25) brightness(0.95);
       background: #000;
     }
 
@@ -336,8 +336,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to top, rgba(0, 0, 0, 0.48) 5%, transparent 42%),
-        linear-gradient(to right, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.24));
+        linear-gradient(to top, rgba(0, 0, 0, 0.42) 5%, transparent 42%),
+        linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2));
       pointer-events: none;
     }
 
@@ -383,8 +383,15 @@
 
     .stat {
       padding: 18px 14px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255, 255, 255, 0.03);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .stat:hover {
+      border-color: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-1px);
     }
 
     .stat strong {
@@ -441,10 +448,10 @@
     }
 
     .contact-band {
-  padding: 120px 0;
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-}
+      padding: 120px 0;
+      background:
+        linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
 
     .contact-band-inner {
       display: flex;
@@ -469,9 +476,9 @@
     }
 
     .site-footer {
-  padding: 28px 0 38px;
-  background: transparent;
-}
+      padding: 28px 0 38px;
+      background: transparent;
+    }
 
     .site-footer-inner {
       display: flex;
@@ -614,27 +621,27 @@
       <div class="hero-content">
         <h1>Naiyar Shaman</h1>
         <p class="hero-subtitle">
-  Engineering student with hands-on experience in mission architecture, hardware design, and manufacturing.
-</p>
+          Engineering student with hands-on experience in mission architecture, hardware design, and manufacturing.
+        </p>
 
         <div class="hero-meta">
-  <span>Mission Architecture</span>
-  <span>Hardware Design</span>
-  <span>Manufacturing</span>
-</div>
+          <span>Mission Architecture</span>
+          <span>Hardware Design</span>
+          <span>Manufacturing</span>
+        </div>
 
-       <div class="hero-actions">
-  <a class="btn" href="projects.html">View Projects</a>
-  <a class="btn" href="experience.html">Resume</a>
-  <a class="btn" href="mailto:naiyar@shamanengineering.com">Contact</a>
-</div>
+        <div class="hero-actions">
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn" href="experience.html">Resume</a>
+          <a class="btn" href="mailto:naiyar@shamanengineering.com">Contact</a>
+        </div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="featured-project-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Featured Project</div>
+          <div class="section-label">Aurevo System</div>
           <div class="section-heading">
             <h2 id="featured-project-heading">AUREVO — Lunar Surface Power Architecture</h2>
             <p>
@@ -646,7 +653,7 @@
         <div class="feature-grid">
           <div class="feature-visual">
             <img src="aurevo-hero.jpg" alt="AUREVO lunar surface power architecture render" />
-            <div class="feature-visual-note">Project AUREVO</div>
+            <div class="feature-visual-note">Lunar Power System</div>
           </div>
 
           <div class="feature-copy">
@@ -736,42 +743,38 @@
       </div>
     </section>
 
-<section class="contact-band" aria-labelledby="reach-out-heading">
-  <div class="container">
+    <section class="contact-band" aria-labelledby="reach-out-heading">
+      <div class="container">
+        <div style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          min-height: 60vh;
+          gap: 20px;
+        ">
+          <h2 id="reach-out-heading" style="
+            font-size: clamp(3rem, 8vw, 6rem);
+            letter-spacing: -0.04em;
+          ">
+            GET IN CONTACT
+          </h2>
 
-    <div style="
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 60vh;
-      gap: 20px;
-    ">
+          <p style="
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.12em;
+            font-size: 0.9rem;
+          ">
+            naiyar@shamanengineering.com
+          </p>
 
-      <h2 id="reach-out-heading" style="
-        font-size: clamp(3rem, 8vw, 6rem);
-        letter-spacing: -0.04em;
-      ">
-        GET IN CONTACT
-      </h2>
-
-      <p style="
-        color: rgba(255,255,255,0.6);
-        letter-spacing: 0.12em;
-        font-size: 0.9rem;
-      ">
-        naiyar@shamanengineering.com
-      </p>
-
-      <a class="btn" href="mailto:naiyar@shamanengineering.com" style="margin-top: 20px;">
-        EMAIL ME
-      </a>
-
-    </div>
-
-  </div>
-</section>
+          <a class="btn" href="mailto:naiyar@shamanengineering.com" style="margin-top: 20px;">
+            EMAIL ME
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
