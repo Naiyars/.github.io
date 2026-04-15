@@ -286,7 +286,6 @@
       font-size: 1.04rem;
     }
 
-    /* AUREVO section */
     .feature-header {
       width: 100%;
       max-width: 1240px;
@@ -305,15 +304,13 @@
     }
 
     .feature-section-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-
-  color: rgba(255,255,255,0.9);
-
-  margin-bottom: 18px;
-}
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 18px;
+    }
 
     .feature-header p {
       max-width: 1120px;
@@ -334,7 +331,7 @@
 
     .feature-visual {
       position: relative;
-      min-height: 620px;
+      aspect-ratio: 16 / 9;
       background: #000;
       border-right: 1px solid var(--line);
       overflow: hidden;
@@ -343,10 +340,11 @@
     .feature-visual img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       object-position: center center;
+      background: #000;
       filter: brightness(0.88) contrast(1.06);
-      transform: scale(1.01);
+      transform: none;
     }
 
     .feature-visual::after {
@@ -539,7 +537,7 @@
       }
 
       .feature-visual {
-        min-height: 460px;
+        aspect-ratio: 16 / 9;
         border-right: none;
         border-bottom: 1px solid var(--line);
       }
@@ -662,11 +660,11 @@
       <div class="container">
         <div class="feature-header">
           <div class="feature-section-title">
-  FEATURED PROJECT
-</div>
+            FEATURED PROJECT
+          </div>
           <h2 id="featured-project-heading">PROJECT AUREVO — LUNAR SURFACE POWER ARCHITECTURE</h2>
           <p>
-            Project AUREVO stands for <strong>Advanced Utilization of Resources for Energy &amp; Viability Off-Earth</strong>. I Founded and led Embry-Riddle’s NASA RASC-AL team to develop a technically rigorous lunar surface power concept, advancing the project through finalist selection with a systems-driven architecture supported by detailed analysis and engineering trade studies.
+            Project AUREVO stands for <strong>Advanced Utilization of Resources for Energy &amp; Viability Off-Earth</strong>. I founded and led Embry-Riddle’s NASA RASC-AL team to develop a technically rigorous lunar surface power concept, advancing the project through finalist selection with a systems-driven architecture supported by detailed analysis and engineering trade studies.
           </p>
         </div>
 
