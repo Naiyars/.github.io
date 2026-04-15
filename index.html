@@ -26,7 +26,6 @@
       --muted: rgba(255, 255, 255, 0.72);
       --muted-2: rgba(255, 255, 255, 0.5);
       --panel: rgba(0, 0, 0, 0.68);
-      --panel-2: rgba(255, 255, 255, 0.03);
       --max-width: 1280px;
       --header-height: 150px;
       --transition: 220ms ease;
@@ -288,50 +287,29 @@
     }
 
     /* AUREVO section */
-   .feature-header {
-  width: 100%;
-  max-width: 1180px;
-  margin-bottom: 34px;
-}
+    .feature-header {
+      width: 100%;
+      max-width: 1240px;
+      margin-bottom: 34px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 26px;
+    }
 
-.feature-eyebrow {
-  width: 100%;
-  margin-bottom: 10px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.55);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
+    .feature-header h2 {
+      font-size: clamp(3.2rem, 5.8vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      max-width: 20ch;
+    }
 
-.feature-subeyebrow {
-  display: block;
-  width: 100%;
-  margin-bottom: 18px;
-  color: rgba(255,255,255,0.48);
-  font-size: 0.82rem;
-  line-height: 1.45;
-  letter-spacing: 0.02em;
-  max-width: none;
-}
-
-.feature-header h2 {
-  font-size: clamp(3.2rem, 6vw, 5.8rem);
-  line-height: 0.94;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  margin-bottom: 18px;
-  max-width: 16ch;
-}
-
-.feature-header p {
-  max-width: 980px;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.5;
-}
+    .feature-header p {
+      max-width: 1120px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
     .feature-grid {
       display: grid;
@@ -558,6 +536,11 @@
       .feature-copy {
         border-left: none;
       }
+
+      .feature-header h2,
+      .feature-header p {
+        max-width: none;
+      }
     }
 
     @media (max-width: 760px) {
@@ -666,16 +649,12 @@
 
     <section class="section" aria-labelledby="featured-project-heading">
       <div class="container">
-       <div class="feature-header">
-  <div class="feature-eyebrow">PROJECT AUREVO</div>
-  <div class="feature-subeyebrow">
-    Advanced Utilization of Resources for Energy &amp; Viability Off-Earth
-  </div>
-  <h2 id="featured-project-heading">AUREVO — LUNAR SURFACE POWER ARCHITECTURE</h2>
-  <p>
-    Founded and led Embry-Riddle’s NASA RASC-AL team to develop a technically rigorous lunar surface power concept, advancing the project through finalist selection with a systems-driven architecture supported by detailed analysis and engineering trade studies.
-  </p>
-</div>
+        <div class="feature-header">
+          <h2 id="featured-project-heading">PROJECT AUREVO — LUNAR SURFACE POWER ARCHITECTURE</h2>
+          <p>
+            Project AUREVO stands for <strong>Advanced Utilization of Resources for Energy &amp; Viability Off-Earth</strong>. Founded and led Embry-Riddle’s NASA RASC-AL team to develop a technically rigorous lunar surface power concept, advancing the project through finalist selection with a systems-driven architecture supported by detailed analysis and engineering trade studies.
+          </p>
+        </div>
 
         <div class="feature-grid">
           <div class="feature-visual">
