@@ -20,6 +20,7 @@
     :root {
       --bg: #000000;
       --bg-soft: #0a0a0a;
+      --bg-card: #050505;
       --line: rgba(255, 255, 255, 0.12);
       --line-strong: rgba(255, 255, 255, 0.18);
       --text: #ffffff;
@@ -365,13 +366,13 @@
     }
 
     .feature-copy-top h3 {
-  font-size: clamp(1.7rem, 2.6vw, 2.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-  max-width: 18ch;
-}
+      font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      max-width: 18ch;
+    }
 
     .feature-copy-top p {
       color: rgba(255,255,255,0.78);
@@ -425,17 +426,69 @@
       background: rgba(255,255,255,0.02);
     }
 
-    .experience-grid {
+    .experience-intro {
+      margin-bottom: 28px;
+    }
+
+    .experience-signals {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .signal {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      padding: 16px 14px;
+      min-height: 88px;
+    }
+
+    .signal strong {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.05;
+      margin-bottom: 7px;
+      letter-spacing: -0.02em;
+    }
+
+    .signal span {
+      display: block;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.62rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .experience-main-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
+      margin-top: 10px;
     }
 
     .experience-card {
       border: 1px solid var(--line);
       background: var(--bg-soft);
       padding: 28px;
-      min-height: 210px;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .experience-card:hover {
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.025);
+      transform: translateY(-1px);
+    }
+
+    .experience-card.featured {
+      background: var(--bg-card);
+      min-height: 280px;
+    }
+
+    .experience-card.secondary {
+      min-height: 225px;
     }
 
     .experience-card .role-type {
@@ -449,16 +502,96 @@
     }
 
     .experience-card h3 {
-      font-size: 1.3rem;
-      line-height: 1.05;
-      margin-bottom: 10px;
+      font-size: 1.45rem;
+      line-height: 1.02;
+      margin-bottom: 14px;
       text-transform: uppercase;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.035em;
+      max-width: 22ch;
     }
 
     .experience-card p {
       color: var(--muted);
       font-size: 0.98rem;
+      margin-bottom: 14px;
+      max-width: 58ch;
+    }
+
+    .experience-points {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .experience-points li {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.92rem;
+      line-height: 1.45;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .experience-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .additional-experience {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.015);
+      padding: 22px 24px;
+    }
+
+    .additional-experience-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+
+    .additional-experience h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .additional-experience p {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 0.95rem;
+    }
+
+    .additional-experience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .additional-pill {
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.02);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    .experience-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
     .contact-band {
@@ -513,6 +646,12 @@
       color: var(--text);
     }
 
+    @media (max-width: 1080px) {
+      .experience-signals {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 980px) {
       .section-header {
         grid-template-columns: 1fr;
@@ -520,8 +659,8 @@
       }
 
       .feature-grid,
-      .experience-grid,
-      .feature-stats {
+      .feature-stats,
+      .experience-main-grid {
         grid-template-columns: 1fr;
       }
 
@@ -582,13 +721,18 @@
       }
 
       .feature-copy,
-      .experience-card {
+      .experience-card,
+      .additional-experience {
         padding: 22px;
       }
 
       .feature-header h2,
       .feature-copy-top h3 {
         max-width: none;
+      }
+
+      .experience-signals {
+        grid-template-columns: 1fr;
       }
 
       .site-footer-inner {
@@ -627,7 +771,7 @@
       <div class="hero-content">
         <h1>Naiyar Shaman</h1>
         <p class="hero-subtitle">
-          Engineering student with hands-on experience in mission architecture, hardware design, and manufacturing.
+          Engineering student with hands-on experience in mission architecture, hardware design, manufacturing, and multidisciplinary systems engineering.
         </p>
 
         <div class="hero-meta">
@@ -648,7 +792,7 @@
       <div class="container">
         <div class="feature-header">
           <div class="feature-section-title">
-            FEATURED PROJECT
+            Featured Project
           </div>
           <h2 id="featured-project-heading">PROJECT AUREVO</h2>
           <p>
@@ -666,7 +810,7 @@
 
           <aside class="feature-copy" aria-label="AUREVO summary">
             <div class="feature-copy-top">
-              <h3>Lunar power architecture overview.</h3>
+              <h3>LUNAR POWER<br>ARCHITECTURE<br>OVERVIEW.</h3>
               <p>
                 A 100 kWe hybrid surface power system integrating dual fission reactors, regolith thermal energy storage, and long-distance HVDC transmission for resilient lunar surface operations.
               </p>
@@ -698,49 +842,109 @@
         <div class="section-header">
           <div class="section-label">Experience</div>
           <div class="section-heading">
-            <h2 id="experience-preview-heading">Engineering, mission development, and real hardware work.</h2>
+            <h2 id="experience-preview-heading">Built through real hardware, systems engineering, and mission architecture leadership.</h2>
             <p>
-              My background spans mechanical design, manufacturing support, systems engineering, NASA-affiliated mission work, and multidisciplinary technical leadership across both industry and research settings.
+              My work spans end-to-end mechanical design, production support, NASA mission development, trade studies, subsystem integration, and technical leadership across both industry and aerospace research.
             </p>
           </div>
         </div>
 
-        <div class="experience-grid">
-          <article class="experience-card">
-            <span class="role-type">Industry</span>
-            <h3>MeltPro Inc. — Engineering Lead / Mechanical Designer</h3>
+        <div class="experience-intro">
+          <div class="experience-signals">
+            <div class="signal">
+              <strong>500+ Parts</strong>
+              <span>Managed in SolidWorks</span>
+            </div>
+            <div class="signal">
+              <strong>15-Person Team</strong>
+              <span>Mission Architecture Led</span>
+            </div>
+            <div class="signal">
+              <strong>100 kWe System</strong>
+              <span>Lunar Surface Power</span>
+            </div>
+            <div class="signal">
+              <strong>NASA OSTEM</strong>
+              <span>Langley Selection</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-main-grid">
+          <article class="experience-card featured">
+            <span class="role-type">Industry Leadership</span>
+            <h3>MeltPro Inc. — Lead Engineer / Mechanical Designer</h3>
             <p>
-              Own SolidWorks drafting and CAD modeling across a large part and assembly library, support production integration, and drive design improvements based on manufacturability, fit, and performance.
+              Own end-to-end development of industrial adhesive dispensing systems, serving as the primary engineering resource across design, manufacturability, and production implementation.
             </p>
+            <ul class="experience-points">
+              <li>Manage 500+ part and assembly models in SolidWorks with drawings, revisions, and configuration control.</li>
+              <li>Perform tolerance analysis, DFM, and validation to improve manufacturability, reliability, and assembly efficiency.</li>
+              <li>Work directly with machining and production teams to resolve real engineering issues on hardware that gets built.</li>
+            </ul>
           </article>
 
-          <article class="experience-card">
+          <article class="experience-card featured">
+            <span class="role-type">Flagship Mission Work</span>
+            <h3>NASA RASC-AL — Founder &amp; Principal Investigator</h3>
+            <p>
+              Led development of Project AUREVO, a lunar surface power architecture selected as a national finalist in NASA’s RASC-AL competition.
+            </p>
+            <ul class="experience-points">
+              <li>Developed system architecture and trade studies for a 100 kWe continuous power concept using dual fission reactors and HVDC distribution.</li>
+              <li>Designed and analyzed regolith-based thermal energy storage for multi-day lunar night survivability.</li>
+              <li>Directed requirements development, risk analysis, and subsystem integration across power, thermal, PMAD, and surface systems.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card secondary">
             <span class="role-type">NASA Mission Development</span>
-            <h3>NASA L’SPACE Mission Concept Academy — Project Manager</h3>
+            <h3>NASA L’SPACE MCA — Project Manager</h3>
             <p>
-              Led a 15-member multidisciplinary team through mission architecture development under NASA systems engineering standards, including subsystem integration, technical documentation, trade studies, and design reviews.
+              Led a 15-member multidisciplinary team through end-to-end planetary mission architecture development under NASA systems engineering standards.
             </p>
+            <ul class="experience-points">
+              <li>Directed subsystem integration across propulsion, thermal, power, communications, payload, and CDH.</li>
+              <li>Produced 200+ pages of technical deliverables including requirements, interface definitions, N² diagrams, and risk assessments.</li>
+            </ul>
           </article>
 
-          <article class="experience-card">
-            <span class="role-type">Competition Leadership</span>
-            <h3>NASA RASC-AL — President / Project Manager</h3>
-            <p>
-              Founded and led Embry-Riddle’s team developing sustainable lunar surface power architectures, coordinating technical direction, proposal strategy, requirements validation, and cross-team systems integration.
-            </p>
-          </article>
-
-          <article class="experience-card">
-            <span class="role-type">Incoming Internship</span>
+          <article class="experience-card secondary">
+            <span class="role-type">Incoming NASA Internship</span>
             <h3>NASA Langley — Mars Human Exploration Architecture</h3>
             <p>
-              Incoming internship work centered on Mars human exploration architecture, reinforcing a broader focus on mission design, exploration systems, and long-horizon aerospace problem solving.
+              Selected for NASA’s Space Mission Analysis Branch to support human Mars exploration studies and mission-level architecture development.
             </p>
+            <ul class="experience-points">
+              <li>Will contribute to trade studies, concept evaluation, multidisciplinary integration, and systems analysis for Mars exploration architectures.</li>
+            </ul>
           </article>
         </div>
 
-        <div style="margin-top: 28px;">
+        <div class="additional-experience">
+          <div class="additional-experience-header">
+            <div>
+              <div class="section-label" style="padding-top: 0; margin-bottom: 6px;">Additional Experience</div>
+              <h3>Foundation in manufacturing, fabrication, research, and technical operations.</h3>
+            </div>
+          </div>
+
+          <p>
+            Supporting experience includes hands-on manufacturing and CNC workflow at Height Tower Systems, technical systems leadership and automation at The Bellwether Alliance, reusable launch vehicle research through the Compass Research Program, and ongoing NASA proposal and interface development work through NPWEE and SUITS.
+          </p>
+
+          <div class="additional-experience-list">
+            <span class="additional-pill">Height Tower Systems</span>
+            <span class="additional-pill">Bellwether Alliance</span>
+            <span class="additional-pill">Compass Research</span>
+            <span class="additional-pill">NASA NPWEE</span>
+            <span class="additional-pill">NASA SUITS</span>
+          </div>
+        </div>
+
+        <div class="experience-actions">
           <a class="btn" href="experience.html">View Full Experience</a>
+          <a class="btn" href="projects.html">View Technical Work</a>
         </div>
       </div>
     </section>
@@ -772,7 +976,7 @@
           </p>
 
           <a class="btn" href="mailto:naiyar@shamanengineering.com" style="margin-top: 20px;">
-            EMAIL ME
+            Email Me
           </a>
         </div>
       </div>
