@@ -28,7 +28,7 @@
       --muted-2: rgba(255, 255, 255, 0.5);
       --panel: rgba(0, 0, 0, 0.68);
       --max-width: 1280px;
-      --header-height: 150px;
+      --header-height: 110px;
       --transition: 220ms ease;
     }
 
@@ -107,7 +107,7 @@
     }
 
     .brand img {
-      height: 300px;
+      height: 180px;
       width: auto;
       display: block;
     }
@@ -164,11 +164,62 @@
       display: flex;
       align-items: center;
       border-bottom: 1px solid var(--line);
-      background: transparent;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255,255,255,0.08), transparent 28%),
+        transparent;
     }
 
     .hero-media {
       display: none;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .stars::before,
+    .stars::after {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background-repeat: repeat;
+      animation: driftStars linear infinite;
+    }
+
+    .stars::before {
+      background-image:
+        radial-gradient(1.5px 1.5px at 40px 60px, rgba(255,255,255,0.9) 100%, transparent 0),
+        radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.7) 100%, transparent 0),
+        radial-gradient(1.2px 1.2px at 220px 40px, rgba(255,255,255,0.8) 100%, transparent 0),
+        radial-gradient(1px 1px at 320px 180px, rgba(255,255,255,0.65) 100%, transparent 0),
+        radial-gradient(1.4px 1.4px at 420px 100px, rgba(255,255,255,0.85) 100%, transparent 0);
+      background-size: 480px 240px;
+      opacity: 0.22;
+      animation-duration: 160s;
+    }
+
+    .stars::after {
+      background-image:
+        radial-gradient(1px 1px at 80px 40px, rgba(255,255,255,0.55) 100%, transparent 0),
+        radial-gradient(1.2px 1.2px at 200px 140px, rgba(255,255,255,0.45) 100%, transparent 0),
+        radial-gradient(1px 1px at 300px 90px, rgba(255,255,255,0.5) 100%, transparent 0),
+        radial-gradient(1.3px 1.3px at 380px 200px, rgba(255,255,255,0.4) 100%, transparent 0);
+      background-size: 520px 260px;
+      opacity: 0.10;
+      animation-duration: 260s;
+    }
+
+    @keyframes driftStars {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+      to {
+        transform: translate3d(-120px, -80px, 0);
+      }
     }
 
     .hero-overlay {
@@ -560,69 +611,6 @@
       color: var(--text);
     }
 
-
-.stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.stars::before,
-.stars::after {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background-repeat: repeat;
-  animation: driftStars linear infinite;
-}
-
-.stars::before {
-  background-image:
-    radial-gradient(1.5px 1.5px at 40px 60px, rgba(255,255,255,0.9) 100%, transparent 0),
-    radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.7) 100%, transparent 0),
-    radial-gradient(1.2px 1.2px at 220px 40px, rgba(255,255,255,0.8) 100%, transparent 0),
-    radial-gradient(1px 1px at 320px 180px, rgba(255,255,255,0.65) 100%, transparent 0),
-    radial-gradient(1.4px 1.4px at 420px 100px, rgba(255,255,255,0.85) 100%, transparent 0);
-  background-size: 480px 240px;
-  opacity: 0.35;
-  animation-duration: 160s;
-}
-
-.stars::after {
-  background-image:
-    radial-gradient(1px 1px at 80px 40px, rgba(255,255,255,0.55) 100%, transparent 0),
-    radial-gradient(1.2px 1.2px at 200px 140px, rgba(255,255,255,0.45) 100%, transparent 0),
-    radial-gradient(1px 1px at 300px 90px, rgba(255,255,255,0.5) 100%, transparent 0),
-    radial-gradient(1.3px 1.3px at 380px 200px, rgba(255,255,255,0.4) 100%, transparent 0);
-  background-size: 520px 260px;
-  opacity: 0.18;
-  animation-duration: 260s;
-}
-
-@keyframes driftStars {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-120px, -80px, 0);
-  }
-}
-
-.site-header,
-main,
-.site-footer {
-  position: relative;
-  z-index: 1;
-}
-
-.hero {
-  background:
-    radial-gradient(circle at 50% 35%, rgba(255,255,255,0.08), transparent 28%),
-    transparent;
-}
-    
     @media (max-width: 980px) {
       .about-brief,
       .feature-grid,
@@ -649,7 +637,7 @@ main,
 
     @media (max-width: 760px) {
       :root {
-        --header-height: 100px;
+        --header-height: 88px;
       }
 
       .container,
@@ -666,7 +654,7 @@ main,
       }
 
       .brand img {
-        height: 100px;
+        height: 95px;
       }
 
       .nav ul {
@@ -711,7 +699,6 @@ main,
   </style>
 </head>
 <body>
-  <div class="stars"></div>
   <header class="site-header">
     <div class="container site-header-inner">
       <a href="index.html" class="brand">
@@ -731,6 +718,8 @@ main,
 
   <main>
     <section class="hero" aria-label="Homepage hero">
+      <div class="stars"></div>
+
       <div class="hero-media">
         <img src="aurevo-hero.jpg" alt="AUREVO lunar surface power architecture render" />
       </div>
@@ -757,17 +746,17 @@ main,
           <div class="about-brief-content">
             <h2 id="about-brief-heading">ABOUT ME</h2>
 
-<p>
-  I’m Naiyar Shaman, an engineering student focused on aerospace systems and mechanical design. I spend most of my time working on CAD, refining designs, or thinking through how systems actually come together beyond just analysis.
-</p>
+            <p>
+              I’m Naiyar Shaman, an engineering student focused on aerospace systems and mechanical design. I spend most of my time working on CAD, refining designs, or thinking through how systems actually come together beyond just analysis.
+            </p>
 
-<p>
-  Outside of school and engineering work, I enjoy bowling, working on personal projects, and staying involved in technical competitions and NASA programs. I like building things that have a clear purpose and pushing ideas until they’re something tangible.
-</p>
+            <p>
+              Outside of school and engineering work, I enjoy bowling, working on personal projects, and staying involved in technical competitions and NASA programs. I like building things that have a clear purpose and pushing ideas until they’re something tangible.
+            </p>
 
-<p>
-  I’m especially interested in working on human space exploration systems — the kind of engineering that has to operate reliably in extreme environments and can’t afford to fail.
-</p>
+            <p>
+              I’m especially interested in working on human space exploration systems — the kind of engineering that has to operate reliably in extreme environments and can’t afford to fail.
+            </p>
           </div>
         </div>
       </div>
