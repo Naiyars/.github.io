@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naiyar Shaman | Experience</title>
+  <meta
+    name="description"
+    content="Experience portfolio of Naiyar Shaman across aerospace systems engineering, NASA programs, mission architecture, CAD design, manufacturing, and technical leadership."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #000000;
+      --bg-soft: #0a0a0a;
+      --bg-card: #050505;
+      --line: rgba(255, 255, 255, 0.12);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.72);
+      --muted-2: rgba(255, 255, 255, 0.5);
+      --panel: rgba(0, 0, 0, 0.68);
+      --max-width: 1280px;
+      --header-height: 110px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Familjen Grotesk", Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      line-height: 1.5;
+      padding-top: var(--header-height);
+      background-size: 600px 600px;
+      background-attachment: fixed;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      overflow: visible;
+    }
+
+    .site-header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      flex-shrink: 0;
+      margin-left: 0;
+    }
+
+    .brand img {
+      height: 180px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .nav ul {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav a {
+      position: relative;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      transition: color var(--transition);
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform 0.35s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: #ffffff;
+    }
+
+    .nav a:hover::after,
+    .nav a:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 68vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 32%, rgba(255,255,255,0.08), transparent 28%),
+        transparent;
+    }
+
+    .stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .stars::before,
+    .stars::after {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background-repeat: repeat;
+      animation: driftStars linear infinite;
+    }
+
+    .stars::before {
+      background-image:
+        radial-gradient(1.5px 1.5px at 40px 60px, rgba(255,255,255,0.9) 100%, transparent 0),
+        radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.7) 100%, transparent 0),
+        radial-gradient(1.2px 1.2px at 220px 40px, rgba(255,255,255,0.8) 100%, transparent 0),
+        radial-gradient(1px 1px at 320px 180px, rgba(255,255,255,0.65) 100%, transparent 0),
+        radial-gradient(1.4px 1.4px at 420px 100px, rgba(255,255,255,0.85) 100%, transparent 0);
+      background-size: 480px 240px;
+      opacity: 0.22;
+      animation-duration: 160s;
+    }
+
+    .stars::after {
+      background-image:
+        radial-gradient(1px 1px at 80px 40px, rgba(255,255,255,0.55) 100%, transparent 0),
+        radial-gradient(1.2px 1.2px at 200px 140px, rgba(255,255,255,0.45) 100%, transparent 0),
+        radial-gradient(1px 1px at 300px 90px, rgba(255,255,255,0.5) 100%, transparent 0),
+        radial-gradient(1.3px 1.3px at 380px 200px, rgba(255,255,255,0.4) 100%, transparent 0);
+      background-size: 520px 260px;
+      opacity: 0.10;
+      animation-duration: 260s;
+    }
+
+    @keyframes driftStars {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
+      to {
+        transform: translate3d(-120px, -80px, 0);
+      }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.38));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 84px 0 54px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: rgba(255,255,255,0.72);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      font-size: clamp(3rem, 7.4vw, 6.2rem);
+      line-height: 0.94;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      max-width: 860px;
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .proof-pill {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+      padding: 11px 14px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: rgba(255,255,255,0.86);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 15px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: #fff;
+      color: #000;
+      transform: translateY(-1px);
+    }
+
+    .btn-muted {
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .section {
+      position: relative;
+      padding: 104px 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-header {
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: rgba(255,255,255,0.72);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.7rem, 5.6vw, 5.3rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      max-width: 18ch;
+    }
+
+    .section-header p {
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .jump-nav-wrap {
+      position: sticky;
+      top: calc(var(--header-height) + 10px);
+      z-index: 60;
+      margin-top: -34px;
+      margin-bottom: 44px;
+    }
+
+    .jump-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .jump-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.82);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
+    }
+
+    .jump-nav a:hover,
+    .jump-nav a:focus-visible {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.28);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .focus-tile {
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      padding: 22px;
+      min-height: 130px;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .focus-tile:hover {
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.03);
+      transform: translateY(-1px);
+    }
+
+    .focus-tile strong {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1.08;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .focus-tile span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .experience-block {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      background: #050505;
+      overflow: hidden;
+    }
+
+    .experience-block.reverse {
+      grid-template-columns: minmax(320px, 0.82fr) minmax(0, 1.18fr);
+    }
+
+    .exp-copy {
+      padding: 34px 30px 30px;
+      background: rgba(0,0,0,0.72);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+    }
+
+    .exp-copy.alt {
+      border-right: 1px solid var(--line);
+    }
+
+    .exp-visual {
+      position: relative;
+      min-height: 100%;
+      background: #000;
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .exp-visual.alt {
+      border-left: none;
+      border-right: 1px solid var(--line);
+    }
+
+    .exp-main-image {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .exp-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .exp-gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #000;
+    }
+
+    .exp-gallery img:nth-child(2n) {
+      border-right: none;
+    }
+
+    .exp-label {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: rgba(255,255,255,0.62);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .exp-copy h3 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      max-width: 16ch;
+    }
+
+    .exp-role {
+      color: rgba(255,255,255,0.78);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .exp-summary {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      max-width: 66ch;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .stat-card {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      padding: 14px 12px;
+      min-height: 102px;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .stat-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.30);
+      transform: translateY(-1px);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.08rem;
+      line-height: 1.04;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-card span {
+      display: block;
+      color: rgba(255,255,255,0.58);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.63rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .exp-bullets {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .exp-bullets li {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.94rem;
+      line-height: 1.52;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .exp-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.58);
+    }
+
+    .exp-note {
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.76);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .compact-card {
+      border: 1px solid var(--line);
+      background: var(--bg-soft);
+      overflow: hidden;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+
+    .compact-card:hover {
+      border-color: rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.03);
+      transform: translateY(-1px);
+    }
+
+    .compact-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-bottom: 1px solid var(--line);
+      background: #000;
+    }
+
+    .compact-card-content {
+      padding: 24px;
+    }
+
+    .compact-card .exp-label {
+      margin-bottom: 10px;
+    }
+
+    .compact-card h3 {
+      font-size: 1.5rem;
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .compact-role {
+      color: rgba(255,255,255,0.76);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.74rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .compact-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.58;
+      margin-bottom: 16px;
+    }
+
+    .compact-card ul {
+      display: grid;
+      gap: 9px;
+    }
+
+    .compact-card li {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.92rem;
+      line-height: 1.48;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .compact-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.58);
+    }
+
+    .mini-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .mini-stats span {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      padding: 8px 10px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .langley-band {
+      border: 1px solid var(--line);
+      background: linear-gradient(to right, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      overflow: hidden;
+    }
+
+    .langley-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: 0;
+    }
+
+    .langley-copy {
+      padding: 34px 30px;
+    }
+
+    .langley-copy h3 {
+      font-size: clamp(2rem, 3vw, 3.1rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      max-width: 16ch;
+    }
+
+    .langley-visual {
+      border-left: 1px solid var(--line);
+      background: #000;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .langley-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .cta-band {
+      padding: 120px 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+
+    .cta-band h2 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+      max-width: 16ch;
+    }
+
+    .cta-band p {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .site-footer {
+      padding: 28px 0 38px;
+      background: transparent;
+    }
+
+    .site-footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+
+    .site-footer p,
+    .site-footer a {
+      color: var(--muted-2);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--text);
+    }
+
+    @media (max-width: 1100px) {
+      .experience-block,
+      .experience-block.reverse,
+      .langley-grid,
+      .focus-grid,
+      .compact-grid,
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-visual,
+      .exp-visual.alt,
+      .langley-visual {
+        border-left: none;
+        border-right: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .exp-copy.alt {
+        border-right: none;
+      }
+
+      .exp-main-image,
+      .langley-visual img {
+        min-height: 340px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-height: 88px;
+      }
+
+      .container,
+      .hero-content {
+        width: min(100% - 20px, var(--max-width));
+      }
+
+      .site-header-inner {
+        gap: 14px;
+      }
+
+      .brand {
+        margin-left: -4px;
+      }
+
+      .brand img {
+        height: 95px;
+      }
+
+      .nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav a {
+        font-size: 0.72rem;
+      }
+
+      .section,
+      .cta-band {
+        padding: 72px 0;
+      }
+
+      .hero-content {
+        padding: 76px 0 42px;
+      }
+
+      .jump-nav-wrap {
+        top: calc(var(--header-height) + 8px);
+      }
+
+      .exp-copy,
+      .compact-card-content,
+      .langley-copy,
+      .focus-tile {
+        padding: 22px;
+      }
+
+      .exp-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-gallery img {
+        border-right: none;
+        height: 200px;
+      }
+
+      .site-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Shaman Engineering Logo" />
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Experience hero">
+      <div class="stars"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <span class="eyebrow">Experience</span>
+        <h1>Engineering Across Hardware, NASA Programs, and Mission Architecture.</h1>
+        <p class="hero-subtitle">
+          My experience spans real production hardware, aerospace systems engineering, mission concept development, technical leadership, and multidisciplinary design — from managing 500+ CAD models in industry to leading NASA-affiliated mission architecture and lunar systems work.
+        </p>
+
+        <div class="hero-proof">
+          <div class="proof-pill">500+ CAD Models Managed</div>
+          <div class="proof-pill">NASA RASC-AL Finalist</div>
+          <div class="proof-pill">Incoming NASA Langley Intern</div>
+          <div class="proof-pill">15-Member Team Led</div>
+          <div class="proof-pill">Accepted Research Publication</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn" href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+          <a class="btn btn-muted" href="projects.html">View Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="jump-nav-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Navigate Experience</div>
+          <h2 id="jump-nav-heading">Select a Program, Role, or Build Track.</h2>
+          <p>
+            This page is structured as a technical portfolio rather than a resume dump. Jump directly to the experience area you want to review.
+          </p>
+        </div>
+
+        <div class="jump-nav-wrap">
+          <nav class="jump-nav" aria-label="Experience section navigation">
+            <a href="#meltpro">MeltPro</a>
+            <a href="#rascal">RASC-AL</a>
+            <a href="#langley">Langley</a>
+            <a href="#mca">MCA</a>
+            <a href="#npwee">NPWEE</a>
+            <a href="#suits">SUITS</a>
+            <a href="#research">Research</a>
+            <a href="#heighttower">Height Tower</a>
+            <a href="#bellwether">Bellwether</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="focus-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Technical Focus</div>
+          <h2 id="focus-heading">Built Around Systems, Hardware, and Execution.</h2>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-tile">
+            <strong>Mechanical Design</strong>
+            <span>Production-ready CAD, assemblies, detail drawings, revision control, manufacturability, and physical implementation.</span>
+          </div>
+          <div class="focus-tile">
+            <strong>Systems Engineering</strong>
+            <span>Requirements development, trade studies, subsystem integration, interface definition, and mission architecture.</span>
+          </div>
+          <div class="focus-tile">
+            <strong>Technical Leadership</strong>
+            <span>Leading multidisciplinary teams, structuring deliverables, coordinating design efforts, and driving concepts to submission.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="meltpro" aria-labelledby="meltpro-heading">
+      <div class="container">
+        <div class="experience-block">
+          <div class="exp-copy">
+            <div>
+              <span class="exp-label">Industry / Hardware</span>
+              <h3 id="meltpro-heading">MeltPro Inc.</h3>
+              <div class="exp-role">Mechanical Designer &amp; Engineering Lead · Apr 2025 – Present</div>
+
+              <p class="exp-summary">
+                I serve as the primary engineering contributor for industrial adhesive dispensing systems, owning end-to-end product development across mechanical design, CAD management, drawing generation, configuration control, manufacturability, and production implementation.
+              </p>
+
+              <div class="stats-row">
+                <div class="stat-card">
+                  <strong>500+</strong>
+                  <span>Part &amp; Assembly Models</span>
+                </div>
+                <div class="stat-card">
+                  <strong>Sole</strong>
+                  <span>Engineering Resource</span>
+                </div>
+                <div class="stat-card">
+                  <strong>Full Cycle</strong>
+                  <span>Design to Production</span>
+                </div>
+              </div>
+
+              <ul class="exp-bullets">
+                <li>Designed and managed 500+ part and assembly models in SolidWorks, including drawings, revisions, and configuration control.</li>
+                <li>Performed tolerance analysis, design-for-manufacturability reviews, and validation to resolve stack-ups and improve assembly reliability.</li>
+                <li>Developed and iterated mechanical systems to reduce assembly time, improve manufacturability, and support field performance.</li>
+                <li>Worked directly with machining and production teams, supporting CNC workflow and resolving real engineering problems on hardware that gets built.</li>
+              </ul>
+            </div>
+
+            <div class="exp-note">
+              This role matters because it is not theoretical. It put me in direct ownership of hardware development, drawings, shop support, and engineering decisions that affect real production systems.
+            </div>
+          </div>
+
+          <div class="exp-visual">
+            <img class="exp-main-image" src="meltpro-main.jpg" alt="MeltPro machine assembly or CAD render" />
+            <div class="exp-gallery">
+              <img src="meltpro-detail-1.jpg" alt="MeltPro CAD detail or subsystem" />
+              <img src="meltpro-detail-2.jpg" alt="MeltPro drawing, assembly, or hardware photo" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rascal" aria-labelledby="rascal-heading">
+      <div class="container">
+        <div class="experience-block reverse">
+          <div class="exp-visual alt">
+            <img class="exp-main-image" src="aurevo-render.jpg" alt="Project AUREVO cinematic lunar power architecture render" />
+            <div class="exp-gallery">
+              <img src="aurevo-quad-chart.jpg" alt="Project AUREVO quad chart" />
+              <img src="aurevo-proposal-visual.jpg" alt="Project AUREVO proposal architecture or technical page" />
+            </div>
+          </div>
+
+          <div class="exp-copy alt">
+            <div>
+              <span class="exp-label">NASA Competition / Mission Architecture</span>
+              <h3 id="rascal-heading">NASA RASC-AL — Project AUREVO</h3>
+              <div class="exp-role">President &amp; Principal Investigator · May 2025 – Present</div>
+
+              <p class="exp-summary">
+                I led development of Project AUREVO, a lunar surface power architecture selected as a national finalist in NASA’s RASC-AL competition. The concept integrates dual fission reactors, regolith thermal energy storage, and high-voltage DC power distribution for resilient long-duration lunar surface operations.
+              </p>
+
+              <div class="stats-row">
+                <div class="stat-card">
+                  <strong>100 kWe</strong>
+                  <span>Continuous Power Concept</span>
+                </div>
+                <div class="stat-card">
+                  <strong>354 hr</strong>
+                  <span>Lunar Night Survivability</span>
+                </div>
+                <div class="stat-card">
+                  <strong>Finalist</strong>
+                  <span>National NASA Competition</span>
+                </div>
+              </div>
+
+              <ul class="exp-bullets">
+                <li>Developed system architecture and trade studies for a 100 kWe continuous lunar surface power system using dual fission reactors and HVDC distribution.</li>
+                <li>Designed and analyzed regolith-based thermal energy storage for multi-day lunar night survivability, including efficiency and mass optimization.</li>
+                <li>Directed requirements development, risk analysis, and subsystem integration across power, thermal, PMAD, and surface systems.</li>
+                <li>Led the team and overall technical direction of the proposal through finalist selection.</li>
+              </ul>
+            </div>
+
+            <div class="exp-note">
+              AUREVO is one of the clearest examples of how I work: systems-first, technically grounded, and built around architecture decisions that connect concept vision to engineering reality.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="langley" aria-labelledby="langley-heading">
+      <div class="container">
+        <div class="langley-band">
+          <div class="langley-grid">
+            <div class="langley-copy">
+              <span class="exp-label">Incoming Internship / NASA</span>
+              <h3 id="langley-heading">NASA Langley Research Center</h3>
+              <div class="exp-role">Incoming Engineering Intern — Mars Architecture · Summer 2026</div>
+
+              <p class="exp-summary">
+                I was selected for a NASA OSTEM internship within the Space Mission Analysis Branch to support mission-level studies related to human Mars exploration. The role is centered on systems engineering, concept evaluation, trade studies, and multidisciplinary integration.
+              </p>
+
+              <div class="stats-row">
+                <div class="stat-card">
+                  <strong>NASA OSTEM</strong>
+                  <span>Selected Internship</span>
+                </div>
+                <div class="stat-card">
+                  <strong>SMAB</strong>
+                  <span>Space Mission Analysis Branch</span>
+                </div>
+                <div class="stat-card">
+                  <strong>Mars</strong>
+                  <span>Architecture Focus</span>
+                </div>
+              </div>
+
+              <ul class="exp-bullets">
+                <li>Will support mission-level analysis and trade studies for human Mars exploration architectures.</li>
+                <li>Will contribute to systems engineering efforts including concept evaluation, performance analysis, and multidisciplinary integration.</li>
+                <li>Represents the next step in my trajectory from design and mission development into agency-level architecture work.</li>
+              </ul>
+
+              <div class="exp-note">
+                This section is intentionally restrained. It reflects a role I have earned and will begin soon, without overstating work that has not yet been performed.
+              </div>
+            </div>
+
+            <div class="langley-visual">
+              <img src="langley-center.jpg" alt="NASA Langley Research Center" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="mca" aria-labelledby="mca-heading">
+      <div class="container">
+        <div class="experience-block">
+          <div class="exp-copy">
+            <div>
+              <span class="exp-label">NASA Mission Development</span>
+              <h3 id="mca-heading">NASA L’SPACE Mission Concept Academy</h3>
+              <div class="exp-role">Project Manager · Sep 2025 – Dec 2025</div>
+
+              <p class="exp-summary">
+                In NASA’s L’SPACE Mission Concept Academy, I led a 15-member multidisciplinary team through development of an end-to-end planetary mission architecture under NASA systems engineering standards. The work required technical structure, subsystem integration, trade studies, and substantial formal documentation.
+              </p>
+
+              <div class="stats-row">
+                <div class="stat-card">
+                  <strong>15</strong>
+                  <span>Team Members Led</span>
+                </div>
+                <div class="stat-card">
+                  <strong>200+</strong>
+                  <span>Pages of Deliverables</span>
+                </div>
+                <div class="stat-card">
+                  <strong>End-to-End</strong>
+                  <span>Mission Architecture</span>
+                </div>
+              </div>
+
+              <ul class="exp-bullets">
+                <li>Directed subsystem integration across propulsion, thermal, power, communications, payload, and command/data handling.</li>
+                <li>Produced major technical deliverables including requirements, interface definitions, N² diagrams, risk assessments, and architecture documentation.</li>
+                <li>Conducted trade studies on propulsion performance, mass budgets, and thermal stability.</li>
+                <li>Managed program structure, review readiness, and team coordination through formal mission development phases.</li>
+              </ul>
+            </div>
+
+            <div class="exp-note">
+              MCA strengthened my ability to operate at the systems level — not just solving isolated problems, but building a coherent technical architecture across interacting subsystems.
+            </div>
+          </div>
+
+          <div class="exp-visual">
+            <img class="exp-main-image" src="mca-rover.jpg" alt="NASA L'SPACE MCA rover or mission concept render" />
+            <div class="exp-gallery">
+              <img src="mca-pdr.jpg" alt="NASA L'SPACE MCA PDR slide or review material" />
+              <img src="mca-diagram.jpg" alt="NASA L'SPACE MCA architecture or N2 diagram" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="secondary-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Additional Mission &amp; Research Work</div>
+          <h2 id="secondary-heading">Programs, Concepts, and Supporting Workstreams.</h2>
+          <p>
+            These sections expand the rest of the portfolio — including lunar mechanism concept development, AR astronaut interfaces, research publication, and hands-on manufacturing experience.
+          </p>
+        </div>
+
+        <div class="compact-grid">
+          <article class="compact-card" id="npwee">
+            <img src="npwee-main.jpg" alt="NPWEE dust-tolerant interface or concept visual" />
+            <div class="compact-card-content">
+              <span class="exp-label">NASA Proposal Development</span>
+              <h3>NASA L’SPACE NPWEE</h3>
+              <div class="compact-role">Principal Investigator · Jan 2026 – Present</div>
+              <p>
+                I lead proposal design for a dust-tolerant mechanical interface and latching system for lunar surface operations, defining requirements, metrics, test strategy, and concept development under NASA mission constraints.
+              </p>
+              <ul>
+                <li>Defined system requirements, environmental constraints, and load-case expectations for lunar operations.</li>
+                <li>Directed trade studies and concept evaluation for mechanism design and validation pathways.</li>
+                <li>Coordinated team efforts across mechanical design, testing strategy, and systems engineering.</li>
+              </ul>
+              <div class="mini-stats">
+                <span>Mechanism Design</span>
+                <span>Dust Tolerance</span>
+                <span>Concept Validation</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compact-card" id="suits">
+            <img src="suits-ui.jpg" alt="NASA SUITS UI mockup or telemetry visualization" />
+            <div class="compact-card-content">
+              <span class="exp-label">NASA Human Interface Design</span>
+              <h3>NASA SUITS</h3>
+              <div class="compact-role">Project Manager · Sep 2025 – Present</div>
+              <p>
+                I led development of a mixed-reality EVA HUD concept using Microsoft HoloLens 2 for astronaut navigation, telemetry, and mission-critical interface visualization.
+              </p>
+              <ul>
+                <li>Directed AR interface concept design, sensor mapping, and real-time telemetry overlay strategy.</li>
+                <li>Managed proposal structure, subsystem documentation, and integrated workflow for successful submission.</li>
+                <li>Coordinated contributors across AR design, HCI, systems, and UI/UX.</li>
+              </ul>
+              <div class="mini-stats">
+                <span>HoloLens 2</span>
+                <span>Telemetry UI</span>
+                <span>Mixed Reality</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compact-card" id="research">
+            <img src="research-paper.jpg" alt="Accepted reusable launch vehicle research paper" />
+            <div class="compact-card-content">
+              <span class="exp-label">Research / Publication</span>
+              <h3>Compass Research Program</h3>
+              <div class="compact-role">Undergraduate Researcher · May 2024 – Present</div>
+              <p>
+                Through the Compass Research Program, I conducted research on reusable launch vehicles, including propulsion efficiency, thermal constraints, environmental impact, and evaluation of methodological limitations in aerospace studies.
+              </p>
+              <ul>
+                <li>Performed structured literature analysis across reusable launch vehicle technologies and system tradeoffs.</li>
+                <li>Evaluated study assumptions, technology readiness, and research limitations in aerospace publications.</li>
+                <li>First author of an accepted paper on reusable launch vehicle development and future implications.</li>
+              </ul>
+              <div class="mini-stats">
+                <span>Accepted Paper</span>
+                <span>RLV Research</span>
+                <span>First Author</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="compact-card" id="heighttower">
+            <img src="heighttower-main.jpg" alt="Height Tower Systems manufacturing or radio tower image" />
+            <div class="compact-card-content">
+              <span class="exp-label">Manufacturing / Shop Experience</span>
+              <h3>Height Tower Systems</h3>
+              <div class="compact-role">Engineering Intern · Oct 2024 – Jan 2025</div>
+              <p>
+                At Height Tower Systems, I worked in a hands-on manufacturing environment supporting assembly, CNC machining, and fabrication tasks for large-scale radio tower systems.
+              </p>
+              <ul>
+                <li>Assisted in manufacturing and assembly of 12+ large-scale radio tower systems.</li>
+                <li>Supported CNC machining of 50+ custom components, including setup, tooling changes, and basic G-code execution.</li>
+                <li>Executed 100+ fabrication tasks while maintaining production timelines and part-quality expectations.</li>
+              </ul>
+              <div class="mini-stats">
+                <span>12+ Towers</span>
+                <span>50+ Components</span>
+                <span>100+ Fabrication Tasks</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="bellwether" aria-labelledby="bellwether-heading">
+      <div class="container">
+        <div class="experience-block reverse">
+          <div class="exp-visual alt">
+            <img class="exp-main-image" src="bellwether-main.jpg" alt="Bellwether systems, automation, or CRM visual" />
+            <div class="exp-gallery">
+              <img src="bellwether-automation.jpg" alt="Bellwether automation flow or technical system" />
+              <img src="bellwether-dashboard.jpg" alt="Bellwether dashboard or CRM platform" />
+            </div>
+          </div>
+
+          <div class="exp-copy alt">
+            <div>
+              <span class="exp-label">Systems / Automation</span>
+              <h3 id="bellwether-heading">The Bellwether Alliance</h3>
+              <div class="exp-role">Technical Director · May 2021 – Feb 2024</div>
+
+              <p class="exp-summary">
+                Before my current aerospace-heavy work, I led technical systems and automation efforts for The Bellwether Alliance, managing CRM infrastructure, onboarding workflows, and organization-wide automation systems.
+              </p>
+
+              <div class="stats-row">
+                <div class="stat-card">
+                  <strong>3000+</strong>
+                  <span>CRM Contacts Managed</span>
+                </div>
+                <div class="stat-card">
+                  <strong>200+</strong>
+                  <span>Automations Built</span>
+                </div>
+                <div class="stat-card">
+                  <strong>Hundreds</strong>
+                  <span>Hours Saved</span>
+                </div>
+              </div>
+
+              <ul class="exp-bullets">
+                <li>Managed the organization’s CRM platform and technical systems infrastructure.</li>
+                <li>Designed and deployed automations across departments to reduce manual workload and improve operational flow.</li>
+                <li>Owned technical workflows supporting onboarding, member experience, and organizational efficiency.</li>
+              </ul>
+            </div>
+
+            <div class="exp-note">
+              While it is not aerospace work, this role still matters because it shows early technical ownership, process design, and systems thinking — traits that carried directly into later engineering leadership.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Interested in My Work Across Aerospace Systems and Hardware Development?</h2>
+        <p>
+          Explore my projects, review my resume, or reach out directly for engineering, internship, or collaboration opportunities.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn" href="projects.html">View Projects</a>
+          <a class="btn btn-muted" href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">Open Resume</a>
+          <a class="btn btn-muted" href="mailto:naiyar@shamanengineering.com">Contact Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer-inner">
+      <p>© 2026 Naiyar Shaman</p>
+
+      <div class="footer-links">
+        <a href="mailto:naiyar@shamanengineering.com">Email</a>
+        <a href="https://www.linkedin.com/in/naiyarshaman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
