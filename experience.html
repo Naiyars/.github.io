@@ -159,13 +159,13 @@
 
     .hero {
       position: relative;
-      min-height: 68vh;
+      min-height: 62vh;
       overflow: hidden;
       display: flex;
       align-items: center;
       border-bottom: 1px solid var(--line);
       background:
-        radial-gradient(circle at 50% 32%, rgba(255,255,255,0.08), transparent 28%),
+        radial-gradient(circle at 45% 28%, rgba(255,255,255,0.07), transparent 30%),
         transparent;
     }
 
@@ -221,7 +221,7 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.38));
+      background: linear-gradient(to bottom, rgba(0,0,0,0.14), rgba(0,0,0,0.34));
       z-index: 1;
       pointer-events: none;
     }
@@ -231,90 +231,48 @@
       z-index: 2;
       width: min(100% - 32px, var(--max-width));
       margin: 0 auto;
-      padding: 84px 0 54px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      color: rgba(255,255,255,0.72);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.78rem;
-      font-weight: 700;
+      padding: 60px 0 48px;
     }
 
     .hero h1 {
-      max-width: 980px;
-      font-size: clamp(3rem, 7.4vw, 6.2rem);
-      line-height: 0.94;
+      max-width: 1080px;
+      font-size: clamp(2.6rem, 7vw, 5.8rem);
+      line-height: 0.92;
       font-weight: 700;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.055em;
       text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero-subtitle {
-      max-width: 860px;
-      font-size: clamp(1rem, 2vw, 1.18rem);
-      color: var(--muted);
-      margin-bottom: 26px;
+      margin-bottom: 28px;
+      text-wrap: balance;
     }
 
     .hero-proof {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
-      margin-bottom: 28px;
+      max-width: 1120px;
     }
 
     .proof-pill {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.04);
-      padding: 11px 14px;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-      color: rgba(255,255,255,0.86);
-    }
-
-    .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      position: relative;
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 170px;
-      padding: 15px 24px;
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      font-weight: 700;
-      transition:
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      background: #fff;
-      color: #000;
-      transform: translateY(-1px);
-    }
-
-    .btn-muted {
-      border-color: rgba(255,255,255,0.18);
+      min-height: 66px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.03);
+      padding: 14px 16px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .proof-pill:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.28);
+      transform: translateY(-1px);
     }
 
     .section {
@@ -772,6 +730,44 @@
       margin-bottom: 26px;
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 15px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: #fff;
+      color: #000;
+      transform: translateY(-1px);
+    }
+
+    .btn-muted {
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.03);
+    }
+
     .site-footer {
       padding: 28px 0 38px;
       background: transparent;
@@ -806,6 +802,7 @@
     }
 
     @media (max-width: 1100px) {
+      .hero-proof,
       .experience-block,
       .experience-block.reverse,
       .langley-grid,
@@ -865,13 +862,22 @@
         font-size: 0.72rem;
       }
 
-      .section,
-      .cta-band {
-        padding: 72px 0;
+      .hero {
+        min-height: 56vh;
       }
 
       .hero-content {
-        padding: 76px 0 42px;
+        padding: 40px 0 36px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.2rem, 10vw, 4rem);
+        margin-bottom: 20px;
+      }
+
+      .section,
+      .cta-band {
+        padding: 72px 0;
       }
 
       .jump-nav-wrap {
@@ -926,23 +932,13 @@
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <span class="eyebrow">Experience</span>
         <h1>Engineering Across Hardware, NASA Programs, and Mission Architecture.</h1>
-        <p class="hero-subtitle">
-          My experience spans real production hardware, aerospace systems engineering, mission concept development, technical leadership, and multidisciplinary design — from managing 500+ CAD models in industry to leading NASA-affiliated mission architecture and lunar systems work.
-        </p>
 
         <div class="hero-proof">
-          <div class="proof-pill">500+ CAD Models Managed</div>
-          <div class="proof-pill">NASA RASC-AL Finalist</div>
-          <div class="proof-pill">Incoming NASA Langley Intern</div>
-          <div class="proof-pill">15-Member Team Led</div>
-          <div class="proof-pill">Accepted Research Publication</div>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn" href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
-          <a class="btn btn-muted" href="projects.html">View Projects</a>
+          <div class="proof-pill">Incoming NASA Intern</div>
+          <div class="proof-pill">Aerospace &amp; Systems Engineering Student</div>
+          <div class="proof-pill">Lead Designer @ MeltPro</div>
+          <div class="proof-pill">NASA RASC-AL &amp; L’SPACE (MCA, NPWEE)</div>
         </div>
       </div>
     </section>
@@ -1158,13 +1154,13 @@
               <div class="exp-role">Project Manager · Sep 2025 – Dec 2025</div>
 
               <p class="exp-summary">
-                In NASA’s L’SPACE Mission Concept Academy, I led a 15-member multidisciplinary team through development of an end-to-end planetary mission architecture under NASA systems engineering standards. The work required technical structure, subsystem integration, trade studies, and substantial formal documentation.
+                In NASA’s L’SPACE Mission Concept Academy, I led a multidisciplinary team through development of an end-to-end planetary mission architecture under NASA systems engineering standards. The work required technical structure, subsystem integration, trade studies, and substantial formal documentation.
               </p>
 
               <div class="stats-row">
                 <div class="stat-card">
-                  <strong>15</strong>
-                  <span>Team Members Led</span>
+                  <strong>Mission</strong>
+                  <span>Architecture Development</span>
                 </div>
                 <div class="stat-card">
                   <strong>200+</strong>
@@ -1172,7 +1168,7 @@
                 </div>
                 <div class="stat-card">
                   <strong>End-to-End</strong>
-                  <span>Mission Architecture</span>
+                  <span>Systems Integration</span>
                 </div>
               </div>
 
