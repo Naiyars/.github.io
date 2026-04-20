@@ -157,129 +157,15 @@
       transform-origin: left center;
     }
 
-    .hero {
-      position: relative;
-      min-height: 62vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 45% 28%, rgba(255,255,255,0.07), transparent 30%),
-        transparent;
-    }
-
-    .stars {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .stars::before,
-    .stars::after {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      background-repeat: repeat;
-      animation: driftStars linear infinite;
-    }
-
-    .stars::before {
-      background-image:
-        radial-gradient(1.5px 1.5px at 40px 60px, rgba(255,255,255,0.9) 100%, transparent 0),
-        radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.7) 100%, transparent 0),
-        radial-gradient(1.2px 1.2px at 220px 40px, rgba(255,255,255,0.8) 100%, transparent 0),
-        radial-gradient(1px 1px at 320px 180px, rgba(255,255,255,0.65) 100%, transparent 0),
-        radial-gradient(1.4px 1.4px at 420px 100px, rgba(255,255,255,0.85) 100%, transparent 0);
-      background-size: 480px 240px;
-      opacity: 0.22;
-      animation-duration: 160s;
-    }
-
-    .stars::after {
-      background-image:
-        radial-gradient(1px 1px at 80px 40px, rgba(255,255,255,0.55) 100%, transparent 0),
-        radial-gradient(1.2px 1.2px at 200px 140px, rgba(255,255,255,0.45) 100%, transparent 0),
-        radial-gradient(1px 1px at 300px 90px, rgba(255,255,255,0.5) 100%, transparent 0),
-        radial-gradient(1.3px 1.3px at 380px 200px, rgba(255,255,255,0.4) 100%, transparent 0);
-      background-size: 520px 260px;
-      opacity: 0.10;
-      animation-duration: 260s;
-    }
-
-    @keyframes driftStars {
-      from {
-        transform: translate3d(0, 0, 0);
-      }
-      to {
-        transform: translate3d(-120px, -80px, 0);
-      }
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.14), rgba(0,0,0,0.34));
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(100% - 32px, var(--max-width));
-      margin: 0 auto;
-      padding: 60px 0 48px;
-    }
-
-    .hero h1 {
-      max-width: 1080px;
-      font-size: clamp(2.6rem, 7vw, 5.8rem);
-      line-height: 0.92;
-      font-weight: 700;
-      letter-spacing: -0.055em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      text-wrap: balance;
-    }
-
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      max-width: 1120px;
-    }
-
-    .proof-pill {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 66px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.03);
-      padding: 14px 16px;
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      font-weight: 700;
-      color: rgba(255,255,255,0.9);
-      transition: background var(--transition), border-color var(--transition), transform var(--transition);
-    }
-
-    .proof-pill:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.28);
-      transform: translateY(-1px);
-    }
-
     .section {
       position: relative;
       padding: 104px 0;
       border-bottom: 1px solid var(--line);
       background: transparent;
+    }
+
+    .section:first-of-type {
+      padding-top: 136px;
     }
 
     .section:last-of-type {
@@ -319,8 +205,8 @@
       position: sticky;
       top: calc(var(--header-height) + 10px);
       z-index: 60;
-      margin-top: -34px;
-      margin-bottom: 44px;
+      margin-top: 0;
+      margin-bottom: 6px;
     }
 
     .jump-nav {
@@ -802,7 +688,6 @@
     }
 
     @media (max-width: 1100px) {
-      .hero-proof,
       .experience-block,
       .experience-block.reverse,
       .langley-grid,
@@ -835,8 +720,7 @@
         --header-height: 88px;
       }
 
-      .container,
-      .hero-content {
+      .container {
         width: min(100% - 20px, var(--max-width));
       }
 
@@ -862,22 +746,13 @@
         font-size: 0.72rem;
       }
 
-      .hero {
-        min-height: 56vh;
-      }
-
-      .hero-content {
-        padding: 40px 0 36px;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.2rem, 10vw, 4rem);
-        margin-bottom: 20px;
-      }
-
       .section,
       .cta-band {
         padding: 72px 0;
+      }
+
+      .section:first-of-type {
+        padding-top: 110px;
       }
 
       .jump-nav-wrap {
@@ -927,29 +802,13 @@
   </header>
 
   <main>
-    <section class="hero" aria-label="Experience hero">
-      <div class="stars"></div>
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <h1>Engineering Across Hardware, NASA Programs, and Mission Architecture.</h1>
-
-        <div class="hero-proof">
-          <div class="proof-pill">Incoming NASA Intern</div>
-          <div class="proof-pill">Aerospace &amp; Systems Engineering Student</div>
-          <div class="proof-pill">Lead Designer @ MeltPro</div>
-          <div class="proof-pill">NASA RASC-AL &amp; L’SPACE (MCA, NPWEE)</div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" aria-labelledby="jump-nav-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-kicker">Navigate Experience</div>
+          <div class="section-kicker">Experience</div>
           <h2 id="jump-nav-heading">Select a Program, Role, or Build Track.</h2>
           <p>
-            This page is structured as a technical portfolio rather than a resume dump. Jump directly to the experience area you want to review.
+            Explore work across hardware design, NASA programs, mission architecture, research, and technical leadership. Jump directly to the area you want to review.
           </p>
         </div>
 
@@ -968,6 +827,7 @@
         </div>
       </div>
     </section>
+
     <section class="section" id="meltpro" aria-labelledby="meltpro-heading">
       <div class="container">
         <div class="experience-block">
