@@ -335,13 +335,28 @@
     }
 
     .exp-gallery img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: #000;
-    }
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #000;
+}
+
+/* ADD THIS RIGHT UNDER */
+.exp-detail {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #000;
+}
+
+.exp-detail.drawing-image {
+  object-fit: contain;
+  height: 280px;
+  padding: 12px;
+  background: #f3f3f3;
+}
 
     .exp-gallery img:nth-child(2n) {
       border-right: none;
