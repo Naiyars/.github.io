@@ -216,7 +216,7 @@
     .jump-nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       padding: 0;
       border: none;
       background: transparent;
@@ -226,14 +226,15 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 14px;
+      padding: 9px 12px;
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.03);
       color: rgba(255,255,255,0.82);
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      font-size: 0.66rem;
       font-weight: 700;
+      white-space: nowrap;
       transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
     }
 
@@ -381,6 +382,12 @@
       text-transform: uppercase;
       margin-bottom: 10px;
       max-width: 16ch;
+    }
+
+    .exp-copy h3.exp-title-wide {
+      max-width: none;
+      white-space: nowrap;
+      font-size: clamp(1.85rem, 2.85vw, 2.85rem);
     }
 
     .exp-role {
@@ -730,6 +737,10 @@
         grid-template-columns: 1fr;
       }
 
+      .exp-copy h3.exp-title-wide {
+        white-space: normal;
+      }
+
       .exp-visual,
       .exp-visual.alt,
       .langley-visual {
@@ -790,6 +801,15 @@
 
       .jump-nav-wrap {
         top: calc(var(--header-height) + 8px);
+      }
+
+      .jump-nav {
+        gap: 8px;
+      }
+
+      .jump-nav a {
+        padding: 8px 10px;
+        font-size: 0.62rem;
       }
 
       .exp-copy,
@@ -981,7 +1001,7 @@
             <div>
               <span class="exp-label">NASA Competition / Mission Architecture</span>
 
-              <h3 id="rascal-heading">NASA RASC-AL — Project AUREVO</h3>
+              <h3 id="rascal-heading" class="exp-title-wide">NASA RASC-AL — Project AUREVO</h3>
 
               <div class="exp-role">
                 President &amp; Principal Investigator · May 2025 – Present
@@ -1027,10 +1047,6 @@
               </ul>
 
               <a class="mini-btn" href="projects/aurevo.html">Learn More</a>
-            </div>
-
-            <div class="exp-note">
-              AUREVO is one of the clearest examples of how I work: systems-first, technically grounded, and built around architecture decisions that connect concept vision to engineering reality.
             </div>
           </div>
         </div>
