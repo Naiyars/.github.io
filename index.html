@@ -55,8 +55,7 @@
     }
 
     img,
-    video,
-    svg {
+    video {
       display: block;
       max-width: 100%;
     }
@@ -161,7 +160,7 @@
     }
 
     /* =========================
-       HERO / TITLE BLOCK
+       HERO
     ========================= */
 
     .hero {
@@ -256,26 +255,6 @@
       max-width: 620px;
     }
 
-    .hero-kicker {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 14px;
-      color: rgba(255,255,255,0.82);
-      text-transform: uppercase;
-      letter-spacing: 0.42em;
-      font-size: clamp(0.72rem, 1vw, 0.9rem);
-      font-weight: 500;
-      margin-bottom: 20px;
-    }
-
-    .hero-kicker::after {
-      content: "";
-      width: 72px;
-      height: 1px;
-      background: rgba(255,255,255,0.55);
-    }
-
     .hero h1 {
       max-width: 900px;
       font-size: clamp(4.2rem, 8.4vw, 8.6rem);
@@ -296,6 +275,15 @@
       font-size: clamp(0.78rem, 1.15vw, 0.98rem);
       font-weight: 500;
       margin-bottom: 18px;
+    }
+
+    .hero-tagline::after {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 1px;
+      margin-top: 18px;
+      background: rgba(255,255,255,0.55);
     }
 
     .hero-subtitle {
@@ -340,284 +328,50 @@
       box-shadow: 0 0 28px rgba(255,255,255,0.16);
     }
 
-    .hero-visual {
+    .hero-image-panel {
       position: relative;
       min-height: 520px;
+      overflow: hidden;
       border-left: 1px solid rgba(255,255,255,0.12);
       border-right: 1px solid rgba(255,255,255,0.08);
-      overflow: hidden;
+      background: #000;
       isolation: isolate;
-      opacity: 0.96;
-      background:
-        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
-      background-size: 72px 72px;
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 10%, black 92%, transparent);
     }
 
-    .hero-visual::before {
-      content: "";
+    .hero-display-image {
       position: absolute;
       inset: 0;
-      z-index: 0;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.14), transparent 26%),
-        radial-gradient(circle at 60% 38%, rgba(255,255,255,0.08), transparent 34%),
-        linear-gradient(to bottom, transparent, rgba(0,0,0,0.84));
-      pointer-events: none;
-    }
-
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 5;
-      background:
-        linear-gradient(to bottom, rgba(255,255,255,0.04), transparent 20%, transparent 80%, rgba(255,255,255,0.03)),
-        radial-gradient(circle at 50% 50%, transparent 28%, rgba(0,0,0,0.7) 78%);
-      pointer-events: none;
-    }
-
-    .hud-line {
-      position: absolute;
-      background: rgba(255,255,255,0.16);
-      z-index: 2;
-    }
-
-    .hud-line.horizontal {
-      left: 6%;
-      right: 6%;
-      top: 50%;
-      height: 1px;
-    }
-
-    .hud-line.vertical {
-      top: 8%;
-      bottom: 8%;
-      left: 50%;
-      width: 1px;
-    }
-
-    .hud-corner {
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      z-index: 4;
-      opacity: 0.78;
-    }
-
-    .hud-corner::before,
-    .hud-corner::after {
-      content: "";
-      position: absolute;
-      background: rgba(255,255,255,0.78);
-    }
-
-    .hud-corner::before {
-      width: 18px;
-      height: 1px;
-      top: 8px;
-      left: 0;
-    }
-
-    .hud-corner::after {
-      width: 1px;
-      height: 18px;
-      left: 8px;
-      top: 0;
-    }
-
-    .hud-corner.tl {
-      top: 58px;
-      left: 48px;
-    }
-
-    .hud-corner.tr {
-      top: 58px;
-      right: 48px;
-    }
-
-    .hud-corner.bl {
-      bottom: 58px;
-      left: 48px;
-    }
-
-    .hud-corner.br {
-      bottom: 58px;
-      right: 48px;
-    }
-
-    .orbit-ring {
-      position: absolute;
-      z-index: 1;
-      left: 50%;
-      top: 50%;
-      width: 540px;
-      height: 210px;
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 50%;
-      transform: translate(-50%, -50%) rotate(-18deg);
-      animation: orbitSpin 22s linear infinite;
-      box-shadow:
-        inset 0 0 38px rgba(255,255,255,0.04),
-        0 0 24px rgba(255,255,255,0.04);
-    }
-
-    .orbit-ring.ring-2 {
-      width: 620px;
-      height: 270px;
-      opacity: 0.42;
-      animation-duration: 34s;
-      animation-direction: reverse;
-    }
-
-    .orbit-ring.ring-3 {
-      width: 470px;
-      height: 156px;
-      opacity: 0.28;
-      animation-duration: 18s;
-    }
-
-    @keyframes orbitSpin {
-      from {
-        transform: translate(-50%, -50%) rotate(-18deg);
-      }
-
-      to {
-        transform: translate(-50%, -50%) rotate(342deg);
-      }
-    }
-
-    .scan-beam {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 2px;
-      height: 330px;
-      z-index: 1;
-      transform-origin: top center;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.42), transparent);
-      opacity: 0.18;
-      animation: scannerSweep 7s linear infinite;
-    }
-
-    @keyframes scannerSweep {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .satellite-stage {
-      position: absolute;
-      z-index: 3;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center right;
+      opacity: 0.92;
+      transform: scale(1.04);
+      animation: heroImageDrift 18s ease-in-out infinite alternate;
       filter:
-        drop-shadow(0 0 18px rgba(255,255,255,0.18))
-        drop-shadow(0 22px 42px rgba(0,0,0,0.8));
+        contrast(1.08)
+        brightness(0.92);
     }
 
-    .satellite-blueprint {
-      width: min(92%, 700px);
-      opacity: 0.88;
-      animation: satelliteFloat 5.5s ease-in-out infinite;
+    .hero-image-vignette {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background:
+        radial-gradient(circle at 65% 48%, transparent 0%, rgba(0,0,0,0.08) 32%, rgba(0,0,0,0.72) 82%),
+        linear-gradient(to right, rgba(0,0,0,0.82), rgba(0,0,0,0.18) 38%, rgba(0,0,0,0.12) 70%, rgba(0,0,0,0.5)),
+        linear-gradient(to bottom, rgba(0,0,0,0.12), rgba(0,0,0,0.55));
     }
 
-    .satellite-spin {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: satelliteSpin 28s linear infinite;
-    }
-
-    .hero-visual:hover .satellite-spin {
-      animation-duration: 10s;
-    }
-
-    @keyframes satelliteFloat {
-      0%,
-      100% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-
-      50% {
-        transform: translate3d(0, -14px, 0) scale(1.015);
-      }
-    }
-
-    @keyframes satelliteSpin {
+    @keyframes heroImageDrift {
       from {
-        transform: rotate(0deg);
+        transform: scale(1.04) translate3d(0, 0, 0);
       }
 
       to {
-        transform: rotate(360deg);
-      }
-    }
-
-    .hud-label {
-      position: absolute;
-      z-index: 6;
-      right: 54px;
-      bottom: 48px;
-      color: rgba(255,255,255,0.42);
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.68rem;
-      font-weight: 600;
-    }
-
-    .hud-label.left {
-      left: 54px;
-      right: auto;
-      top: 48px;
-      bottom: auto;
-    }
-
-    .data-dot {
-      position: absolute;
-      z-index: 6;
-      width: 4px;
-      height: 4px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.75);
-      box-shadow: 0 0 16px rgba(255,255,255,0.65);
-      animation: dataPulse 2.4s ease-in-out infinite;
-    }
-
-    .data-dot.dot-1 {
-      left: 22%;
-      top: 28%;
-      animation-delay: 0s;
-    }
-
-    .data-dot.dot-2 {
-      right: 19%;
-      top: 35%;
-      animation-delay: 0.6s;
-    }
-
-    .data-dot.dot-3 {
-      left: 35%;
-      bottom: 25%;
-      animation-delay: 1.2s;
-    }
-
-    @keyframes dataPulse {
-      0%,
-      100% {
-        opacity: 0.18;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: 0.9;
-        transform: scale(1.8);
+        transform: scale(1.1) translate3d(-18px, -8px, 0);
       }
     }
 
@@ -761,7 +515,10 @@
       background: rgba(255,255,255,0.03);
       padding: 14px 10px;
       min-height: 112px;
-      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
     }
 
     .stat:hover {
@@ -805,7 +562,10 @@
       border: 1px solid var(--line);
       background: var(--bg-soft);
       padding: 28px;
-      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+      transition:
+        border-color var(--transition),
+        background var(--transition),
+        transform var(--transition);
     }
 
     .experience-card:hover {
@@ -884,8 +644,8 @@
 
     .contact-band {
       padding: 120px 0;
-      background:
-        linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      background: #000;
+      border-bottom: 1px solid var(--line);
     }
 
     .contact-block {
@@ -896,6 +656,7 @@
       text-align: center;
       min-height: 60vh;
       gap: 20px;
+      background: #000;
     }
 
     .contact-band h2 {
@@ -915,7 +676,7 @@
 
     .site-footer {
       padding: 28px 0 38px;
-      background: transparent;
+      background: #000;
     }
 
     .site-footer-inner {
@@ -959,7 +720,7 @@
         max-width: 760px;
       }
 
-      .hero-visual {
+      .hero-image-panel {
         min-height: 420px;
         border-left: 1px solid rgba(255,255,255,0.10);
         border-right: 1px solid rgba(255,255,255,0.10);
@@ -1034,10 +795,6 @@
         font-size: clamp(4rem, 20vw, 6rem);
       }
 
-      .hero-kicker {
-        letter-spacing: 0.22em;
-      }
-
       .hero-tagline {
         letter-spacing: 0.2em;
       }
@@ -1051,33 +808,12 @@
         width: 100%;
       }
 
-      .hero-visual {
+      .hero-image-panel {
         min-height: 320px;
       }
 
-      .hud-corner.tl {
-        top: 28px;
-        left: 24px;
-      }
-
-      .hud-corner.tr {
-        top: 28px;
-        right: 24px;
-      }
-
-      .hud-corner.bl {
-        bottom: 28px;
-        left: 24px;
-      }
-
-      .hud-corner.br {
-        bottom: 28px;
-        right: 24px;
-      }
-
-      .hud-label,
-      .hud-label.left {
-        display: none;
+      .hero-display-image {
+        object-position: center center;
       }
 
       .section,
@@ -1143,8 +879,6 @@
 
       <div class="hero-content hero-grid">
         <div class="hero-copy">
-          <p class="hero-kicker">Engineering Student</p>
-
           <h1>
             Naiyar<br />
             Shaman
@@ -1164,118 +898,9 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hud-line horizontal"></div>
-          <div class="hud-line vertical"></div>
-
-          <div class="hud-corner tl"></div>
-          <div class="hud-corner tr"></div>
-          <div class="hud-corner bl"></div>
-          <div class="hud-corner br"></div>
-
-          <div class="orbit-ring ring-1"></div>
-          <div class="orbit-ring ring-2"></div>
-          <div class="orbit-ring ring-3"></div>
-
-          <div class="scan-beam"></div>
-
-          <div class="data-dot dot-1"></div>
-          <div class="data-dot dot-2"></div>
-          <div class="data-dot dot-3"></div>
-
-          <p class="hud-label left">Aerospace Systems</p>
-          <p class="hud-label">Mission Architecture</p>
-
-          <div class="satellite-stage">
-            <svg
-              class="satellite-blueprint"
-              viewBox="0 0 760 460"
-              role="img"
-              aria-label="Animated satellite blueprint"
-            >
-              <defs>
-                <filter id="satGlow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur stdDeviation="2.5" result="blur" />
-                  <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <g
-                class="satellite-spin"
-                filter="url(#satGlow)"
-                fill="none"
-                stroke="rgba(255,255,255,0.78)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <g transform="translate(380 230) rotate(-18)">
-                  <!-- Left solar array boom -->
-                  <line x1="-88" y1="0" x2="-168" y2="0" opacity="0.85" />
-
-                  <!-- Left solar panel -->
-                  <g transform="translate(-342 -76)">
-                    <rect x="0" y="0" width="176" height="152" opacity="0.82" />
-                    <line x1="35" y1="0" x2="35" y2="152" opacity="0.34" />
-                    <line x1="70" y1="0" x2="70" y2="152" opacity="0.34" />
-                    <line x1="105" y1="0" x2="105" y2="152" opacity="0.34" />
-                    <line x1="140" y1="0" x2="140" y2="152" opacity="0.34" />
-                    <line x1="0" y1="38" x2="176" y2="38" opacity="0.34" />
-                    <line x1="0" y1="76" x2="176" y2="76" opacity="0.34" />
-                    <line x1="0" y1="114" x2="176" y2="114" opacity="0.34" />
-                    <path d="M0 0 L176 152" opacity="0.18" />
-                    <path d="M176 0 L0 152" opacity="0.18" />
-                  </g>
-
-                  <!-- Main satellite bus -->
-                  <g>
-                    <rect x="-82" y="-58" width="164" height="116" rx="16" opacity="0.92" />
-                    <rect x="-56" y="-34" width="112" height="68" rx="10" opacity="0.4" />
-                    <circle cx="0" cy="0" r="34" opacity="0.72" />
-                    <circle cx="0" cy="0" r="16" opacity="0.82" />
-                    <line x1="-82" y1="-18" x2="82" y2="-18" opacity="0.28" />
-                    <line x1="-82" y1="18" x2="82" y2="18" opacity="0.28" />
-                    <line x1="-28" y1="-58" x2="-28" y2="58" opacity="0.28" />
-                    <line x1="28" y1="-58" x2="28" y2="58" opacity="0.28" />
-                  </g>
-
-                  <!-- Right solar array boom -->
-                  <line x1="88" y1="0" x2="168" y2="0" opacity="0.85" />
-
-                  <!-- Right solar panel -->
-                  <g transform="translate(166 -76)">
-                    <rect x="0" y="0" width="176" height="152" opacity="0.82" />
-                    <line x1="35" y1="0" x2="35" y2="152" opacity="0.34" />
-                    <line x1="70" y1="0" x2="70" y2="152" opacity="0.34" />
-                    <line x1="105" y1="0" x2="105" y2="152" opacity="0.34" />
-                    <line x1="140" y1="0" x2="140" y2="152" opacity="0.34" />
-                    <line x1="0" y1="38" x2="176" y2="38" opacity="0.34" />
-                    <line x1="0" y1="76" x2="176" y2="76" opacity="0.34" />
-                    <line x1="0" y1="114" x2="176" y2="114" opacity="0.34" />
-                    <path d="M0 0 L176 152" opacity="0.18" />
-                    <path d="M176 0 L0 152" opacity="0.18" />
-                  </g>
-
-                  <!-- Forward instrument / telescope -->
-                  <g transform="translate(0 -58)">
-                    <line x1="0" y1="0" x2="0" y2="-42" opacity="0.6" />
-                    <path d="M-30 -42 H30 L18 -92 H-18 Z" opacity="0.82" />
-                    <ellipse cx="0" cy="-92" rx="18" ry="7" opacity="0.82" />
-                  </g>
-
-                  <!-- Aft antenna -->
-                  <g transform="translate(0 58)">
-                    <line x1="0" y1="0" x2="0" y2="52" opacity="0.55" />
-                    <path d="M-46 86 Q0 38 46 86" opacity="0.72" />
-                    <path d="M-26 72 Q0 48 26 72" opacity="0.42" />
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </div>
+        <div class="hero-image-panel" aria-hidden="true">
+          <img src="hero-visual.png" alt="" class="hero-display-image" />
+          <div class="hero-image-vignette"></div>
         </div>
       </div>
     </section>
