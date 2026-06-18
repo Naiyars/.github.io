@@ -628,42 +628,15 @@
     .site-footer-content {
       position: relative;
       z-index: 1;
-      padding: 76px 0 32px;
+      padding: 46px 0 24px;
     }
 
     .footer-row {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      align-items: center;
-      gap: 48px;
-      padding-bottom: 88px;
-    }
-
-    .footer-brand-block {
       display: flex;
       align-items: center;
-      gap: 18px;
-    }
-
-    .footer-mark {
-      font-size: 2rem;
-      line-height: 1;
-      filter: drop-shadow(0 0 16px rgba(255,255,255,0.35));
-    }
-
-    .footer-name h3 {
-      font-size: clamp(1.35rem, 2vw, 2rem);
-      font-weight: 500;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .footer-name p {
-      color: rgba(255,255,255,0.58);
-      font-size: 0.78rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
+      justify-content: space-between;
+      gap: 42px;
+      padding-bottom: 42px;
     }
 
     .footer-nav {
@@ -719,7 +692,7 @@
 
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.34);
-      padding-top: 24px;
+      padding-top: 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -729,7 +702,7 @@
 
     .footer-bottom p,
     .footer-bottom span {
-      font-size: 0.92rem;
+      font-size: 0.86rem;
       letter-spacing: 0.04em;
     }
 
@@ -738,7 +711,7 @@
       align-items: center;
       justify-content: flex-end;
       color: rgba(255,255,255,0.8);
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       filter: drop-shadow(0 0 12px rgba(255,255,255,0.35));
     }
 
@@ -766,10 +739,10 @@
       }
 
       .footer-row {
-        grid-template-columns: 1fr;
-        align-items: start;
+        flex-direction: column;
+        align-items: flex-start;
         gap: 28px;
-        padding-bottom: 56px;
+        padding-bottom: 34px;
       }
 
       .footer-nav {
@@ -881,15 +854,11 @@
       }
 
       .site-footer-content {
-        padding: 52px 0 28px;
+        padding: 38px 0 22px;
       }
 
-      .footer-brand-block {
-        align-items: flex-start;
-      }
-
-      .footer-name h3 {
-        letter-spacing: 0.16em;
+      .footer-row {
+        padding-bottom: 28px;
       }
 
       .footer-nav {
@@ -1185,15 +1154,6 @@
   <footer class="site-footer">
     <div class="container site-footer-content">
       <div class="footer-row">
-        <div class="footer-brand-block">
-          <div class="footer-mark" aria-hidden="true">✦</div>
-
-          <div class="footer-name">
-            <h3>Naiyar Shaman</h3>
-            <p>Aerospace Systems Engineer</p>
-          </div>
-        </div>
-
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="about.html">About</a>
           <a href="experience.html">Experience</a>
@@ -1209,7 +1169,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026 Naiyar Shaman. All rights reserved.</p>
+        <p>© 2026. All rights reserved.</p>
 
         <div class="footer-bottom-mark">
           <span aria-hidden="true">✦</span>
