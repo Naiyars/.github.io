@@ -215,6 +215,1252 @@
       from {
         transform: translate3d(0, 0, 0);
       }
+
+      to {
+        transform: translate3d(-120px, -80px, 0);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+      padding: 96px 0 74px;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      font-size: clamp(4.2rem, 8.4vw, 8.6rem);
+      line-height: 0.78;
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      text-shadow:
+        0 0 28px rgba(255,255,255,0.08),
+        0 18px 48px rgba(0,0,0,0.72);
+    }
+
+    .hero-subtitle {
+      max-width: 610px;
+      font-size: clamp(1rem, 1.65vw, 1.16rem);
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 170px;
+      padding: 15px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: #fff;
+      color: #000;
+      transform: translateY(-1px);
+      box-shadow: 0 0 28px rgba(255,255,255,0.16);
+    }
+
+    /* GENERAL SECTIONS */
+
+    .section {
+      position: relative;
+      padding: 108px 0;
+      border-bottom: 1px solid var(--line);
+      background: #000;
+    }
+
+    .section:last-of-type {
+      border-bottom: none;
+    }
+
+    .feature-header {
+      width: 100%;
+      max-width: 1240px;
+      margin-bottom: 34px;
+    }
+
+    .feature-header h2 {
+      font-size: clamp(3.2rem, 5.8vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      max-width: 20ch;
+    }
+
+    .feature-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 18px;
+    }
+
+    .feature-header p {
+      max-width: 1120px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* ABOUT */
+
+    .about-section {
+      padding: 120px 0;
+      background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.035), transparent 34%),
+        #000;
+    }
+
+    .about-brief {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 42vh;
+    }
+
+    .about-brief-content {
+      width: min(100%, 880px);
+      margin: 0 auto;
+    }
+
+    .about-brief-content h2 {
+      font-size: clamp(2.6rem, 5vw, 4.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      text-transform: uppercase;
+      margin: 0 auto 22px;
+    }
+
+    .about-brief-content h2::after {
+      content: "";
+      display: block;
+      width: 74px;
+      height: 1px;
+      margin: 18px auto 0;
+      background: rgba(255,255,255,0.62);
+    }
+
+    .about-brief-content p {
+      max-width: 820px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.4vw, 1.12rem);
+      line-height: 1.68;
+    }
+
+    .about-brief-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* FEATURED PROJECT */
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 0;
+      align-items: stretch;
+      border: 1px solid var(--line);
+      background: #050505;
+      overflow: hidden;
+    }
+
+    .feature-visual {
+      position: relative;
+      background: #000;
+      border-right: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .feature-visual img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      background: #000;
+      filter: none;
+      transform: none;
+    }
+
+    .feature-copy {
+      background: var(--panel);
+      border-left: 1px solid var(--line-strong);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+      padding: 22px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .feature-copy-top h3 {
+      font-size: clamp(1.7rem, 2.6vw, 2.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      max-width: 18ch;
+    }
+
+    .feature-copy-top p {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .feature-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .stat {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      padding: 14px 10px;
+      min-height: 112px;
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+    }
+
+    .stat:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.32);
+      transform: translateY(-1px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.12rem;
+      line-height: 1.05;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat span {
+      display: block;
+      color: rgba(255,255,255,0.58);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-size: 0.64rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .feature-copy .btn {
+      width: 100%;
+      min-width: 0;
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* EXPERIENCE */
+
+    .experience-main-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .experience-card {
+      border: 1px solid var(--line);
+      background: var(--bg-card);
+      padding: 28px;
+      transition:
+        border-color var(--transition),
+        background var(--transition),
+        transform var(--transition);
+    }
+
+    .experience-card:hover {
+      border-color: rgba(255,255,255,0.24);
+      background: #090909;
+      transform: translateY(-1px);
+    }
+
+    .experience-card.featured,
+    .experience-card.secondary {
+      background: var(--bg-card);
+      min-height: 260px;
+    }
+
+    .experience-card .role-type {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--muted-2);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .experience-card h3 {
+      font-size: 1.18rem;
+      line-height: 1.08;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      max-width: none;
+      white-space: normal;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 14px;
+      max-width: 58ch;
+    }
+
+    .experience-points {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .experience-points li {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.92rem;
+      line-height: 1.45;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .experience-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.62em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .experience-actions {
+      margin-top: 28px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* CONTACT */
+
+    .contact-band {
+      padding: 120px 0;
+      background: #000;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 60vh;
+      gap: 20px;
+      background: #000;
+    }
+
+    .contact-band h2 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .contact-band p {
+      max-width: 760px;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.72), rgba(0,0,0,0.92)),
+        url("footer-earth-bg.png") center center / cover no-repeat;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.38), rgba(0,0,0,0.8)),
+        radial-gradient(circle at 50% 42%, rgba(255,255,255,0.08), transparent 28%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .site-footer-inner {
+      position: relative;
+      z-index: 1;
+      padding: 78px 0 34px;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.95fr) minmax(460px, 1.3fr) auto;
+      align-items: center;
+      gap: 42px;
+      padding-bottom: 92px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .footer-star {
+      width: 44px;
+      height: 44px;
+      position: relative;
+      flex: 0 0 auto;
+      filter: drop-shadow(0 0 16px rgba(255,255,255,0.32));
+    }
+
+    .footer-star::before,
+    .footer-star::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .footer-star::before {
+      width: 4px;
+      height: 44px;
+      clip-path: polygon(50% 0%, 100% 48%, 50% 100%, 0% 48%);
+    }
+
+    .footer-star::after {
+      width: 44px;
+      height: 4px;
+      clip-path: polygon(0% 50%, 48% 0%, 100% 50%, 48% 100%);
+    }
+
+    .footer-brand-text h3 {
+      font-size: clamp(1.35rem, 2.4vw, 2.2rem);
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-weight: 600;
+      margin-bottom: 9px;
+    }
+
+    .footer-brand-text p {
+      color: rgba(255,255,255,0.62);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(22px, 3.2vw, 48px);
+    }
+
+    .footer-nav a {
+      position: relative;
+      color: rgba(255,255,255,0.88);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+
+    .footer-nav a:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: calc(-1 * clamp(12px, 1.6vw, 24px));
+      top: 50%;
+      width: 1px;
+      height: 34px;
+      background: rgba(255,255,255,0.36);
+      transform: translateY(-50%);
+    }
+
+    .footer-nav a:hover,
+    .footer-nav a:focus-visible {
+      color: #fff;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .footer-icon {
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(255,255,255,0.82);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1;
+      background: rgba(0,0,0,0.18);
+      transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+    }
+
+    .footer-icon:hover,
+    .footer-icon:focus-visible {
+      background: #fff;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(255,255,255,0.2);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.36);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .footer-bottom p,
+    .footer-bottom span {
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-coordinates {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      white-space: nowrap;
+    }
+
+    .footer-small-star {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      position: relative;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.4));
+    }
+
+    .footer-small-star::before,
+    .footer-small-star::after {
+      content: "";
+      position: absolute;
+      background: #fff;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .footer-small-star::before {
+      width: 3px;
+      height: 22px;
+      clip-path: polygon(50% 0%, 100% 48%, 50% 100%, 0% 48%);
+    }
+
+    .footer-small-star::after {
+      width: 22px;
+      height: 3px;
+      clip-path: polygon(0% 50%, 48% 0%, 100% 50%, 48% 100%);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1080px) {
+      .footer-main {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 30px;
+        padding-bottom: 70px;
+      }
+
+      .footer-nav {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .footer-social {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .feature-grid,
+      .feature-stats,
+      .experience-main-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-visual {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .feature-copy {
+        border-left: none;
+      }
+
+      .feature-header h2,
+      .feature-header p {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-height: 88px;
+      }
+
+      .container,
+      .hero-content {
+        width: min(100% - 20px, var(--max-width));
+      }
+
+      .site-header-inner {
+        gap: 14px;
+      }
+
+      .brand {
+        margin-left: -4px;
+      }
+
+      .brand img {
+        height: 95px;
+      }
+
+      .nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav a {
+        font-size: 0.72rem;
+      }
+
+      .hero {
+        min-height: calc(100vh - var(--header-height));
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.96) 0%,
+            rgba(0, 0, 0, 0.88) 50%,
+            rgba(0, 0, 0, 0.46) 100%
+          ),
+          radial-gradient(circle at 28% 48%, rgba(255,255,255,0.1), transparent 34%),
+          url("hero-visual.png") 68% center / cover no-repeat;
+      }
+
+      .hero-content {
+        padding: 72px 0 46px;
+      }
+
+      .hero h1 {
+        font-size: clamp(4rem, 20vw, 6rem);
+      }
+
+      .hero-actions {
+        width: 100%;
+      }
+
+      .btn {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .section,
+      .about-section,
+      .contact-band {
+        padding: 72px 0;
+      }
+
+      .about-brief {
+        min-height: auto;
+      }
+
+      .feature-copy,
+      .experience-card {
+        padding: 22px;
+      }
+
+      .feature-header h2,
+      .feature-copy-top h3,
+      .about-brief-content h2 {
+        max-width: none;
+      }
+
+      .experience-card h3 {
+        font-size: 1.08rem;
+      }
+
+      .site-footer-inner {
+        padding: 58px 0 28px;
+      }
+
+      .footer-main {
+        padding-bottom: 52px;
+      }
+
+      .footer-brand {
+        align-items: flex-start;
+      }
+
+      .footer-brand-text h3 {
+        letter-spacing: 0.18em;
+      }
+
+      .footer-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px 24px;
+      }
+
+      .footer-nav a:not(:last-child)::after {
+        display: none;
+      }
+
+      .footer-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.05rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-coordinates {
+        white-space: normal;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand" aria-label="Shaman Engineering homepage">
+        <img src="logo.png" alt="Shaman Engineering Logo" />
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Homepage hero">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h1>
+            Naiyar<br />
+            Shaman
+          </h1>
+
+          <p class="hero-subtitle">
+            Engineering student with hands-on experience in mission architecture,
+            hardware design, manufacturing, and multidisciplinary systems engineering.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="projects.html">View Projects</a>
+            <a class="btn" href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a class="btn" href="mailto:naiyar@shamanengineering.com">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" aria-labelledby="about-brief-heading">
+      <div class="container">
+        <div class="about-brief">
+          <div class="about-brief-content">
+            <h2 id="about-brief-heading">ABOUT ME</h2>
+
+            <p>
+              I’m Naiyar Shaman, an engineering student focused on aerospace systems and mechanical design.
+              I spend most of my time working on CAD, refining designs, or thinking through how systems
+              actually come together beyond just analysis.
+            </p>
+
+            <p>
+              Outside of school and engineering work, I enjoy bowling, working on personal projects,
+              and staying involved in technical competitions and NASA programs. I like building things
+              that have a clear purpose and pushing ideas until they’re something tangible.
+            </p>
+
+            <p>
+              I’m especially interested in working on human space exploration systems — the kind of
+              engineering that has to operate reliably in extreme environments and can’t afford to fail.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="featured-project-heading">
+      <div class="container">
+        <div class="feature-header">
+          <div class="feature-section-title">
+            Featured Project
+          </div>
+
+          <h2 id="featured-project-heading">PROJECT AUREVO</h2>
+
+          <p>
+            Project AUREVO stands for
+            <strong>Advanced Utilization of Resources for Energy &amp; Viability Off-Earth</strong>.
+            I founded and led Embry-Riddle’s NASA RASC-AL team to develop a technically rigorous lunar
+            surface power concept, advancing the project through finalist selection with a systems-driven
+            architecture supported by detailed analysis and engineering trade studies.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-visual">
+            <img
+              src="aurevo-cinematic.png"
+              alt="AUREVO lunar surface power architecture render"
+            />
+          </div>
+
+          <aside class="feature-copy" aria-label="AUREVO summary">
+            <div class="feature-copy-top">
+              <h3>
+                LUNAR POWER<br />
+                ARCHITECTURE<br />
+                OVERVIEW.
+              </h3>
+
+              <p>
+                A 100 kWe hybrid surface power system integrating dual fission reactors, regolith thermal
+                energy storage, and long-distance HVDC transmission for resilient lunar surface operations.
+              </p>
+
+              <div class="feature-stats">
+                <div class="stat">
+                  <strong>100 kWe</strong>
+                  <span>Continuous Power</span>
+                </div>
+
+                <div class="stat">
+                  <strong>354 hr</strong>
+                  <span>Lunar Night Survival</span>
+                </div>
+
+                <div class="stat">
+                  <strong>~3 kV</strong>
+                  <span>HVDC Distribution</span>
+                </div>
+              </div>
+            </div>
+
+            <a class="btn" href="projects.html">Explore Project</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-preview-heading">
+      <div class="container">
+        <div class="feature-header">
+          <h2 id="experience-preview-heading">EXPERIENCE</h2>
+
+          <p>
+            My background spans mechanical design, manufacturing support, systems engineering, NASA mission
+            development, trade studies, subsystem integration, and technical leadership across both industry
+            and aerospace research.
+          </p>
+        </div>
+
+        <div class="experience-main-grid">
+          <article class="experience-card featured">
+            <span class="role-type">Industry</span>
+
+            <h3>MeltPro Inc. — Lead Engineer / Mechanical Designer</h3>
+
+            <p>
+              Own end-to-end development of industrial adhesive dispensing systems, serving as the primary
+              engineering resource across design, manufacturability, and production implementation.
+            </p>
+
+            <ul class="experience-points">
+              <li>
+                Manage 500+ part and assembly models in SolidWorks with drawings, revisions,
+                and configuration control.
+              </li>
+              <li>
+                Perform tolerance analysis, DFM, and validation to improve manufacturability,
+                reliability, and assembly efficiency.
+              </li>
+              <li>
+                Work directly with machining and production teams to resolve real engineering
+                issues on hardware that gets built.
+              </li>
+            </ul>
+          </article>
+
+          <article class="experience-card featured">
+            <span class="role-type">NASA Competition</span>
+
+            <h3>NASA RASC-AL — Founder &amp; Principal Investigator</h3>
+
+            <p>
+              Led development of Project AUREVO, a lunar surface power architecture selected as a finalist
+              in NASA’s RASC-AL competition.
+            </p>
+
+            <ul class="experience-points">
+              <li>
+                Developed system architecture and trade studies for a 100 kWe continuous power concept
+                using dual fission reactors and HVDC distribution.
+              </li>
+              <li>
+                Designed and analyzed regolith-based thermal energy storage for multi-day lunar night
+                survivability.
+              </li>
+              <li>
+                Directed requirements development, risk analysis, and subsystem integration across power,
+                thermal, PMAD, and surface systems.
+              </li>
+            </ul>
+          </article>
+
+          <article class="experience-card secondary">
+            <span class="role-type">NASA Mission Development</span>
+
+            <h3>NASA L’SPACE MCA — Project Manager</h3>
+
+            <p>
+              Led a 15-member multidisciplinary team through end-to-end planetary mission architecture
+              development under NASA systems engineering standards.
+            </p>
+
+            <ul class="experience-points">
+              <li>
+                Directed subsystem integration across propulsion, thermal, power, communications,
+                payload, and CDH.
+              </li>
+              <li>
+                Produced 200+ pages of technical deliverables including requirements, interface definitions,
+                N² diagrams, and risk assessments.
+              </li>
+            </ul>
+          </article>
+
+          <article class="experience-card secondary">
+            <span class="role-type">NASA Internship</span>
+
+            <h3>NASA Langley Research Center — Engineering Intern</h3>
+
+            <p>
+              Supporting Mars exploration studies through systems-level definition frameworks,
+              architecture option analysis, and trade-space evaluation for future human Mars missions.
+            </p>
+
+            <ul class="experience-points">
+              <li>
+                Develop systems-level definition frameworks for Mars architecture trade studies.
+              </li>
+              <li>
+                Analyze architecture option spaces across Mars EDL split strategies, ascent propulsion,
+                in-space propulsion, and EDL technology concepts.
+              </li>
+              <li>
+                Identify key attributes, evaluation criteria, and comparative trade factors to support
+                strategic architecture recommendations.
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="experience-actions">
+          <a class="btn" href="experience.html">View Full Experience</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" aria-labelledby="reach-out-heading">
+      <div class="container">
+        <div class="contact-block">
+          <h2 id="reach-out-heading">GET IN CONTACT</h2>
+
+          <p>
+            naiyar@shamanengineering.com
+          </p>
+
+          <a class="btn" href="mailto:naiyar@shamanengineering.com">
+            Email Me
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer-inner">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <span class="footer-star" aria-hidden="true"></span>
+
+          <div class="footer-brand-text">
+            <h3>Naiyar Shaman</h3>
+            <p>Aerospace Systems Engineer</p>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="about.html">About</a>
+          <a href="experience.html">Experience</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="footer-social" aria-label="Footer links">
+          <a class="footer-icon" href="mailto:naiyar@shamanengineering.com" aria-label="Email">✉</a>
+          <a class="footer-icon" href="https://www.linkedin.com/in/naiyarshaman/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          <a class="footer-icon" href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">▤</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Naiyar Shaman. All rights reserved.</p>
+
+        <div class="footer-coordinates">
+          <span>30.4213° N, 87.2169° W</span>
+          <span class="footer-small-star" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>      list-style: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      overflow: visible;
+    }
+
+    .site-header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 100%;
+      flex-shrink: 0;
+      margin-left: 0;
+    }
+
+    .brand img {
+      height: 180px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .nav ul {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav a {
+      position: relative;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      transition: color var(--transition);
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 1px;
+      background: #fff;
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform 0.35s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: #ffffff;
+    }
+
+    .nav a:hover::after,
+    .nav a:focus-visible::after {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - var(--header-height));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.96) 0%,
+          rgba(0, 0, 0, 0.91) 26%,
+          rgba(0, 0, 0, 0.68) 48%,
+          rgba(0, 0, 0, 0.25) 72%,
+          rgba(0, 0, 0, 0.56) 100%
+        ),
+        radial-gradient(circle at 24% 50%, rgba(255,255,255,0.11), transparent 32%),
+        url("hero-visual.png") center right / cover no-repeat;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(circle at 18% 46%, rgba(255,255,255,0.09), transparent 24%),
+        linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.62));
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-repeat: repeat;
+      background-size: 480px 240px;
+      background-image:
+        radial-gradient(1.5px 1.5px at 40px 60px, rgba(255,255,255,0.9) 100%, transparent 0),
+        radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.7) 100%, transparent 0),
+        radial-gradient(1.2px 1.2px at 220px 40px, rgba(255,255,255,0.8) 100%, transparent 0),
+        radial-gradient(1px 1px at 320px 180px, rgba(255,255,255,0.65) 100%, transparent 0),
+        radial-gradient(1.4px 1.4px at 420px 100px, rgba(255,255,255,0.85) 100%, transparent 0);
+      animation: driftStars 160s linear infinite;
+    }
+
+    @keyframes driftStars {
+      from {
+        transform: translate3d(0, 0, 0);
+      }
       to {
         transform: translate3d(-120px, -80px, 0);
       }
