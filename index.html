@@ -616,9 +616,12 @@
     .site-footer {
       position: relative;
       overflow: hidden;
-      background:
+      background-image:
         linear-gradient(to bottom, rgba(0,0,0,0.48), rgba(0,0,0,0.92)),
-        url("footer-earth-bg.png") center center / cover no-repeat;
+        url("footer-earth-bg.png");
+      background-size: auto, cover;
+      background-position: center center, center 68%;
+      background-repeat: no-repeat, no-repeat;
       border-top: 1px solid var(--line);
     }
 
@@ -730,11 +733,13 @@
       letter-spacing: 0.04em;
     }
 
-    .footer-coordinates {
+    .footer-bottom-mark {
       display: flex;
       align-items: center;
-      gap: 14px;
-      white-space: nowrap;
+      justify-content: flex-end;
+      color: rgba(255,255,255,0.8);
+      font-size: 1.15rem;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.35));
     }
 
     /* RESPONSIVE */
@@ -775,6 +780,10 @@
       .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .footer-bottom-mark {
+        justify-content: flex-start;
       }
     }
 
@@ -867,6 +876,10 @@
         font-size: 1.08rem;
       }
 
+      .site-footer {
+        background-position: center center, center 72%;
+      }
+
       .site-footer-content {
         padding: 52px 0 28px;
       }
@@ -887,10 +900,6 @@
       .footer-circle {
         width: 48px;
         height: 48px;
-      }
-
-      .footer-coordinates {
-        white-space: normal;
       }
     }
 
@@ -1202,8 +1211,7 @@
       <div class="footer-bottom">
         <p>© 2026 Naiyar Shaman. All rights reserved.</p>
 
-        <div class="footer-coordinates">
-          <span>30.4213° N, 87.2169° W</span>
+        <div class="footer-bottom-mark">
           <span aria-hidden="true">✦</span>
         </div>
       </div>
