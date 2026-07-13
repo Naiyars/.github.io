@@ -75,6 +75,8 @@
       margin: 0 auto;
     }
 
+    /* HEADER */
+
     .site-header {
       position: fixed;
       top: 0;
@@ -160,6 +162,8 @@
       transform-origin: left center;
     }
 
+    /* GENERAL SECTIONS */
+
     .section {
       position: relative;
       padding: 104px 0;
@@ -181,7 +185,7 @@
     }
 
     .section-kicker {
-      color: rgba(255,255,255,0.72);
+      color: rgba(255, 255, 255, 0.72);
       text-transform: uppercase;
       letter-spacing: 0.16em;
       font-size: 0.76rem;
@@ -205,6 +209,8 @@
       line-height: 1.6;
     }
 
+    /* JUMP NAV */
+
     .jump-nav-wrap {
       position: sticky;
       top: calc(var(--header-height) + 10px);
@@ -227,60 +233,30 @@
       align-items: center;
       justify-content: center;
       padding: 9px 12px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.03);
-      color: rgba(255,255,255,0.82);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.03);
+      color: rgba(255, 255, 255, 0.82);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-size: 0.66rem;
       font-weight: 700;
       white-space: nowrap;
-      transition: background var(--transition), border-color var(--transition), color var(--transition), transform var(--transition);
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
     }
 
     .jump-nav a:hover,
     .jump-nav a:focus-visible {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.28);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.28);
       color: #fff;
       transform: translateY(-1px);
     }
 
-    .focus-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .focus-tile {
-      border: 1px solid var(--line);
-      background: var(--bg-soft);
-      padding: 22px;
-      min-height: 130px;
-      transition: border-color var(--transition), background var(--transition), transform var(--transition);
-    }
-
-    .focus-tile:hover {
-      border-color: rgba(255,255,255,0.24);
-      background: rgba(255,255,255,0.03);
-      transform: translateY(-1px);
-    }
-
-    .focus-tile strong {
-      display: block;
-      font-size: 1.05rem;
-      line-height: 1.08;
-      text-transform: uppercase;
-      letter-spacing: -0.03em;
-      margin-bottom: 10px;
-    }
-
-    .focus-tile span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
-    }
+    /* EXPERIENCE BLOCKS */
 
     .experience-block {
       display: grid;
@@ -297,7 +273,7 @@
 
     .exp-copy {
       padding: 34px 30px 30px;
-      background: rgba(0,0,0,0.72);
+      background: rgba(0, 0, 0, 0.72);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -329,6 +305,17 @@
       min-height: 420px;
       object-fit: cover;
       background: #000;
+    }
+
+    /*
+      Use this class for drawings or diagrams that should
+      fit fully inside the available image area without cropping.
+    */
+    .exp-main-image.fit-image {
+      object-fit: contain;
+      object-position: center;
+      background: #f3f3f3;
+      padding: 0;
     }
 
     .exp-gallery {
@@ -368,7 +355,7 @@
     .exp-label {
       display: inline-block;
       margin-bottom: 12px;
-      color: rgba(255,255,255,0.62);
+      color: rgba(255, 255, 255, 0.62);
       text-transform: uppercase;
       letter-spacing: 0.14em;
       font-size: 0.72rem;
@@ -391,7 +378,7 @@
     }
 
     .exp-role {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.78);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-size: 0.78rem;
@@ -407,6 +394,8 @@
       max-width: 66ch;
     }
 
+    /* STATS */
+
     .stats-row {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -415,16 +404,19 @@
     }
 
     .stat-card {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.03);
       padding: 14px 12px;
       min-height: 102px;
-      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
     }
 
     .stat-card:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.30);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.3);
       transform: translateY(-1px);
     }
 
@@ -438,13 +430,15 @@
 
     .stat-card span {
       display: block;
-      color: rgba(255,255,255,0.58);
+      color: rgba(255, 255, 255, 0.58);
       text-transform: uppercase;
       letter-spacing: 0.11em;
       font-size: 0.63rem;
       font-weight: 700;
       line-height: 1.3;
     }
+
+    /* BULLETS */
 
     .exp-bullets {
       display: grid;
@@ -453,7 +447,7 @@
     }
 
     .exp-bullets li {
-      color: rgba(255,255,255,0.82);
+      color: rgba(255, 255, 255, 0.82);
       font-size: 0.94rem;
       line-height: 1.52;
       position: relative;
@@ -468,8 +462,10 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.58);
+      background: rgba(255, 255, 255, 0.58);
     }
+
+    /* SMALL BUTTON */
 
     .mini-btn {
       display: inline-flex;
@@ -478,128 +474,36 @@
       width: fit-content;
       margin-top: 2px;
       padding: 10px 14px;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.03);
       color: #fff;
       text-transform: uppercase;
       letter-spacing: 0.11em;
       font-size: 0.68rem;
       font-weight: 700;
-      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+      transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
     }
 
     .mini-btn:hover,
     .mini-btn:focus-visible {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.4);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.4);
       transform: translateY(-1px);
     }
 
-    .compact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .compact-card {
-      border: 1px solid var(--line);
-      background: var(--bg-soft);
-      overflow: hidden;
-      transition: border-color var(--transition), background var(--transition), transform var(--transition);
-    }
-
-    .compact-card:hover {
-      border-color: rgba(255,255,255,0.24);
-      background: rgba(255,255,255,0.03);
-      transform: translateY(-1px);
-    }
-
-    .compact-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      border-bottom: 1px solid var(--line);
-      background: #000;
-    }
-
-    .compact-card-content {
-      padding: 24px;
-    }
-
-    .compact-card .exp-label {
-      margin-bottom: 10px;
-    }
-
-    .compact-card h3 {
-      font-size: 1.5rem;
-      line-height: 0.98;
-      letter-spacing: -0.04em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .compact-role {
-      color: rgba(255,255,255,0.76);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 0.74rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .compact-card p {
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.58;
-      margin-bottom: 16px;
-    }
-
-    .compact-card ul {
-      display: grid;
-      gap: 9px;
-    }
-
-    .compact-card li {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.92rem;
-      line-height: 1.48;
-      position: relative;
-      padding-left: 16px;
-    }
-
-    .compact-card li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0.62em;
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.58);
-    }
-
-    .mini-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-      margin-bottom: 18px;
-    }
-
-    .mini-stats span {
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
-      padding: 8px 10px;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-      font-weight: 700;
-      color: rgba(255,255,255,0.8);
-    }
+    /* LANGLEY */
 
     .langley-band {
       border: 1px solid var(--line);
-      background: linear-gradient(to right, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      background:
+        linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.03),
+          rgba(255, 255, 255, 0.01)
+        );
       overflow: hidden;
     }
 
@@ -636,99 +540,118 @@
       object-fit: cover;
     }
 
-    .cta-band {
-      padding: 120px 0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    }
+    /* HOMEPAGE FOOTER */
 
-    .cta-band h2 {
-      font-size: clamp(2rem, 4vw, 4rem);
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
-      margin-bottom: 14px;
-      max-width: 16ch;
-    }
-
-    .cta-band p {
-      max-width: 760px;
-      color: var(--muted);
-      margin-bottom: 26px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
+    .site-footer {
       position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.48),
+          rgba(0, 0, 0, 0.92)
+        ),
+        url("footer-earth-bg.png");
+      background-size: auto, cover;
+      background-position: center center, center 68%;
+      background-repeat: no-repeat, no-repeat;
+      border-top: 1px solid var(--line);
+    }
+
+    .site-footer-content {
+      position: relative;
+      z-index: 1;
+      padding: 46px 0 24px;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 42px;
+      padding-bottom: 42px;
+    }
+
+    .footer-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .footer-nav a {
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.86rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: color var(--transition);
+    }
+
+    .footer-nav a:hover,
+    .footer-nav a:focus-visible {
+      color: #fff;
+    }
+
+    .footer-social {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-circle {
+      width: 54px;
+      height: 54px;
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 170px;
-      padding: 15px 24px;
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.18);
+      font-size: 1rem;
       font-weight: 700;
       transition:
         background var(--transition),
         color var(--transition),
-        border-color var(--transition),
         transform var(--transition);
     }
 
-    .btn:hover,
-    .btn:focus-visible {
+    .footer-circle:hover,
+    .footer-circle:focus-visible {
       background: #fff;
       color: #000;
-      transform: translateY(-1px);
+      transform: translateY(-2px);
     }
 
-    .btn-muted {
-      border-color: rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .site-footer {
-      padding: 28px 0 38px;
-      background: transparent;
-    }
-
-    .site-footer-inner {
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.34);
+      padding-top: 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
+      color: rgba(255, 255, 255, 0.72);
     }
 
-    .site-footer p,
-    .site-footer a {
-      color: var(--muted-2);
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .footer-bottom p,
+    .footer-bottom span {
+      font-size: 0.86rem;
+      letter-spacing: 0.04em;
     }
 
-    .footer-links {
+    .footer-bottom-mark {
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.05rem;
+      filter: drop-shadow(
+        0 0 12px rgba(255, 255, 255, 0.35)
+      );
     }
 
-    .footer-links a:hover,
-    .footer-links a:focus-visible {
-      color: var(--text);
-    }
+    /* LIGHTBOX */
 
-
-    /* Fullscreen image lightbox */
     .lightbox-img {
       cursor: zoom-in;
     }
@@ -752,7 +675,8 @@
       max-width: 94vw;
       max-height: 90vh;
       object-fit: contain;
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 0 40px rgba(255, 255, 255, 0.08);
     }
 
     .lightbox-close {
@@ -780,18 +704,18 @@
       bottom: 22px;
       transform: translateX(-50%);
       max-width: min(900px, 90vw);
-      color: rgba(255,255,255,0.72);
+      color: rgba(255, 255, 255, 0.72);
       text-align: center;
       font-size: 0.85rem;
       letter-spacing: 0.04em;
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 1100px) {
       .experience-block,
       .experience-block.reverse,
       .langley-grid,
-      .focus-grid,
-      .compact-grid,
       .stats-row {
         grid-template-columns: 1fr;
       }
@@ -815,6 +739,27 @@
       .exp-main-image,
       .langley-visual img {
         min-height: 340px;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+        padding-bottom: 34px;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        gap: 20px 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-bottom-mark {
+        justify-content: flex-start;
       }
     }
 
@@ -849,8 +794,7 @@
         font-size: 0.72rem;
       }
 
-      .section,
-      .cta-band {
+      .section {
         padding: 72px 0;
       }
 
@@ -872,9 +816,7 @@
       }
 
       .exp-copy,
-      .compact-card-content,
-      .langley-copy,
-      .focus-tile {
+      .langley-copy {
         padding: 22px;
       }
 
@@ -892,86 +834,190 @@
         height: 220px;
       }
 
-      .site-footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
+      .site-footer {
+        background-position:
+          center center,
+          center 72%;
+      }
+
+      .site-footer-content {
+        padding: 38px 0 22px;
+      }
+
+      .footer-row {
+        padding-bottom: 28px;
+      }
+
+      .footer-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-circle {
+        width: 48px;
+        height: 48px;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
+
   <header class="site-header">
     <div class="container site-header-inner">
-      <a href="index.html" class="brand">
-        <img src="logo.png" alt="Shaman Engineering Logo" />
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="Shaman Engineering homepage"
+      >
+        <img
+          src="logo.png"
+          alt="Shaman Engineering Logo"
+        />
       </a>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <nav
+        class="nav"
+        aria-label="Primary navigation"
+      >
         <ul>
           <li>
-            <a href="about.html">About</a>
+            <a href="about.html">
+              About
+            </a>
           </li>
 
           <li>
-            <a href="experience.html">Experience</a>
+            <a href="experience.html">
+              Experience
+            </a>
           </li>
 
           <li>
-            <a href="projects.html">Projects</a>
+            <a href="projects.html">
+              Projects
+            </a>
           </li>
 
           <li>
-            <a href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+            <a
+              href="Naiyar-Shaman-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
           </li>
 
           <li>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html">
+              Contact
+            </a>
           </li>
         </ul>
       </nav>
+
     </div>
   </header>
 
   <main>
-    <section class="section" aria-labelledby="jump-nav-heading">
+
+    <!-- NAVIGATE EXPERIENCE -->
+
+    <section
+      class="section"
+      aria-labelledby="jump-nav-heading"
+    >
       <div class="container">
+
         <div class="section-header">
-          <h2 id="jump-nav-heading">Navigate Experience</h2>
+          <h2 id="jump-nav-heading">
+            Navigate Experience
+          </h2>
         </div>
 
         <div class="jump-nav-wrap">
-          <nav class="jump-nav" aria-label="Experience section navigation">
-            <a href="#meltpro">MeltPro Inc</a>
-            <a href="#rascal">NASA RASC-AL</a>
-            <a href="#langley">NASA Langley</a>
-            <a href="#mca">NASA L'SPACE MCA</a>
-            <a href="#npwee">NASA L'SPACE NPWEE</a>
-            <a href="#suits">NASA SUITS</a>
-            <a href="#research">Research</a>
-            <a href="#heighttower">Heights Tower Systems</a>
-            <a href="#bellwether">The Bellwether Alliance</a>
+
+          <nav
+            class="jump-nav"
+            aria-label="Experience section navigation"
+          >
+            <a href="#meltpro">
+              MeltPro Inc
+            </a>
+
+            <a href="#rascal">
+              NASA RASC-AL
+            </a>
+
+            <a href="#langley">
+              NASA Langley
+            </a>
+
+            <a href="#mca">
+              NASA L'SPACE MCA
+            </a>
+
+            <a href="#npwee">
+              NASA L'SPACE NPWEE
+            </a>
+
+            <a href="#suits">
+              NASA SUITS
+            </a>
+
+            <a href="#research">
+              Research
+            </a>
+
+            <a href="#heighttower">
+              Heights Tower Systems
+            </a>
+
+            <a href="#bellwether">
+              The Bellwether Alliance
+            </a>
           </nav>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="meltpro" aria-labelledby="meltpro-heading">
+    <!-- MELTPRO -->
+
+    <section
+      class="section"
+      id="meltpro"
+      aria-labelledby="meltpro-heading"
+    >
       <div class="container">
+
         <div class="experience-block">
+
           <div class="exp-copy">
             <div>
-              <h3 id="meltpro-heading">MeltPro Inc.</h3>
+
+              <h3 id="meltpro-heading">
+                MeltPro Inc.
+              </h3>
 
               <div class="exp-role">
                 Mechanical Designer &amp; Engineering Lead · Apr 2025 – Present
               </div>
 
               <p class="exp-summary">
-                I serve as the primary engineering contributor for industrial adhesive dispensing systems, owning end-to-end product development across mechanical design, CAD management, drawing generation, configuration control, manufacturability, and production implementation.
+                I serve as the primary engineering contributor for industrial
+                adhesive dispensing systems, owning end-to-end product
+                development across mechanical design, CAD management, drawing
+                generation, configuration control, manufacturability, and
+                production implementation.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>500+</strong>
                   <span>Part &amp; Assembly Models</span>
@@ -986,29 +1032,41 @@
                   <strong>Full Cycle</strong>
                   <span>Design to Production</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Designed and managed 500+ part and assembly models in SolidWorks, including drawings, revisions, and configuration control.
+                  Designed and managed 500+ part and assembly models in
+                  SolidWorks, including drawings, revisions, and configuration
+                  control.
                 </li>
 
                 <li>
-                  Performed tolerance analysis, design-for-manufacturability reviews, and validation to resolve stack-ups and improve assembly reliability.
+                  Performed tolerance analysis, design-for-manufacturability
+                  reviews, and validation to resolve stack-ups and improve
+                  assembly reliability.
                 </li>
 
                 <li>
-                  Developed and iterated mechanical systems to reduce assembly time, improve manufacturability, and support field performance.
+                  Developed and iterated mechanical systems to reduce assembly
+                  time, improve manufacturability, and support field performance.
                 </li>
 
                 <li>
-                  Worked directly with machining and production teams, supporting CNC workflow and resolving real engineering problems on hardware that gets built.
+                  Worked directly with machining and production teams,
+                  supporting CNC workflow and resolving real engineering
+                  problems on hardware that gets built.
                 </li>
+
               </ul>
+
             </div>
           </div>
 
           <div class="exp-visual">
+
             <img
               class="exp-main-image"
               src="meltpro-main.jpg"
@@ -1016,6 +1074,7 @@
             />
 
             <div class="exp-gallery">
+
               <img
                 src="meltpro-detail-1.jpg"
                 alt="MeltPro CAD detail or subsystem"
@@ -1027,16 +1086,28 @@
                 alt="MeltPro drawing, assembly, or hardware photo"
                 class="exp-detail"
               />
+
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="rascal" aria-labelledby="rascal-heading">
+    <!-- NASA RASC-AL -->
+
+    <section
+      class="section"
+      id="rascal"
+      aria-labelledby="rascal-heading"
+    >
       <div class="container">
+
         <div class="experience-block reverse">
+
           <div class="exp-visual alt">
+
             <img
               class="exp-main-image"
               src="aurevo-render.jpg"
@@ -1044,6 +1115,7 @@
             />
 
             <div class="exp-gallery">
+
               <img
                 src="aurevo-quad-chart.jpg"
                 alt="Project AUREVO quad chart"
@@ -1053,24 +1125,40 @@
                 src="aurevo-proposal-visual.jpg"
                 alt="Project AUREVO proposal architecture or technical page"
               />
+
             </div>
+
           </div>
 
           <div class="exp-copy alt">
             <div>
-              <span class="exp-label">NASA Competition / Mission Architecture</span>
 
-              <h3 id="rascal-heading" class="exp-title-wide">NASA RASC-AL — Project AUREVO</h3>
+              <span class="exp-label">
+                NASA Competition / Mission Architecture
+              </span>
+
+              <h3
+                id="rascal-heading"
+                class="exp-title-wide"
+              >
+                NASA RASC-AL — Project AUREVO
+              </h3>
 
               <div class="exp-role">
                 President &amp; Principal Investigator · May 2025 – Present
               </div>
 
               <p class="exp-summary">
-                I led development of Project AUREVO, a lunar surface power architecture selected as a national finalist in NASA’s RASC-AL competition. The concept integrates dual fission reactors, regolith thermal energy storage, and high-voltage DC power distribution for resilient long-duration lunar surface operations.
+                I led development of Project AUREVO, a lunar surface power
+                architecture selected as a national finalist in NASA’s RASC-AL
+                competition. The concept integrates dual fission reactors,
+                regolith thermal energy storage, and high-voltage DC power
+                distribution for resilient long-duration lunar surface
+                operations.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>100 kWe</strong>
                   <span>Continuous Power Concept</span>
@@ -1085,54 +1173,88 @@
                   <strong>Finalist</strong>
                   <span>National NASA Competition</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Developed system architecture and trade studies for a 100 kWe continuous lunar surface power system using dual fission reactors and HVDC distribution.
+                  Developed system architecture and trade studies for a
+                  100 kWe continuous lunar surface power system using dual
+                  fission reactors and HVDC distribution.
                 </li>
 
                 <li>
-                  Designed and analyzed regolith-based thermal energy storage for multi-day lunar night survivability, including efficiency and mass optimization.
+                  Designed and analyzed regolith-based thermal energy storage
+                  for multi-day lunar night survivability, including efficiency
+                  and mass optimization.
                 </li>
 
                 <li>
-                  Directed requirements development, risk analysis, and subsystem integration across power, thermal, PMAD, and surface systems.
+                  Directed requirements development, risk analysis, and
+                  subsystem integration across power, thermal, PMAD, and
+                  surface systems.
                 </li>
 
                 <li>
-                  Led the team and overall technical direction of the proposal through finalist selection.
+                  Led the team and overall technical direction of the proposal
+                  through finalist selection.
                 </li>
+
               </ul>
 
-              <a class="mini-btn" href="projects/aurevo.html">Learn More</a>
+              <a
+                class="mini-btn"
+                href="projects/aurevo.html"
+              >
+                Learn More
+              </a>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="langley" aria-labelledby="langley-heading">
-      <div class="container">
-        <div class="langley-band">
-          <div class="langley-grid">
-            <div class="langley-copy">
-              <span class="exp-label">Incoming Internship / NASA</span>
+    <!-- NASA LANGLEY -->
 
-              <h3 id="langley-heading">NASA Langley Research Center</h3>
+    <section
+      class="section"
+      id="langley"
+      aria-labelledby="langley-heading"
+    >
+      <div class="container">
+
+        <div class="langley-band">
+
+          <div class="langley-grid">
+
+            <div class="langley-copy">
+
+              <span class="exp-label">
+                NASA Internship
+              </span>
+
+              <h3 id="langley-heading">
+                NASA Langley Research Center
+              </h3>
 
               <div class="exp-role">
-                Incoming Engineering Intern — Mars Architecture · Summer 2026
+                Engineering Intern — Mars Architecture · Summer 2026
               </div>
 
               <p class="exp-summary">
-                I was selected for a NASA OSTEM internship within the Space Mission Analysis Branch to support mission-level studies related to human Mars exploration. The role is centered on systems engineering, concept evaluation, trade studies, and multidisciplinary integration.
+                Supporting Mars exploration studies through systems-level
+                definition frameworks, architecture option analysis, and
+                trade-space evaluation for future human Mars missions.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>NASA OSTEM</strong>
-                  <span>Selected Internship</span>
+                  <span>Engineering Internship</span>
                 </div>
 
                 <div class="stat-card">
@@ -1144,56 +1266,83 @@
                   <strong>Mars</strong>
                   <span>Architecture Focus</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Will support mission-level analysis and trade studies for human Mars exploration architectures.
+                  Develop systems-level definition frameworks for Mars
+                  architecture trade studies.
                 </li>
 
                 <li>
-                  Will contribute to systems engineering efforts including concept evaluation, performance analysis, and multidisciplinary integration.
+                  Analyze architecture option spaces across Mars EDL split
+                  strategies, ascent propulsion, in-space propulsion, and EDL
+                  technology concepts.
                 </li>
 
                 <li>
-                  Represents the next step in my trajectory from design and mission development into agency-level architecture work.
+                  Identify key attributes, evaluation criteria, and comparative
+                  trade factors to support strategic architecture
+                  recommendations.
                 </li>
+
               </ul>
 
-              <div class="exp-note">
-                This section is intentionally restrained. It reflects a role I have earned and will begin soon, without overstating work that has not yet been performed.
-              </div>
             </div>
 
             <div class="langley-visual">
+
               <img
                 src="langley-center.jpg"
                 alt="NASA Langley Research Center"
               />
+
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="mca" aria-labelledby="mca-heading">
+    <!-- NASA L'SPACE MCA -->
+
+    <section
+      class="section"
+      id="mca"
+      aria-labelledby="mca-heading"
+    >
       <div class="container">
+
         <div class="experience-block">
+
           <div class="exp-copy">
             <div>
-              <span class="exp-label">NASA Mission Development</span>
 
-              <h3 id="mca-heading">NASA L’SPACE Mission Concept Academy</h3>
+              <span class="exp-label">
+                NASA Mission Development
+              </span>
+
+              <h3 id="mca-heading">
+                NASA L’SPACE Mission Concept Academy
+              </h3>
 
               <div class="exp-role">
                 Project Manager · Sep 2025 – Dec 2025
               </div>
 
               <p class="exp-summary">
-                In NASA’s L’SPACE Mission Concept Academy, I led a multidisciplinary team through development of an end-to-end planetary mission architecture under NASA systems engineering standards. The work required technical structure, subsystem integration, trade studies, and substantial formal documentation.
+                In NASA’s L’SPACE Mission Concept Academy, I led a
+                multidisciplinary team through development of an end-to-end
+                planetary mission architecture under NASA systems engineering
+                standards. The work required technical structure, subsystem
+                integration, trade studies, and substantial formal documentation.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>Mission</strong>
                   <span>Architecture Development</span>
@@ -1208,40 +1357,59 @@
                   <strong>End-to-End</strong>
                   <span>Systems Integration</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Directed subsystem integration across propulsion, thermal, power, communications, payload, and command/data handling.
+                  Directed subsystem integration across propulsion, thermal,
+                  power, communications, payload, and command/data handling.
                 </li>
 
                 <li>
-                  Produced major technical deliverables including requirements, interface definitions, N² diagrams, risk assessments, and architecture documentation.
+                  Produced major technical deliverables including requirements,
+                  interface definitions, N² diagrams, risk assessments, and
+                  architecture documentation.
                 </li>
 
                 <li>
-                  Conducted trade studies on propulsion performance, mass budgets, and thermal stability.
+                  Conducted trade studies on propulsion performance, mass
+                  budgets, and thermal stability.
                 </li>
 
                 <li>
-                  Managed program structure, review readiness, and team coordination through formal mission development phases.
+                  Managed program structure, review readiness, and team
+                  coordination through formal mission development phases.
                 </li>
+
               </ul>
 
-              <a class="mini-btn" href="projects/bifrost.html">Learn More</a>
-            </div>
+              <a
+                class="mini-btn"
+                href="projects/bifrost.html"
+              >
+                Learn More
+              </a>
 
-            
+            </div>
           </div>
 
           <div class="exp-visual">
+
+            <!--
+              FIT-IMAGE ADDED HERE.
+              THIS MAKES THE FULL WHITE DRAWING VISIBLE.
+            -->
+
             <img
-              class="exp-main-image"
+              class="exp-main-image fit-image"
               src="bifrost-cad-render.jpg.png"
-              alt="NASA L'SPACE MCA rover or mission concept render"
+              alt="NASA L'SPACE MCA rover or mission concept engineering drawing"
             />
 
             <div class="exp-gallery">
+
               <img
                 src="bifrost-conops-poster.jpg"
                 alt="NASA L'SPACE MCA PDR slide or review material"
@@ -1251,30 +1419,50 @@
                 src="bifrost-n2-systems-architecture.jpg"
                 alt="NASA L'SPACE MCA architecture or N2 diagram"
               />
+
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="npwee" aria-labelledby="npwee-heading">
+    <!-- NASA L'SPACE NPWEE -->
+
+    <section
+      class="section"
+      id="npwee"
+      aria-labelledby="npwee-heading"
+    >
       <div class="container">
+
         <div class="experience-block">
+
           <div class="exp-copy">
             <div>
-              <span class="exp-label">NASA Proposal Development</span>
 
-              <h3 id="npwee-heading">NASA L’SPACE NPWEE</h3>
+              <span class="exp-label">
+                NASA Proposal Development
+              </span>
+
+              <h3 id="npwee-heading">
+                NASA L’SPACE NPWEE
+              </h3>
 
               <div class="exp-role">
                 Principal Investigator · Jan 2026 – Present
               </div>
 
               <p class="exp-summary">
-                I lead proposal design for a dust-tolerant mechanical interface and latching system for lunar surface operations, defining requirements, metrics, test strategy, and concept development under NASA mission constraints.
+                I lead proposal design for a dust-tolerant mechanical interface
+                and latching system for lunar surface operations, defining
+                requirements, metrics, test strategy, and concept development
+                under NASA mission constraints.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>Mechanism</strong>
                   <span>Design</span>
@@ -1289,27 +1477,40 @@
                   <strong>TRL</strong>
                   <span>Concept Validation</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Defined system requirements, environmental constraints, and load-case expectations for lunar operations.
+                  Defined system requirements, environmental constraints, and
+                  load-case expectations for lunar operations.
                 </li>
 
                 <li>
-                  Directed trade studies and concept evaluation for mechanism design and validation pathways.
+                  Directed trade studies and concept evaluation for mechanism
+                  design and validation pathways.
                 </li>
 
                 <li>
-                  Coordinated team efforts across mechanical design, testing strategy, and systems engineering.
+                  Coordinated team efforts across mechanical design, testing
+                  strategy, and systems engineering.
                 </li>
+
               </ul>
 
-              <a class="mini-btn" href="projects/npwee-lunar-interface.html">Learn More</a>
+              <a
+                class="mini-btn"
+                href="projects/npwee-lunar-interface.html"
+              >
+                Learn More
+              </a>
+
             </div>
           </div>
 
           <div class="exp-visual">
+
             <img
               class="exp-main-image"
               src="npwee-main.jpg"
@@ -1317,6 +1518,7 @@
             />
 
             <div class="exp-gallery">
+
               <img
                 src="npwee-mechanism.jpg"
                 alt="NPWEE mechanical interface concept"
@@ -1326,16 +1528,28 @@
                 src="npwee-test-plan.jpg"
                 alt="NPWEE dust testing and validation plan"
               />
+
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="suits" aria-labelledby="suits-heading">
+    <!-- NASA SUITS -->
+
+    <section
+      class="section"
+      id="suits"
+      aria-labelledby="suits-heading"
+    >
       <div class="container">
+
         <div class="experience-block reverse">
+
           <div class="exp-visual alt">
+
             <img
               class="exp-main-image"
               src="suits-ui.jpg"
@@ -1343,6 +1557,7 @@
             />
 
             <div class="exp-gallery">
+
               <img
                 src="suits-hud.jpg"
                 alt="NASA SUITS EVA HUD layout"
@@ -1352,24 +1567,34 @@
                 src="suits-telemetry.jpg"
                 alt="NASA SUITS telemetry interface visualization"
               />
+
             </div>
+
           </div>
 
           <div class="exp-copy alt">
             <div>
-              <span class="exp-label">NASA Human Interface Design</span>
 
-              <h3 id="suits-heading">NASA SUITS</h3>
+              <span class="exp-label">
+                NASA Human Interface Design
+              </span>
+
+              <h3 id="suits-heading">
+                NASA SUITS
+              </h3>
 
               <div class="exp-role">
                 Project Manager · Sep 2025 – Present
               </div>
 
               <p class="exp-summary">
-                I led development of a mixed-reality EVA HUD concept using Microsoft HoloLens 2 for astronaut navigation, telemetry, and mission-critical interface visualization.
+                I led development of a mixed-reality EVA HUD concept using
+                Microsoft HoloLens 2 for astronaut navigation, telemetry, and
+                mission-critical interface visualization.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>HoloLens 2</strong>
                   <span>Platform</span>
@@ -1384,47 +1609,77 @@
                   <strong>EVA</strong>
                   <span>Mission UI</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Directed AR interface concept design, sensor mapping, and real-time telemetry overlay strategy.
+                  Directed AR interface concept design, sensor mapping, and
+                  real-time telemetry overlay strategy.
                 </li>
 
                 <li>
-                  Managed proposal structure, subsystem documentation, and integrated workflow for successful submission.
+                  Managed proposal structure, subsystem documentation, and
+                  integrated workflow for successful submission.
                 </li>
 
                 <li>
-                  Coordinated contributors across AR design, HCI, systems, and UI/UX.
+                  Coordinated contributors across AR design, HCI, systems, and
+                  UI/UX.
                 </li>
+
               </ul>
 
-              <a class="mini-btn" href="projects/suits-eva-hud.html">Learn More</a>
+              <a
+                class="mini-btn"
+                href="projects/suits-eva-hud.html"
+              >
+                Learn More
+              </a>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="research" aria-labelledby="research-heading">
+    <!-- RESEARCH -->
+
+    <section
+      class="section"
+      id="research"
+      aria-labelledby="research-heading"
+    >
       <div class="container">
+
         <div class="experience-block">
+
           <div class="exp-copy">
             <div>
-              <span class="exp-label">Research / Publication</span>
 
-              <h3 id="research-heading">Compass Research Program</h3>
+              <span class="exp-label">
+                Research / Publication
+              </span>
+
+              <h3 id="research-heading">
+                Compass Research Program
+              </h3>
 
               <div class="exp-role">
                 Undergraduate Researcher · May 2024 – Present
               </div>
 
               <p class="exp-summary">
-                Through the Compass Research Program, I conducted research on reusable launch vehicles, including propulsion efficiency, thermal constraints, environmental impact, and evaluation of methodological limitations in aerospace studies.
+                Through the Compass Research Program, I conducted research on
+                reusable launch vehicles, including propulsion efficiency,
+                thermal constraints, environmental impact, and evaluation of
+                methodological limitations in aerospace studies.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>Accepted</strong>
                   <span>Paper</span>
@@ -1439,27 +1694,40 @@
                   <strong>First</strong>
                   <span>Author</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Performed structured literature analysis across reusable launch vehicle technologies and system tradeoffs.
+                  Performed structured literature analysis across reusable
+                  launch vehicle technologies and system tradeoffs.
                 </li>
 
                 <li>
-                  Evaluated study assumptions, technology readiness, and research limitations in aerospace publications.
+                  Evaluated study assumptions, technology readiness, and
+                  research limitations in aerospace publications.
                 </li>
 
                 <li>
-                  First author of an accepted paper on reusable launch vehicle development and future implications.
+                  First author of an accepted paper on reusable launch vehicle
+                  development and future implications.
                 </li>
+
               </ul>
 
-              <a class="mini-btn" href="projects/reusable-launch-vehicle-research.html">Learn More</a>
+              <a
+                class="mini-btn"
+                href="projects/reusable-launch-vehicle-research.html"
+              >
+                Learn More
+              </a>
+
             </div>
           </div>
 
           <div class="exp-visual">
+
             <img
               class="exp-main-image"
               src="research-paper.jpg"
@@ -1467,6 +1735,7 @@
             />
 
             <div class="exp-gallery">
+
               <img
                 src="research-rlv.jpg"
                 alt="Reusable launch vehicle research figure"
@@ -1476,16 +1745,28 @@
                 src="research-methodology.jpg"
                 alt="Reusable launch vehicle literature review methodology"
               />
+
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="heighttower" aria-labelledby="heighttower-heading">
+    <!-- HEIGHT TOWER -->
+
+    <section
+      class="section"
+      id="heighttower"
+      aria-labelledby="heighttower-heading"
+    >
       <div class="container">
+
         <div class="experience-block reverse">
+
           <div class="exp-visual alt">
+
             <img
               class="exp-main-image"
               src="heighttower-main.jpg"
@@ -1493,6 +1774,7 @@
             />
 
             <div class="exp-gallery">
+
               <img
                 src="heighttower-cnc.jpg"
                 alt="CNC machining work for tower components"
@@ -1502,24 +1784,34 @@
                 src="heighttower-fabrication.jpg"
                 alt="Fabrication and assembly work for radio tower systems"
               />
+
             </div>
+
           </div>
 
           <div class="exp-copy alt">
             <div>
-              <span class="exp-label">Manufacturing / Shop Experience</span>
 
-              <h3 id="heighttower-heading">Height Tower Systems</h3>
+              <span class="exp-label">
+                Manufacturing / Shop Experience
+              </span>
+
+              <h3 id="heighttower-heading">
+                Height Tower Systems
+              </h3>
 
               <div class="exp-role">
                 Engineering Intern · Oct 2024 – Jan 2025
               </div>
 
               <p class="exp-summary">
-                At Height Tower Systems, I worked in a hands-on manufacturing environment supporting assembly, CNC machining, and fabrication tasks for large-scale radio tower systems.
+                At Height Tower Systems, I worked in a hands-on manufacturing
+                environment supporting assembly, CNC machining, and fabrication
+                tasks for large-scale radio tower systems.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>12+</strong>
                   <span>Towers</span>
@@ -1534,31 +1826,48 @@
                   <strong>100+</strong>
                   <span>Fabrication Tasks</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Assisted in manufacturing and assembly of 12+ large-scale radio tower systems.
+                  Assisted in manufacturing and assembly of 12+ large-scale
+                  radio tower systems.
                 </li>
 
                 <li>
-                  Supported CNC machining of 50+ custom components, including setup, tooling changes, and basic G-code execution.
+                  Supported CNC machining of 50+ custom components, including
+                  setup, tooling changes, and basic G-code execution.
                 </li>
 
                 <li>
-                  Executed 100+ fabrication tasks while maintaining production timelines and part-quality expectations.
+                  Executed 100+ fabrication tasks while maintaining production
+                  timelines and part-quality expectations.
                 </li>
+
               </ul>
+
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="bellwether" aria-labelledby="bellwether-heading">
+    <!-- BELLWETHER -->
+
+    <section
+      class="section"
+      id="bellwether"
+      aria-labelledby="bellwether-heading"
+    >
       <div class="container">
+
         <div class="experience-block reverse">
+
           <div class="exp-visual alt">
+
             <img
               class="exp-main-image"
               src="bellwether-main.jpg"
@@ -1566,6 +1875,7 @@
             />
 
             <div class="exp-gallery">
+
               <img
                 src="bellwether-automation.jpg"
                 alt="Bellwether automation flow or technical system"
@@ -1575,24 +1885,35 @@
                 src="bellwether-dashboard.jpg"
                 alt="Bellwether dashboard or CRM platform"
               />
+
             </div>
+
           </div>
 
           <div class="exp-copy alt">
             <div>
-              <span class="exp-label">Systems / Automation</span>
 
-              <h3 id="bellwether-heading">The Bellwether Alliance</h3>
+              <span class="exp-label">
+                Systems / Automation
+              </span>
+
+              <h3 id="bellwether-heading">
+                The Bellwether Alliance
+              </h3>
 
               <div class="exp-role">
                 Technical Director · May 2021 – Feb 2024
               </div>
 
               <p class="exp-summary">
-                Before my current aerospace-heavy work, I led technical systems and automation efforts for The Bellwether Alliance, managing CRM infrastructure, onboarding workflows, and organization-wide automation systems.
+                Before my current aerospace-heavy work, I led technical systems
+                and automation efforts for The Bellwether Alliance, managing
+                CRM infrastructure, onboarding workflows, and organization-wide
+                automation systems.
               </p>
 
               <div class="stats-row">
+
                 <div class="stat-card">
                   <strong>3000+</strong>
                   <span>CRM Contacts Managed</span>
@@ -1607,149 +1928,286 @@
                   <strong>Hundreds</strong>
                   <span>Hours Saved</span>
                 </div>
+
               </div>
 
               <ul class="exp-bullets">
+
                 <li>
-                  Managed the organization’s CRM platform and technical systems infrastructure.
+                  Managed the organization’s CRM platform and technical systems
+                  infrastructure.
                 </li>
 
                 <li>
-                  Designed and deployed automations across departments to reduce manual workload and improve operational flow.
+                  Designed and deployed automations across departments to reduce
+                  manual workload and improve operational flow.
                 </li>
 
                 <li>
-                  Owned technical workflows supporting onboarding, member experience, and organizational efficiency.
+                  Owned technical workflows supporting onboarding, member
+                  experience, and organizational efficiency.
                 </li>
+
               </ul>
-            </div>
 
-            <div class="exp-note">
-              While it is not aerospace work, this role still matters because it shows early technical ownership, process design, and systems thinking — traits that carried directly into later engineering leadership.
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <section class="cta-band" aria-labelledby="cta-heading">
-      <div class="container">
-        <h2 id="cta-heading">
-          Interested in My Work Across Aerospace Systems and Hardware Development?
-        </h2>
+  </main>
 
-        <p>
-          Explore my projects, review my resume, or reach out directly for engineering, internship, or collaboration opportunities.
-        </p>
+  <!-- HOMEPAGE FOOTER -->
 
-        <div class="hero-actions">
-          <a class="btn" href="projects.html">View Projects</a>
+  <footer class="site-footer">
+
+    <div class="container site-footer-content">
+
+      <div class="footer-row">
+
+        <nav
+          class="footer-nav"
+          aria-label="Footer navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="experience.html">
+            Experience
+          </a>
+
+          <a href="projects.html">
+            Projects
+          </a>
 
           <a
-            class="btn btn-muted"
             href="Naiyar-Shaman-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Open Resume
+            Resume
           </a>
 
-          <a class="btn btn-muted" href="mailto:naiyar@shamanengineering.com">
-            Contact Me
+          <a href="contact.html">
+            Contact
           </a>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container site-footer-inner">
-      <p>© 2026 Naiyar Shaman</p>
+        </nav>
 
-      <div class="footer-links">
-        <a href="mailto:naiyar@shamanengineering.com">Email</a>
-
-        <a
-          href="https://www.linkedin.com/in/naiyarshaman/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
+          class="footer-social"
+          aria-label="Footer links"
         >
-          LinkedIn
-        </a>
 
-        <a href="projects.html">Projects</a>
+          <a
+            class="footer-circle"
+            href="mailto:naiyar@shamanengineering.com"
+            aria-label="Email"
+          >
+            ✉
+          </a>
+
+          <a
+            class="footer-circle"
+            href="https://www.linkedin.com/in/naiyarshaman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+
+          <a
+            class="footer-circle"
+            href="Naiyar-Shaman-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Resume"
+          >
+            CV
+          </a>
+
+        </div>
+
       </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          © 2026. All rights reserved.
+        </p>
+
+        <div class="footer-bottom-mark">
+          <span aria-hidden="true">
+            ✦
+          </span>
+        </div>
+
+      </div>
+
     </div>
+
   </footer>
 
-  <div class="image-lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Fullscreen image preview">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">
+  <!-- IMAGE LIGHTBOX -->
+
+  <div
+    class="image-lightbox"
+    id="imageLightbox"
+    aria-hidden="true"
+    role="dialog"
+    aria-label="Fullscreen image preview"
+  >
+
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      aria-label="Close image preview"
+    >
       &times;
     </button>
 
-    <img id="lightboxImage" src="" alt="" />
+    <img
+      id="lightboxImage"
+      src=""
+      alt=""
+    />
 
-    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div
+      class="lightbox-caption"
+      id="lightboxCaption"
+    ></div>
+
   </div>
 
   <script>
-    const lightbox = document.getElementById("imageLightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxCaption = document.getElementById("lightboxCaption");
-    const lightboxClose = document.getElementById("lightboxClose");
+    const lightbox =
+      document.getElementById("imageLightbox");
 
-    const expandableImages = document.querySelectorAll(
-      ".exp-visual img, .langley-visual img, .compact-card img"
-    );
+    const lightboxImage =
+      document.getElementById("lightboxImage");
+
+    const lightboxCaption =
+      document.getElementById("lightboxCaption");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+    const expandableImages =
+      document.querySelectorAll(
+        ".exp-visual img, .langley-visual img"
+      );
 
     function openLightbox(image) {
       lightboxImage.src = image.src;
-      lightboxImage.alt = image.alt || "Expanded portfolio image";
-      lightboxCaption.textContent = image.alt || "";
+      lightboxImage.alt =
+        image.alt || "Expanded portfolio image";
+
+      lightboxCaption.textContent =
+        image.alt || "";
+
       lightbox.classList.add("active");
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+
       lightboxClose.focus();
     }
 
     function closeLightbox() {
       lightbox.classList.remove("active");
-      lightbox.setAttribute("aria-hidden", "true");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
       lightboxImage.src = "";
       lightboxImage.alt = "";
+
       lightboxCaption.textContent = "";
+
       document.body.style.overflow = "";
     }
 
     expandableImages.forEach((image) => {
-      image.classList.add("lightbox-img");
-      image.setAttribute("tabindex", "0");
 
-      image.addEventListener("click", () => {
-        openLightbox(image);
-      });
+      image.classList.add(
+        "lightbox-img"
+      );
 
-      image.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
+      image.setAttribute(
+        "tabindex",
+        "0"
+      );
+
+      image.addEventListener(
+        "click",
+        () => {
           openLightbox(image);
         }
-      });
+      );
+
+      image.addEventListener(
+        "keydown",
+        (event) => {
+
+          if (
+            event.key === "Enter" ||
+            event.key === " "
+          ) {
+            event.preventDefault();
+
+            openLightbox(image);
+          }
+
+        }
+      );
+
     });
 
-    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxClose.addEventListener(
+      "click",
+      closeLightbox
+    );
 
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        closeLightbox();
+    lightbox.addEventListener(
+      "click",
+      (event) => {
+
+        if (
+          event.target === lightbox
+        ) {
+          closeLightbox();
+        }
+
       }
-    });
+    );
 
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && lightbox.classList.contains("active")) {
-        closeLightbox();
+    document.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (
+          event.key === "Escape" &&
+          lightbox.classList.contains(
+            "active"
+          )
+        ) {
+          closeLightbox();
+        }
+
       }
-    });
+    );
   </script>
 
 </body>
