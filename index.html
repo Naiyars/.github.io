@@ -177,7 +177,11 @@
           rgba(0, 0, 0, 0.25) 72%,
           rgba(0, 0, 0, 0.56) 100%
         ),
-        radial-gradient(circle at 24% 50%, rgba(255,255,255,0.11), transparent 32%),
+        radial-gradient(
+          circle at 24% 50%,
+          rgba(255, 255, 255, 0.11),
+          transparent 32%
+        ),
         url("hero-visual.png") center right / cover no-repeat;
       isolation: isolate;
     }
@@ -188,8 +192,16 @@
       inset: 0;
       z-index: 0;
       background:
-        radial-gradient(circle at 18% 46%, rgba(255,255,255,0.09), transparent 24%),
-        linear-gradient(to bottom, rgba(0,0,0,0.05), rgba(0,0,0,0.62));
+        radial-gradient(
+          circle at 18% 46%,
+          rgba(255, 255, 255, 0.09),
+          transparent 24%
+        ),
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.05),
+          rgba(0, 0, 0, 0.62)
+        );
       pointer-events: none;
     }
 
@@ -203,11 +215,31 @@
       background-repeat: repeat;
       background-size: 480px 240px;
       background-image:
-        radial-gradient(1.5px 1.5px at 40px 60px, rgba(255,255,255,0.9) 100%, transparent 0),
-        radial-gradient(1px 1px at 140px 120px, rgba(255,255,255,0.7) 100%, transparent 0),
-        radial-gradient(1.2px 1.2px at 220px 40px, rgba(255,255,255,0.8) 100%, transparent 0),
-        radial-gradient(1px 1px at 320px 180px, rgba(255,255,255,0.65) 100%, transparent 0),
-        radial-gradient(1.4px 1.4px at 420px 100px, rgba(255,255,255,0.85) 100%, transparent 0);
+        radial-gradient(
+          1.5px 1.5px at 40px 60px,
+          rgba(255, 255, 255, 0.9) 100%,
+          transparent 0
+        ),
+        radial-gradient(
+          1px 1px at 140px 120px,
+          rgba(255, 255, 255, 0.7) 100%,
+          transparent 0
+        ),
+        radial-gradient(
+          1.2px 1.2px at 220px 40px,
+          rgba(255, 255, 255, 0.8) 100%,
+          transparent 0
+        ),
+        radial-gradient(
+          1px 1px at 320px 180px,
+          rgba(255, 255, 255, 0.65) 100%,
+          transparent 0
+        ),
+        radial-gradient(
+          1.4px 1.4px at 420px 100px,
+          rgba(255, 255, 255, 0.85) 100%,
+          transparent 0
+        );
       animation: driftStars 160s linear infinite;
     }
 
@@ -242,8 +274,8 @@
       text-transform: uppercase;
       margin-bottom: 30px;
       text-shadow:
-        0 0 28px rgba(255,255,255,0.08),
-        0 18px 48px rgba(0,0,0,0.72);
+        0 0 28px rgba(255, 255, 255, 0.08),
+        0 18px 48px rgba(0, 0, 0, 0.72);
     }
 
     .hero-subtitle {
@@ -285,7 +317,7 @@
       background: #fff;
       color: #000;
       transform: translateY(-1px);
-      box-shadow: 0 0 28px rgba(255,255,255,0.16);
+      box-shadow: 0 0 28px rgba(255, 255, 255, 0.16);
     }
 
     /* GENERAL SECTIONS */
@@ -321,7 +353,7 @@
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255, 255, 255, 0.9);
       margin-bottom: 18px;
     }
 
@@ -337,7 +369,11 @@
     .about-section {
       padding: 120px 0;
       background:
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.035), transparent 34%),
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(255, 255, 255, 0.035),
+          transparent 34%
+        ),
         #000;
     }
 
@@ -368,7 +404,7 @@
       width: 74px;
       height: 1px;
       margin: 18px auto 0;
-      background: rgba(255,255,255,0.62);
+      background: rgba(255, 255, 255, 0.62);
     }
 
     .about-brief-content p {
@@ -419,7 +455,7 @@
       background: var(--panel);
       border-left: 1px solid var(--line-strong);
       backdrop-filter: blur(10px);
-      box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
       padding: 22px 20px 20px;
       display: flex;
       flex-direction: column;
@@ -436,7 +472,7 @@
     }
 
     .feature-copy-top p {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.78);
       font-size: 0.92rem;
       line-height: 1.5;
       margin-bottom: 18px;
@@ -450,8 +486,8 @@
     }
 
     .stat {
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.03);
       padding: 14px 10px;
       min-height: 112px;
       transition:
@@ -461,8 +497,8 @@
     }
 
     .stat:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.32);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.32);
       transform: translateY(-1px);
     }
 
@@ -476,7 +512,7 @@
 
     .stat span {
       display: block;
-      color: rgba(255,255,255,0.58);
+      color: rgba(255, 255, 255, 0.58);
       text-transform: uppercase;
       letter-spacing: 0.11em;
       font-size: 0.64rem;
@@ -487,7 +523,7 @@
     .feature-copy .btn {
       width: 100%;
       min-width: 0;
-      background: rgba(255,255,255,0.02);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     /* EXPERIENCE */
@@ -513,7 +549,7 @@
     }
 
     .experience-card:hover {
-      border-color: rgba(255,255,255,0.24);
+      border-color: rgba(255, 255, 255, 0.24);
       background: #090909;
       transform: translateY(-1px);
     }
@@ -552,7 +588,7 @@
     }
 
     .experience-points li {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.78);
       font-size: 0.92rem;
       line-height: 1.45;
       position: relative;
@@ -567,7 +603,7 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.55);
+      background: rgba(255, 255, 255, 0.55);
     }
 
     .experience-actions {
@@ -577,47 +613,17 @@
       flex-wrap: wrap;
     }
 
-    /* CONTACT */
-
-    .contact-band {
-      padding: 120px 0;
-      background: #000;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .contact-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 60vh;
-      gap: 20px;
-      background: #000;
-    }
-
-    .contact-band h2 {
-      font-size: clamp(3rem, 8vw, 6rem);
-      line-height: 0.95;
-      text-transform: uppercase;
-      letter-spacing: -0.04em;
-      margin-bottom: 12px;
-    }
-
-    .contact-band p {
-      max-width: 760px;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.12em;
-      font-size: 0.9rem;
-    }
-
     /* FOOTER */
 
     .site-footer {
       position: relative;
       overflow: hidden;
       background-image:
-        linear-gradient(to bottom, rgba(0,0,0,0.48), rgba(0,0,0,0.92)),
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.48),
+          rgba(0, 0, 0, 0.92)
+        ),
         url("footer-earth-bg.png");
       background-size: auto, cover;
       background-position: center center, center 68%;
@@ -646,7 +652,7 @@
     }
 
     .footer-nav a {
-      color: rgba(255,255,255,0.88);
+      color: rgba(255, 255, 255, 0.88);
       font-size: 0.86rem;
       font-weight: 600;
       letter-spacing: 0.16em;
@@ -668,13 +674,13 @@
     .footer-circle {
       width: 54px;
       height: 54px;
-      border: 1px solid rgba(255,255,255,0.82);
+      border: 1px solid rgba(255, 255, 255, 0.82);
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      background: rgba(0,0,0,0.18);
+      background: rgba(0, 0, 0, 0.18);
       font-size: 1rem;
       font-weight: 700;
       transition:
@@ -691,13 +697,13 @@
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.34);
+      border-top: 1px solid rgba(255, 255, 255, 0.34);
       padding-top: 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
-      color: rgba(255,255,255,0.72);
+      color: rgba(255, 255, 255, 0.72);
     }
 
     .footer-bottom p,
@@ -710,9 +716,9 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255, 255, 255, 0.8);
       font-size: 1.05rem;
-      filter: drop-shadow(0 0 12px rgba(255,255,255,0.35));
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
     }
 
     /* RESPONSIVE */
@@ -801,7 +807,11 @@
             rgba(0, 0, 0, 0.88) 50%,
             rgba(0, 0, 0, 0.46) 100%
           ),
-          radial-gradient(circle at 28% 48%, rgba(255,255,255,0.1), transparent 34%),
+          radial-gradient(
+            circle at 28% 48%,
+            rgba(255, 255, 255, 0.1),
+            transparent 34%
+          ),
           url("hero-visual.png") 68% center / cover no-repeat;
       }
 
@@ -823,8 +833,7 @@
       }
 
       .section,
-      .about-section,
-      .contact-band {
+      .about-section {
         padding: 72px 0;
       }
 
@@ -887,7 +896,11 @@
 <body>
   <header class="site-header">
     <div class="container site-header-inner">
-      <a href="index.html" class="brand" aria-label="Shaman Engineering homepage">
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="Shaman Engineering homepage"
+      >
         <img src="logo.png" alt="Shaman Engineering Logo" />
       </a>
 
@@ -896,7 +909,15 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="experience.html">Experience</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li>
+            <a
+              href="Naiyar-Shaman-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+          </li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -919,55 +940,83 @@
 
           <div class="hero-actions">
             <a class="btn" href="projects.html">View Projects</a>
-            <a class="btn" href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-            <a class="btn" href="mailto:naiyar@shamanengineering.com">Contact</a>
+
+            <a
+              class="btn"
+              href="Naiyar-Shaman-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </a>
+
+            <a
+              class="btn"
+              href="mailto:naiyar@shamanengineering.com"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section about-section" aria-labelledby="about-brief-heading">
+    <section
+      class="section about-section"
+      aria-labelledby="about-brief-heading"
+    >
       <div class="container">
         <div class="about-brief">
           <div class="about-brief-content">
             <h2 id="about-brief-heading">ABOUT ME</h2>
 
             <p>
-              I’m Naiyar Shaman, an engineering student focused on aerospace systems and mechanical design.
-              I spend most of my time working on CAD, refining designs, or thinking through how systems
+              I’m Naiyar Shaman, an engineering student focused on aerospace
+              systems and mechanical design. I spend most of my time working
+              on CAD, refining designs, or thinking through how systems
               actually come together beyond just analysis.
             </p>
 
             <p>
-              Outside of school and engineering work, I enjoy bowling, working on personal projects,
-              and staying involved in technical competitions and NASA programs. I like building things
-              that have a clear purpose and pushing ideas until they’re something tangible.
+              Outside of school and engineering work, I enjoy bowling,
+              working on personal projects, and staying involved in technical
+              competitions and NASA programs. I like building things that have
+              a clear purpose and pushing ideas until they’re something tangible.
             </p>
 
             <p>
-              I’m especially interested in working on human space exploration systems — the kind of
-              engineering that has to operate reliably in extreme environments and can’t afford to fail.
+              I’m especially interested in working on human space exploration
+              systems — the kind of engineering that has to operate reliably
+              in extreme environments and can’t afford to fail.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="featured-project-heading">
+    <section
+      class="section"
+      aria-labelledby="featured-project-heading"
+    >
       <div class="container">
         <div class="feature-header">
           <div class="feature-section-title">
             Featured Project
           </div>
 
-          <h2 id="featured-project-heading">PROJECT AUREVO</h2>
+          <h2 id="featured-project-heading">
+            PROJECT AUREVO
+          </h2>
 
           <p>
             Project AUREVO stands for
-            <strong>Advanced Utilization of Resources for Energy &amp; Viability Off-Earth</strong>.
-            I founded and led Embry-Riddle’s NASA RASC-AL team to develop a technically rigorous lunar
-            surface power concept, advancing the project through finalist selection with a systems-driven
-            architecture supported by detailed analysis and engineering trade studies.
+            <strong>
+              Advanced Utilization of Resources for Energy &amp; Viability Off-Earth
+            </strong>.
+            I founded and led Embry-Riddle’s NASA RASC-AL team to develop a
+            technically rigorous lunar surface power concept, advancing the
+            project through finalist selection with a systems-driven architecture
+            supported by detailed analysis and engineering trade studies.
           </p>
         </div>
 
@@ -979,7 +1028,10 @@
             />
           </div>
 
-          <aside class="feature-copy" aria-label="AUREVO summary">
+          <aside
+            class="feature-copy"
+            aria-label="AUREVO summary"
+          >
             <div class="feature-copy-top">
               <h3>
                 LUNAR POWER<br />
@@ -988,8 +1040,9 @@
               </h3>
 
               <p>
-                A 100 kWe hybrid surface power system integrating dual fission reactors, regolith thermal
-                energy storage, and long-distance HVDC transmission for resilient lunar surface operations.
+                A 100 kWe hybrid surface power system integrating dual fission
+                reactors, regolith thermal energy storage, and long-distance
+                HVDC transmission for resilient lunar surface operations.
               </p>
 
               <div class="feature-stats">
@@ -1010,142 +1063,173 @@
               </div>
             </div>
 
-            <a class="btn" href="projects.html">Explore Project</a>
+            <a
+              class="btn"
+              href="projects.html"
+            >
+              Explore Project
+            </a>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="experience-preview-heading">
+    <section
+      class="section"
+      aria-labelledby="experience-preview-heading"
+    >
       <div class="container">
         <div class="feature-header">
-          <h2 id="experience-preview-heading">EXPERIENCE</h2>
+          <h2 id="experience-preview-heading">
+            EXPERIENCE
+          </h2>
 
           <p>
-            My background spans mechanical design, manufacturing support, systems engineering, NASA mission
-            development, trade studies, subsystem integration, and technical leadership across both industry
-            and aerospace research.
+            My background spans mechanical design, manufacturing support,
+            systems engineering, NASA mission development, trade studies,
+            subsystem integration, and technical leadership across both
+            industry and aerospace research.
           </p>
         </div>
 
         <div class="experience-main-grid">
           <article class="experience-card featured">
-            <span class="role-type">Industry</span>
+            <span class="role-type">
+              Industry
+            </span>
 
-            <h3>MeltPro Inc. — Lead Engineer / Mechanical Designer</h3>
+            <h3>
+              MeltPro Inc. — Lead Engineer / Mechanical Designer
+            </h3>
 
             <p>
-              Own end-to-end development of industrial adhesive dispensing systems, serving as the primary
-              engineering resource across design, manufacturability, and production implementation.
+              Own end-to-end development of industrial adhesive dispensing
+              systems, serving as the primary engineering resource across
+              design, manufacturability, and production implementation.
             </p>
 
             <ul class="experience-points">
               <li>
-                Manage 500+ part and assembly models in SolidWorks with drawings, revisions,
-                and configuration control.
+                Manage 500+ part and assembly models in SolidWorks with
+                drawings, revisions, and configuration control.
               </li>
+
               <li>
-                Perform tolerance analysis, DFM, and validation to improve manufacturability,
-                reliability, and assembly efficiency.
+                Perform tolerance analysis, DFM, and validation to improve
+                manufacturability, reliability, and assembly efficiency.
               </li>
+
               <li>
-                Work directly with machining and production teams to resolve real engineering
-                issues on hardware that gets built.
+                Work directly with machining and production teams to resolve
+                real engineering issues on hardware that gets built.
               </li>
             </ul>
           </article>
 
           <article class="experience-card featured">
-            <span class="role-type">NASA Competition</span>
+            <span class="role-type">
+              NASA Competition
+            </span>
 
-            <h3>NASA RASC-AL — Founder &amp; Principal Investigator</h3>
+            <h3>
+              NASA RASC-AL — Founder &amp; Principal Investigator
+            </h3>
 
             <p>
-              Led development of Project AUREVO, a lunar surface power architecture selected as a finalist
-              in NASA’s RASC-AL competition.
+              Led development of Project AUREVO, a lunar surface power
+              architecture selected as a finalist in NASA’s RASC-AL competition.
             </p>
 
             <ul class="experience-points">
               <li>
-                Developed system architecture and trade studies for a 100 kWe continuous power concept
-                using dual fission reactors and HVDC distribution.
+                Developed system architecture and trade studies for a
+                100 kWe continuous power concept using dual fission reactors
+                and HVDC distribution.
               </li>
+
               <li>
-                Designed and analyzed regolith-based thermal energy storage for multi-day lunar night
-                survivability.
+                Designed and analyzed regolith-based thermal energy storage
+                for multi-day lunar night survivability.
               </li>
+
               <li>
-                Directed requirements development, risk analysis, and subsystem integration across power,
-                thermal, PMAD, and surface systems.
+                Directed requirements development, risk analysis, and
+                subsystem integration across power, thermal, PMAD,
+                and surface systems.
               </li>
             </ul>
           </article>
 
           <article class="experience-card secondary">
-            <span class="role-type">NASA Mission Development</span>
+            <span class="role-type">
+              NASA Mission Development
+            </span>
 
-            <h3>NASA L’SPACE MCA — Project Manager</h3>
+            <h3>
+              NASA L’SPACE MCA — Project Manager
+            </h3>
 
             <p>
-              Led a 15-member multidisciplinary team through end-to-end planetary mission architecture
-              development under NASA systems engineering standards.
+              Led a 15-member multidisciplinary team through end-to-end
+              planetary mission architecture development under NASA systems
+              engineering standards.
             </p>
 
             <ul class="experience-points">
               <li>
-                Directed subsystem integration across propulsion, thermal, power, communications,
-                payload, and CDH.
+                Directed subsystem integration across propulsion, thermal,
+                power, communications, payload, and CDH.
               </li>
+
               <li>
-                Produced 200+ pages of technical deliverables including requirements, interface definitions,
-                N² diagrams, and risk assessments.
+                Produced 200+ pages of technical deliverables including
+                requirements, interface definitions, N² diagrams,
+                and risk assessments.
               </li>
             </ul>
           </article>
 
           <article class="experience-card secondary">
-            <span class="role-type">NASA Internship</span>
+            <span class="role-type">
+              NASA Internship
+            </span>
 
-            <h3>NASA Langley Research Center — Engineering Intern</h3>
+            <h3>
+              NASA Langley Research Center — Engineering Intern
+            </h3>
 
             <p>
-              Supporting Mars exploration studies through systems-level definition frameworks,
-              architecture option analysis, and trade-space evaluation for future human Mars missions.
+              Supporting Mars exploration studies through systems-level
+              definition frameworks, architecture option analysis, and
+              trade-space evaluation for future human Mars missions.
             </p>
 
             <ul class="experience-points">
               <li>
-                Develop systems-level definition frameworks for Mars architecture trade studies.
+                Develop systems-level definition frameworks for Mars
+                architecture trade studies.
               </li>
+
               <li>
-                Analyze architecture option spaces across Mars EDL split strategies, ascent propulsion,
-                in-space propulsion, and EDL technology concepts.
+                Analyze architecture option spaces across Mars EDL split
+                strategies, ascent propulsion, in-space propulsion,
+                and EDL technology concepts.
               </li>
+
               <li>
-                Identify key attributes, evaluation criteria, and comparative trade factors to support
-                strategic architecture recommendations.
+                Identify key attributes, evaluation criteria, and comparative
+                trade factors to support strategic architecture recommendations.
               </li>
             </ul>
           </article>
         </div>
 
         <div class="experience-actions">
-          <a class="btn" href="experience.html">View Full Experience</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-band" aria-labelledby="reach-out-heading">
-      <div class="container">
-        <div class="contact-block">
-          <h2 id="reach-out-heading">GET IN CONTACT</h2>
-
-          <p>
-            naiyar@shamanengineering.com
-          </p>
-
-          <a class="btn" href="mailto:naiyar@shamanengineering.com">
-            Email Me
+          <a
+            class="btn"
+            href="experience.html"
+          >
+            View Full Experience
           </a>
         </div>
       </div>
@@ -1155,26 +1239,78 @@
   <footer class="site-footer">
     <div class="container site-footer-content">
       <div class="footer-row">
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
-          <a href="experience.html">Experience</a>
-          <a href="projects.html">Projects</a>
-          <a href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-          <a href="contact.html">Contact</a>
+        <nav
+          class="footer-nav"
+          aria-label="Footer navigation"
+        >
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="experience.html">
+            Experience
+          </a>
+
+          <a href="projects.html">
+            Projects
+          </a>
+
+          <a
+            href="Naiyar-Shaman-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
         </nav>
 
-        <div class="footer-social" aria-label="Footer links">
-          <a class="footer-circle" href="mailto:naiyar@shamanengineering.com" aria-label="Email">✉</a>
-          <a class="footer-circle" href="https://www.linkedin.com/in/naiyarshaman/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-          <a class="footer-circle" href="Naiyar-Shaman-Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Resume">CV</a>
+        <div
+          class="footer-social"
+          aria-label="Footer links"
+        >
+          <a
+            class="footer-circle"
+            href="mailto:naiyar@shamanengineering.com"
+            aria-label="Email"
+          >
+            ✉
+          </a>
+
+          <a
+            class="footer-circle"
+            href="https://www.linkedin.com/in/naiyarshaman/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            in
+          </a>
+
+          <a
+            class="footer-circle"
+            href="Naiyar-Shaman-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Resume"
+          >
+            CV
+          </a>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© 2026. All rights reserved.</p>
+        <p>
+          © 2026. All rights reserved.
+        </p>
 
         <div class="footer-bottom-mark">
-          <span aria-hidden="true">✦</span>
+          <span aria-hidden="true">
+            ✦
+          </span>
         </div>
       </div>
     </div>
