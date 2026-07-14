@@ -308,14 +308,14 @@
     }
 
     /*
-      Use this class for drawings or diagrams that should
-      fit fully inside the available image area without cropping.
+      Makes diagrams/posters fit completely inside their blocks.
+      Any unused space is BLACK instead of white.
     */
-    .exp-main-image.fit-image {
-      object-fit: contain;
-      object-position: center;
-      background: #f3f3f3;
-      padding: 0;
+    .fit-image-black {
+      object-fit: contain !important;
+      object-position: center !important;
+      background: #000 !important;
+      padding: 0 !important;
     }
 
     .exp-gallery {
@@ -323,6 +323,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0;
       border-top: 1px solid var(--line);
+      background: #000;
     }
 
     .exp-gallery img {
@@ -338,14 +339,14 @@
       width: 100%;
       height: 280px;
       object-fit: cover;
-      background: transparent;
+      background: #000;
     }
 
     .exp-detail.drawing-image {
       object-fit: contain;
       height: 280px;
       padding: 0;
-      background: #f3f3f3;
+      background: #000;
     }
 
     .exp-gallery img:nth-child(2n) {
@@ -556,6 +557,7 @@
       background-position: center center, center 68%;
       background-repeat: no-repeat, no-repeat;
       border-top: 1px solid var(--line);
+      padding: 0;
     }
 
     .site-footer-content {
@@ -650,7 +652,7 @@
       );
     }
 
-    /* LIGHTBOX */
+    /* IMAGE LIGHTBOX */
 
     .lightbox-img {
       cursor: zoom-in;
@@ -740,27 +742,6 @@
       .langley-visual img {
         min-height: 340px;
       }
-
-      .footer-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 28px;
-        padding-bottom: 34px;
-      }
-
-      .footer-nav {
-        flex-wrap: wrap;
-        gap: 20px 28px;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-bottom-mark {
-        justify-content: flex-start;
-      }
     }
 
     @media (max-width: 760px) {
@@ -845,12 +826,25 @@
       }
 
       .footer-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
         padding-bottom: 28px;
       }
 
       .footer-nav {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 20px 28px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-bottom-mark {
+        justify-content: flex-start;
       }
 
       .footer-circle {
@@ -885,21 +879,15 @@
       >
         <ul>
           <li>
-            <a href="about.html">
-              About
-            </a>
+            <a href="about.html">About</a>
           </li>
 
           <li>
-            <a href="experience.html">
-              Experience
-            </a>
+            <a href="experience.html">Experience</a>
           </li>
 
           <li>
-            <a href="projects.html">
-              Projects
-            </a>
+            <a href="projects.html">Projects</a>
           </li>
 
           <li>
@@ -913,9 +901,7 @@
           </li>
 
           <li>
-            <a href="contact.html">
-              Contact
-            </a>
+            <a href="contact.html">Contact</a>
           </li>
         </ul>
       </nav>
@@ -945,41 +931,15 @@
             class="jump-nav"
             aria-label="Experience section navigation"
           >
-            <a href="#meltpro">
-              MeltPro Inc
-            </a>
-
-            <a href="#rascal">
-              NASA RASC-AL
-            </a>
-
-            <a href="#langley">
-              NASA Langley
-            </a>
-
-            <a href="#mca">
-              NASA L'SPACE MCA
-            </a>
-
-            <a href="#npwee">
-              NASA L'SPACE NPWEE
-            </a>
-
-            <a href="#suits">
-              NASA SUITS
-            </a>
-
-            <a href="#research">
-              Research
-            </a>
-
-            <a href="#heighttower">
-              Heights Tower Systems
-            </a>
-
-            <a href="#bellwether">
-              The Bellwether Alliance
-            </a>
+            <a href="#meltpro">MeltPro Inc</a>
+            <a href="#rascal">NASA RASC-AL</a>
+            <a href="#langley">NASA Langley</a>
+            <a href="#mca">NASA L'SPACE MCA</a>
+            <a href="#npwee">NASA L'SPACE NPWEE</a>
+            <a href="#suits">NASA SUITS</a>
+            <a href="#research">Research</a>
+            <a href="#heighttower">Heights Tower Systems</a>
+            <a href="#bellwether">The Bellwether Alliance</a>
           </nav>
 
         </div>
@@ -1009,11 +969,7 @@
               </div>
 
               <p class="exp-summary">
-                I serve as the primary engineering contributor for industrial
-                adhesive dispensing systems, owning end-to-end product
-                development across mechanical design, CAD management, drawing
-                generation, configuration control, manufacturability, and
-                production implementation.
+                I serve as the primary engineering contributor for industrial adhesive dispensing systems, owning end-to-end product development across mechanical design, CAD management, drawing generation, configuration control, manufacturability, and production implementation.
               </p>
 
               <div class="stats-row">
@@ -1038,26 +994,19 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Designed and managed 500+ part and assembly models in
-                  SolidWorks, including drawings, revisions, and configuration
-                  control.
+                  Designed and managed 500+ part and assembly models in SolidWorks, including drawings, revisions, and configuration control.
                 </li>
 
                 <li>
-                  Performed tolerance analysis, design-for-manufacturability
-                  reviews, and validation to resolve stack-ups and improve
-                  assembly reliability.
+                  Performed tolerance analysis, design-for-manufacturability reviews, and validation to resolve stack-ups and improve assembly reliability.
                 </li>
 
                 <li>
-                  Developed and iterated mechanical systems to reduce assembly
-                  time, improve manufacturability, and support field performance.
+                  Developed and iterated mechanical systems to reduce assembly time, improve manufacturability, and support field performance.
                 </li>
 
                 <li>
-                  Worked directly with machining and production teams,
-                  supporting CNC workflow and resolving real engineering
-                  problems on hardware that gets built.
+                  Worked directly with machining and production teams, supporting CNC workflow and resolving real engineering problems on hardware that gets built.
                 </li>
 
               </ul>
@@ -1149,12 +1098,7 @@
               </div>
 
               <p class="exp-summary">
-                I led development of Project AUREVO, a lunar surface power
-                architecture selected as a national finalist in NASA’s RASC-AL
-                competition. The concept integrates dual fission reactors,
-                regolith thermal energy storage, and high-voltage DC power
-                distribution for resilient long-duration lunar surface
-                operations.
+                I led development of Project AUREVO, a lunar surface power architecture selected as a national finalist in NASA’s RASC-AL competition. The concept integrates dual fission reactors, regolith thermal energy storage, and high-voltage DC power distribution for resilient long-duration lunar surface operations.
               </p>
 
               <div class="stats-row">
@@ -1179,26 +1123,19 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Developed system architecture and trade studies for a
-                  100 kWe continuous lunar surface power system using dual
-                  fission reactors and HVDC distribution.
+                  Developed system architecture and trade studies for a 100 kWe continuous lunar surface power system using dual fission reactors and HVDC distribution.
                 </li>
 
                 <li>
-                  Designed and analyzed regolith-based thermal energy storage
-                  for multi-day lunar night survivability, including efficiency
-                  and mass optimization.
+                  Designed and analyzed regolith-based thermal energy storage for multi-day lunar night survivability, including efficiency and mass optimization.
                 </li>
 
                 <li>
-                  Directed requirements development, risk analysis, and
-                  subsystem integration across power, thermal, PMAD, and
-                  surface systems.
+                  Directed requirements development, risk analysis, and subsystem integration across power, thermal, PMAD, and surface systems.
                 </li>
 
                 <li>
-                  Led the team and overall technical direction of the proposal
-                  through finalist selection.
+                  Led the team and overall technical direction of the proposal through finalist selection.
                 </li>
 
               </ul>
@@ -1245,9 +1182,7 @@
               </div>
 
               <p class="exp-summary">
-                Supporting Mars exploration studies through systems-level
-                definition frameworks, architecture option analysis, and
-                trade-space evaluation for future human Mars missions.
+                Supporting Mars exploration studies through systems-level definition frameworks, architecture option analysis, and trade-space evaluation for future human Mars missions.
               </p>
 
               <div class="stats-row">
@@ -1272,20 +1207,15 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Develop systems-level definition frameworks for Mars
-                  architecture trade studies.
+                  Develop systems-level definition frameworks for Mars architecture trade studies.
                 </li>
 
                 <li>
-                  Analyze architecture option spaces across Mars EDL split
-                  strategies, ascent propulsion, in-space propulsion, and EDL
-                  technology concepts.
+                  Analyze architecture option spaces across Mars EDL split strategies, ascent propulsion, in-space propulsion, and EDL technology concepts.
                 </li>
 
                 <li>
-                  Identify key attributes, evaluation criteria, and comparative
-                  trade factors to support strategic architecture
-                  recommendations.
+                  Identify key attributes, evaluation criteria, and comparative trade factors to support strategic architecture recommendations.
                 </li>
 
               </ul>
@@ -1316,9 +1246,48 @@
     >
       <div class="container">
 
-        <div class="experience-block">
+        <!--
+          REVERSE means the images are on the LEFT
+          and the title/text are on the RIGHT.
+        -->
 
-          <div class="exp-copy">
+        <div class="experience-block reverse">
+
+          <div class="exp-visual alt">
+
+            <!-- Main technical drawing fits completely with black empty space -->
+
+            <img
+              class="exp-main-image fit-image-black"
+              src="bifrost-cad-render.jpg.png"
+              alt="NASA L'SPACE MCA rover or mission concept render"
+            />
+
+            <div class="exp-gallery">
+
+              <!-- Image with the 9 now fits completely -->
+
+              <img
+                class="fit-image-black"
+                src="bifrost-conops-poster.jpg"
+                alt="NASA L'SPACE MCA PDR slide or review material"
+              />
+
+              <!-- Other image also fits completely -->
+
+              <img
+                class="fit-image-black"
+                src="bifrost-n2-systems-architecture.jpg"
+                alt="NASA L'SPACE MCA architecture or N2 diagram"
+              />
+
+            </div>
+
+          </div>
+
+          <!-- NASA L'SPACE TITLE AND TEXT ON THE RIGHT -->
+
+          <div class="exp-copy alt">
             <div>
 
               <span class="exp-label">
@@ -1334,11 +1303,7 @@
               </div>
 
               <p class="exp-summary">
-                In NASA’s L’SPACE Mission Concept Academy, I led a
-                multidisciplinary team through development of an end-to-end
-                planetary mission architecture under NASA systems engineering
-                standards. The work required technical structure, subsystem
-                integration, trade studies, and substantial formal documentation.
+                In NASA’s L’SPACE Mission Concept Academy, I led a multidisciplinary team through development of an end-to-end planetary mission architecture under NASA systems engineering standards. The work required technical structure, subsystem integration, trade studies, and substantial formal documentation.
               </p>
 
               <div class="stats-row">
@@ -1363,24 +1328,19 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Directed subsystem integration across propulsion, thermal,
-                  power, communications, payload, and command/data handling.
+                  Directed subsystem integration across propulsion, thermal, power, communications, payload, and command/data handling.
                 </li>
 
                 <li>
-                  Produced major technical deliverables including requirements,
-                  interface definitions, N² diagrams, risk assessments, and
-                  architecture documentation.
+                  Produced major technical deliverables including requirements, interface definitions, N² diagrams, risk assessments, and architecture documentation.
                 </li>
 
                 <li>
-                  Conducted trade studies on propulsion performance, mass
-                  budgets, and thermal stability.
+                  Conducted trade studies on propulsion performance, mass budgets, and thermal stability.
                 </li>
 
                 <li>
-                  Managed program structure, review readiness, and team
-                  coordination through formal mission development phases.
+                  Managed program structure, review readiness, and team coordination through formal mission development phases.
                 </li>
 
               </ul>
@@ -1393,35 +1353,6 @@
               </a>
 
             </div>
-          </div>
-
-          <div class="exp-visual">
-
-            <!--
-              FIT-IMAGE ADDED HERE.
-              THIS MAKES THE FULL WHITE DRAWING VISIBLE.
-            -->
-
-            <img
-              class="exp-main-image fit-image"
-              src="bifrost-cad-render.jpg.png"
-              alt="NASA L'SPACE MCA rover or mission concept engineering drawing"
-            />
-
-            <div class="exp-gallery">
-
-              <img
-                src="team9title2.png"
-                alt="NASA L'SPACE MCA PDR slide or review material"
-              />
-
-              <img
-                src="APC076 zoomed.png"
-                alt="NASA L'SPACE MCA architecture or N2 diagram"
-              />
-
-            </div>
-
           </div>
 
         </div>
@@ -1455,10 +1386,7 @@
               </div>
 
               <p class="exp-summary">
-                I lead proposal design for a dust-tolerant mechanical interface
-                and latching system for lunar surface operations, defining
-                requirements, metrics, test strategy, and concept development
-                under NASA mission constraints.
+                I lead proposal design for a dust-tolerant mechanical interface and latching system for lunar surface operations, defining requirements, metrics, test strategy, and concept development under NASA mission constraints.
               </p>
 
               <div class="stats-row">
@@ -1483,18 +1411,15 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Defined system requirements, environmental constraints, and
-                  load-case expectations for lunar operations.
+                  Defined system requirements, environmental constraints, and load-case expectations for lunar operations.
                 </li>
 
                 <li>
-                  Directed trade studies and concept evaluation for mechanism
-                  design and validation pathways.
+                  Directed trade studies and concept evaluation for mechanism design and validation pathways.
                 </li>
 
                 <li>
-                  Coordinated team efforts across mechanical design, testing
-                  strategy, and systems engineering.
+                  Coordinated team efforts across mechanical design, testing strategy, and systems engineering.
                 </li>
 
               </ul>
@@ -1588,9 +1513,7 @@
               </div>
 
               <p class="exp-summary">
-                I led development of a mixed-reality EVA HUD concept using
-                Microsoft HoloLens 2 for astronaut navigation, telemetry, and
-                mission-critical interface visualization.
+                I led development of a mixed-reality EVA HUD concept using Microsoft HoloLens 2 for astronaut navigation, telemetry, and mission-critical interface visualization.
               </p>
 
               <div class="stats-row">
@@ -1615,18 +1538,15 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Directed AR interface concept design, sensor mapping, and
-                  real-time telemetry overlay strategy.
+                  Directed AR interface concept design, sensor mapping, and real-time telemetry overlay strategy.
                 </li>
 
                 <li>
-                  Managed proposal structure, subsystem documentation, and
-                  integrated workflow for successful submission.
+                  Managed proposal structure, subsystem documentation, and integrated workflow for successful submission.
                 </li>
 
                 <li>
-                  Coordinated contributors across AR design, HCI, systems, and
-                  UI/UX.
+                  Coordinated contributors across AR design, HCI, systems, and UI/UX.
                 </li>
 
               </ul>
@@ -1672,10 +1592,7 @@
               </div>
 
               <p class="exp-summary">
-                Through the Compass Research Program, I conducted research on
-                reusable launch vehicles, including propulsion efficiency,
-                thermal constraints, environmental impact, and evaluation of
-                methodological limitations in aerospace studies.
+                Through the Compass Research Program, I conducted research on reusable launch vehicles, including propulsion efficiency, thermal constraints, environmental impact, and evaluation of methodological limitations in aerospace studies.
               </p>
 
               <div class="stats-row">
@@ -1700,18 +1617,15 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Performed structured literature analysis across reusable
-                  launch vehicle technologies and system tradeoffs.
+                  Performed structured literature analysis across reusable launch vehicle technologies and system tradeoffs.
                 </li>
 
                 <li>
-                  Evaluated study assumptions, technology readiness, and
-                  research limitations in aerospace publications.
+                  Evaluated study assumptions, technology readiness, and research limitations in aerospace publications.
                 </li>
 
                 <li>
-                  First author of an accepted paper on reusable launch vehicle
-                  development and future implications.
+                  First author of an accepted paper on reusable launch vehicle development and future implications.
                 </li>
 
               </ul>
@@ -1805,9 +1719,7 @@
               </div>
 
               <p class="exp-summary">
-                At Height Tower Systems, I worked in a hands-on manufacturing
-                environment supporting assembly, CNC machining, and fabrication
-                tasks for large-scale radio tower systems.
+                At Height Tower Systems, I worked in a hands-on manufacturing environment supporting assembly, CNC machining, and fabrication tasks for large-scale radio tower systems.
               </p>
 
               <div class="stats-row">
@@ -1832,18 +1744,15 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Assisted in manufacturing and assembly of 12+ large-scale
-                  radio tower systems.
+                  Assisted in manufacturing and assembly of 12+ large-scale radio tower systems.
                 </li>
 
                 <li>
-                  Supported CNC machining of 50+ custom components, including
-                  setup, tooling changes, and basic G-code execution.
+                  Supported CNC machining of 50+ custom components, including setup, tooling changes, and basic G-code execution.
                 </li>
 
                 <li>
-                  Executed 100+ fabrication tasks while maintaining production
-                  timelines and part-quality expectations.
+                  Executed 100+ fabrication tasks while maintaining production timelines and part-quality expectations.
                 </li>
 
               </ul>
@@ -1906,10 +1815,7 @@
               </div>
 
               <p class="exp-summary">
-                Before my current aerospace-heavy work, I led technical systems
-                and automation efforts for The Bellwether Alliance, managing
-                CRM infrastructure, onboarding workflows, and organization-wide
-                automation systems.
+                Before my current aerospace-heavy work, I led technical systems and automation efforts for The Bellwether Alliance, managing CRM infrastructure, onboarding workflows, and organization-wide automation systems.
               </p>
 
               <div class="stats-row">
@@ -1934,18 +1840,15 @@
               <ul class="exp-bullets">
 
                 <li>
-                  Managed the organization’s CRM platform and technical systems
-                  infrastructure.
+                  Managed the organization’s CRM platform and technical systems infrastructure.
                 </li>
 
                 <li>
-                  Designed and deployed automations across departments to reduce
-                  manual workload and improve operational flow.
+                  Designed and deployed automations across departments to reduce manual workload and improve operational flow.
                 </li>
 
                 <li>
-                  Owned technical workflows supporting onboarding, member
-                  experience, and organizational efficiency.
+                  Owned technical workflows supporting onboarding, member experience, and organizational efficiency.
                 </li>
 
               </ul>
@@ -2104,13 +2007,16 @@
 
     function openLightbox(image) {
       lightboxImage.src = image.src;
+
       lightboxImage.alt =
         image.alt || "Expanded portfolio image";
 
       lightboxCaption.textContent =
         image.alt || "";
 
-      lightbox.classList.add("active");
+      lightbox.classList.add(
+        "active"
+      );
 
       lightbox.setAttribute(
         "aria-hidden",
@@ -2124,7 +2030,9 @@
     }
 
     function closeLightbox() {
-      lightbox.classList.remove("active");
+      lightbox.classList.remove(
+        "active"
+      );
 
       lightbox.setAttribute(
         "aria-hidden",
@@ -2139,41 +2047,43 @@
       document.body.style.overflow = "";
     }
 
-    expandableImages.forEach((image) => {
+    expandableImages.forEach(
+      (image) => {
 
-      image.classList.add(
-        "lightbox-img"
-      );
+        image.classList.add(
+          "lightbox-img"
+        );
 
-      image.setAttribute(
-        "tabindex",
-        "0"
-      );
+        image.setAttribute(
+          "tabindex",
+          "0"
+        );
 
-      image.addEventListener(
-        "click",
-        () => {
-          openLightbox(image);
-        }
-      );
-
-      image.addEventListener(
-        "keydown",
-        (event) => {
-
-          if (
-            event.key === "Enter" ||
-            event.key === " "
-          ) {
-            event.preventDefault();
-
+        image.addEventListener(
+          "click",
+          () => {
             openLightbox(image);
           }
+        );
 
-        }
-      );
+        image.addEventListener(
+          "keydown",
+          (event) => {
 
-    });
+            if (
+              event.key === "Enter" ||
+              event.key === " "
+            ) {
+              event.preventDefault();
+
+              openLightbox(image);
+            }
+
+          }
+        );
+
+      }
+    );
 
     lightboxClose.addEventListener(
       "click",
